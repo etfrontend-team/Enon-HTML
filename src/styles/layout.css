@@ -1,0 +1,130 @@
+.site-header {
+  @apply absolute top-15 left-0 right-0 bg-transparent z-200;
+}
+.site-header .header-inner {
+  @apply relative w-full 1366:px-65 425:px-40 px-30 flex items-center justify-between gap-20 1366:pt-46 1366:pb-48 py-30;
+}
+.site-header .header-logo {
+  @apply block 1366:w-265 425:w-228 w-190 1366:h-28 425:h-25 h-20 shrink-0;
+}
+.site-header .header-logo img {
+  @apply w-full h-full object-contain;
+}
+.site-header .header-nav {
+  @apply max-1023:hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.site-header .header-nav ul {
+  @apply flex items-center list-none m-0 p-0 1366:gap-30 gap-16;
+}
+.site-header .header-nav a {
+  @apply font-eaves 1199:text-20 text-18 text-off-white no-underline uppercase relative pb-14 tracking-5 after:absolute after:bottom-0 after:left-0 after:h-px after:bg-off-white after:w-0 hover:after:w-full;
+  transition: opacity 0.3s ease;
+}
+.site-header .header-nav a::after {
+  transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.site-header .header-nav ul:has(a:hover) a:not(:hover) {
+  @apply opacity-80;
+}
+.site-header .header-nav--hidden {
+  @apply invisible opacity-0 pointer-events-none;
+}
+.site-header .header-actions {
+  @apply flex items-center 1366:gap-30 gap-16;
+}
+.site-header .header-enquire-wrap {
+  @apply max-1023:hidden;
+}
+.site-header .btn {
+  backdrop-filter: blur(5px);
+}
+.site-header .header-menu-btn {
+  @apply bg-transparent border-0 cursor-pointer p-0 flex items-center justify-center shrink-0;
+}
+
+.menu-overlay {
+  @apply fixed inset-0 bg-cream z-150 opacity-0 invisible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.menu-overlay.is-open {
+  @apply opacity-100 visible;
+}
+.menu-overlay .menu-panel {
+  @apply absolute bg-rust inset-15;
+}
+.menu-overlay .menu-panel__video {
+  @apply absolute inset-0 w-full h-full object-cover pointer-events-none mix-blend-multiply opacity-25;
+}
+.menu-overlay .menu-inner-container {
+  @apply relative flex flex-col items-center h-full mx-127;
+}
+.menu-overlay .menu-nav {
+  @apply flex flex-1 items-center justify-center 1199:absolute top-1/2 left-1/2 1199:-translate-1/2;
+}
+.menu-overlay .menu-nav ul {
+  @apply flex flex-col items-center list-none m-0 p-0 375:gap-30 gap-20;
+}
+.menu-overlay .menu-nav a {
+  @apply font-eaves text-white uppercase text-center no-underline 375:text-24 text-20 leading-10 tracking-5 h-10 block;
+}
+.menu-overlay .menu-nav ul:has(a:hover) a:not(:hover) {
+  @apply opacity-80;
+}
+.menu-overlay .menu-footer {
+  @apply flex flex-col items-center w-full gap-25 1199:pb-48 pb-35 mt-auto;
+}
+.menu-overlay .menu-contact {
+  @apply flex flex-col items-center text-center 1199:gap-40 375:gap-30 gap-25;
+}
+.menu-overlay .menu-contact__title {
+  @apply font-eaves text-white uppercase text-center no-underline text-24 leading-10 tracking-5 h-10 block;
+}
+.menu-overlay .menu-contact__info {
+  @apply flex flex-col text-center 375:gap-25 gap-20 items-center;
+}
+.menu-overlay .menu-contact__info a {
+  @apply font-body text-white text-center capitalize text-12 tracking-8 leading-9 no-underline w-max transition-all duration-300 ease-in-out;
+}
+.menu-overlay .menu-contact__info:has(a:hover) a:not(:hover) {
+  @apply opacity-80;
+}
+.menu-overlay .menu-social {
+  @apply flex items-center gap-20;
+}
+.menu-overlay .menu-social:has(a:hover) a:not(:hover) {
+  @apply opacity-80;
+}
+.menu-overlay .menu-social__link {
+  @apply flex items-center justify-center size-18 transition-opacity duration-300;
+}
+.menu-overlay .menu-social__link img {
+  @apply w-full h-full object-contain;
+  filter: brightness(0) invert(1);
+}
+.menu-overlay .menu-enquire-mobile {
+  @apply hidden max-767:flex 425:mt-15;
+}
+.menu-overlay .menu-img {
+  @apply absolute max-1199:hidden top-1/2 -translate-y-1/2;
+}
+@media only screen and (max-height: 650px) {
+  .menu-overlay .menu-img {
+    @apply hidden;
+  }
+  .menu-overlay .menu-nav {
+    @apply static translate-none;
+  }
+}
+.menu-overlay .menu-img--left {
+  @apply left-0;
+}
+.menu-overlay .menu-img--right {
+  @apply right-0;
+}
+.menu-overlay .menu-img__frame {
+  @apply bg-off-white relative aspect-square 1366:size-329 size-290 shadow-[2.2px_2.2px_4.4px_1.1px_rgba(0,0,0,0.1)] border-off-white border-14;
+}
+.menu-overlay .menu-img__photo {
+  @apply object-cover size-full;
+}

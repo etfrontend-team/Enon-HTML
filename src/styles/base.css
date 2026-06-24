@@ -1,0 +1,98 @@
+.container-fluid {
+    @apply w-full px-15;
+  }
+  .container-fluid-lg {
+    @apply max-1199:px-60 max-1023:px-35 max-425:px-20 mx-auto w-full px-106;
+  }
+  body {
+    @apply font-body bg-cream m-0 overflow-x-hidden p-0 antialiased relative;
+  }
+  body::after {
+    content: '';
+    @apply fixed inset-0 z-9999 pointer-events-none opacity-35 mix-blend-multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  body.menu-open {
+    @apply overflow-hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-medium;
+  }
+  h1,
+  .h1 {
+    @apply text-51 max-1199:text-41 max-1199:leading-51 max-767:text-38 max-767:leading-[120%] max-425:text-31 max-425:leading-[125%] leading-60;
+  }
+  h2,
+  .h2 {
+    @apply text-41 max-1199:text-31 max-1199:leading-[125%] max-425:text-27 max-425:leading-41 leading-51;
+  }
+  h3,
+  .h3 {
+    @apply text-27 max-1199:text-20 max-1199:leading-[32.6px] max-425:text-18 max-425:leading-25 leading-41;
+  }
+  h4,
+  .h4 {
+    @apply text-20 max-425:text-18 max-425:leading-25 leading-[32.6px];
+  }
+  h5,
+  .h5 {
+    @apply text-18 leading-25;
+  }
+  h6,
+  .h6 {
+    @apply text-16 leading-22;
+  }
+  .title .title-dark-olive h1,
+  .title .title-dark-olive h2,
+  .title .title-dark-olive h3,
+  .title .title-dark-olive h4,
+  .title .title-dark-olive h5,
+  .title .title-dark-olive h6 {
+    @apply text-dark-olive;
+  }
+  .title .title-off-white h1,
+  .title .title-off-white h2,
+  .title .title-off-white h3,
+  .title .title-off-white h4,
+  .title .title-off-white h5,
+  .title .title-off-white h6 {
+    @apply text-off-white;
+  }
+  img {
+    @apply overflow-hidden select-none;
+  }
+  .img-fluid-cover {
+    @apply h-full w-full object-cover;
+  }
+  
+  .img-fluid-contain {
+    @apply h-full w-full object-contain;
+  }
+  .content p strong {
+    @apply font-bold;
+  }
+  .content.content-off-white p {
+    @apply text-off-white;
+  }
+  .content.content-dark p {
+    @apply text-body;
+  }
+  .content.content-dark-light p {
+    @apply text-body/80;
+  }
+  .content p,
+  p {
+    @apply text-16 tracking-3 max-767:text-15 leading-[160%];
+  }
+  .content.content-small p {
+    @apply text-12 leading-[160%];
+  }
+  .pre-heading span {
+    @apply text-14 tracking-8 text-body max-767:text-13 leading-10 uppercase;
+  }
+  

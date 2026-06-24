@@ -1,0 +1,40 @@
+export default function HeroBanner() {
+  return (
+    <section className="hero-banner">
+      <div className="hero-banner__inner">
+
+        <div className="hero-banner__bg" aria-hidden="true">
+          <img
+            className="hero-banner__bg-img"
+            src="/assets/hero-banner.png"
+            alt=""
+          />
+          <div className="hero-banner__bg-overlay" />
+        </div>
+
+        <div className="hero-banner__card-group" aria-hidden="true">
+          <div className="hero-banner__card" />
+          <div className="hero-banner__card-img-wrap">
+            <img
+              className="hero-banner__card-img"
+              src="/assets/hero-banner-inner.jpg"
+              alt="Knysna Lagoon suite view"
+            />
+          </div>
+        </div>
+
+        <div className="hero-banner__content">
+          <div className="hero-banner__title-wrap">
+            <h1 className="hero-banner__title">
+              Stay in the Heart<br />of the Garden Route.
+            </h1>
+          </div>
+          <p className="hero-banner__desc">
+            Each suite is a private retreat. Set above the Knysna Lagoon in the heart of the Garden Route.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+}
