@@ -1,7 +1,8 @@
 import HeroBanner from "@/components/HeroBanner";
 import FullImageWithText from "@/components/FullImageWithText";
 import ProprietorQuote from "@/sections/ProprietorQuote";
-import SuiteDetail from "@/sections/SuiteDetail";
+import AboutUs from "@/sections/AboutUs";
+import SuitsSlider from "@/components/SuitsSlider";
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       <HeroBanner />
       <FullImageWithText />
       <ProprietorQuote />
-      <SuiteDetail />
+      <SuitsSlider />
+      <AboutUs />
     </>
   );
 }

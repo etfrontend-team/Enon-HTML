@@ -24,11 +24,9 @@
 
 .hero-banner .hero-banner__bg-overlay {
   @apply absolute inset-0;
-  
-
-background: linear-gradient(180deg, rgba(121, 113, 101, 0.35) -1.96%, rgba(139, 97, 34, 0) 20.09%), 
-linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), 
-linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
+  background: linear-gradient(180deg, rgba(121, 113, 101, 0.35) -1.96%, rgba(139, 97, 34, 0) 20.09%), 
+  linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), 
+  linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
 }
 
 .hero-banner .hero-banner__card-group {
@@ -51,7 +49,7 @@ linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
   @apply flex flex-col items-start 767:gap-20 gap-8 relative z-1 h-full justify-end 1366:pb-72 425:pt-40 1366:pl-50 425:pl-25 425:pb-50 375:p-20 p-15;
 }
 .hero-banner .hero-banner__content h1 {
-  @apply capitalize;
+  @apply capitalize max-w-474;
 }
 .hero-banner .hero-banner__content .hero-banner__title-wrap {
   @apply 767:max-w-[62%];
@@ -118,7 +116,7 @@ linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
 }
 
 .full-image-text .full-image-text__heading-group {
-  @apply flex flex-col items-start w-full 767:gap-20 gap-20;
+  @apply flex flex-col items-start w-full gap-20;
 }
 
 .full-image-text .full-image-text__description-wrapper {
@@ -165,7 +163,7 @@ linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
 }
 
 .about-us .about-us__heading-group {
-  @apply flex flex-col items-start w-full 767:gap-20 gap-20;
+  @apply flex flex-col items-start w-full gap-20;
 }
 .about-us .about-us__desc-wrapper {
   @apply w-full max-w-450;
@@ -173,4 +171,87 @@ linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
 
 .about-us .about-us__image-col {
   @apply relative overflow-hidden flex-1 767:aspect-594/582 aspect-370/361;
+}
+.suits-slider {
+  @apply relative 1366:pt-180 1199:py-120 pt-100 1366:pb-158 pb-100 bg-[linear-gradient(180deg,#F4F0DF_0%,#F4F0DF00_100%)] border-t border-body/10;
+}
+
+.suits-slider .suits-slider__header {
+  @apply flex items-end justify-between pb-70 max-1199:pb-50;
+}
+
+.suits-slider .suits-slider__content {
+  @apply flex flex-col 767:gap-28 gap-25;
+}
+
+.suits-slider .suits-slider__heading-group {
+  @apply flex flex-col gap-20;
+}
+
+.suits-slider .suits-slider__nav {
+  @apply flex items-center gap-24 pb-12 max-1023:hidden;
+} 
+
+.suits-slider .suits-slider__btn {
+  @apply bg-transparent border-0 cursor-pointer p-0 flex items-center justify-center opacity-100 transition-opacity duration-300 shrink-0;
+}
+
+.suits-slider .suits-slider__btn:hover {
+  @apply opacity-60;
+}
+
+.suits-slider .suits-slider__btn.swiper-button-disabled {
+  @apply opacity-30 cursor-default;
+}
+.suits-slider .suits-slider__btn img {
+  @apply w-24 h-auto;
+} 
+.suits-slider .suits-slider__track {
+  @apply pl-106 max-1199:pl-60 max-1023:pl-35 max-425:pl-20;
+}
+.suits-slider .suits-slider__slide {
+ @apply w-auto!;
+}
+
+.suits-slider .suits-slider__card {
+  @apply relative overflow-hidden max-767:w-305 767:w-392;
+}
+
+.suits-slider .suits-slider__card--tall {
+  @apply 767:h-470 max-767:h-365;
+}
+
+.suits-slider .suits-slider__card--medium {
+  @apply 767:h-420 max-767:h-327;
+}
+
+.suits-slider .suits-slider__card--short {
+  @apply 767:h-395 max-767:h-307;
+}
+
+.suits-slider .suits-slider__card-img {
+  @apply absolute inset-0 size-full object-cover;
+}
+
+.suits-slider .suits-slider__card-gradient {
+  @apply absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,#00000000_72.67%,#000000CC_100%)];
+}
+
+.suits-slider .suits-slider__card-name {
+  @apply absolute bottom-0 left-0 px-24 pb-25 font-heading text-18 text-white uppercase z-1 tracking-5;
+}
+
+.suits-slider .suits-slider__pagination {
+  @apply 1023:hidden mt-40 relative;
+}
+
+.suits-slider .swiper-pagination-progressbar {
+  @apply h-px! relative bg-body/30 425:w-[calc(100%-35px)]! w-[calc(100%-20px)]!;
+}
+
+.suits-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  @apply bg-rust ;
+}
+.suits-slider .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
