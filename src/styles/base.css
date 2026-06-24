@@ -25,7 +25,7 @@
   }
   h1,
   .h1 {
-    @apply text-51 max-1199:text-41 max-1199:leading-51 max-767:text-38 max-767:leading-[120%] max-425:text-31 max-425:leading-[125%] leading-60;
+    @apply text-51 max-1199:text-41 max-1199:leading-51 max-767:text-38 max-767:leading-[120%] max-425:text-34 max-425:leading-[125%] leading-60;
   }
   h2,
   .h2 {
@@ -47,20 +47,20 @@
   .h6 {
     @apply text-16 leading-22;
   }
-  .title .title-dark-olive h1,
-  .title .title-dark-olive h2,
-  .title .title-dark-olive h3,
-  .title .title-dark-olive h4,
-  .title .title-dark-olive h5,
-  .title .title-dark-olive h6 {
+  .title.title-dark-olive h1,
+  .title.title-dark-olive h2,
+  .title.title-dark-olive h3,
+  .title.title-dark-olive h4,
+  .title.title-dark-olive h5,
+  .title.title-dark-olive h6 {
     @apply text-dark-olive;
   }
-  .title .title-off-white h1,
-  .title .title-off-white h2,
-  .title .title-off-white h3,
-  .title .title-off-white h4,
-  .title .title-off-white h5,
-  .title .title-off-white h6 {
+  .title.title-off-white h1,
+  .title.title-off-white h2,
+  .title.title-off-white h3,
+  .title.title-off-white h4,
+  .title.title-off-white h5,
+  .title.title-off-white h6 {
     @apply text-off-white;
   }
   img {

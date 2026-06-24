@@ -123,7 +123,7 @@
   @apply right-0;
 }
 .menu-overlay .menu-img__frame {
-  @apply bg-off-white relative aspect-square 1366:size-329 size-290 shadow-[2.2px_2.2px_4.4px_1.1px_rgba(0,0,0,0.1)] border-off-white border-14;
+  @apply bg-off-white relative aspect-square 1366:size-329 size-290 shadow-image-card border-off-white border-14;
 }
 .menu-overlay .menu-img__photo {
   @apply object-cover size-full;

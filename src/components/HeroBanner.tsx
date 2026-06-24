@@ -11,10 +11,9 @@ export default function HeroBanner() {
           />
           <div className="hero-banner__bg-overlay" />
         </div>
-
+      
         <div className="hero-banner__card-group" aria-hidden="true">
-          <div className="hero-banner__card" />
-          <div className="hero-banner__card-img-wrap">
+          <div className="hero-banner__card">
             <img
               className="hero-banner__card-img"
               src="/assets/hero-banner-inner.jpg"
@@ -25,13 +24,17 @@ export default function HeroBanner() {
 
         <div className="hero-banner__content">
           <div className="hero-banner__title-wrap">
-            <h1 className="hero-banner__title">
-              Stay in the Heart<br />of the Garden Route.
-            </h1>
+            <div className="title title-off-white">
+              <h1 className="hero-banner__title">
+                Stay in the Heart of the Garden Route.
+              </h1>
+            </div>
           </div>
-          <p className="hero-banner__desc">
-            Each suite is a private retreat. Set above the Knysna Lagoon in the heart of the Garden Route.
-          </p>
+          <div className="content content-off-white">
+            <p className="hero-banner__desc">
+              Each suite is a private retreat. Set above the Knysna Lagoon in the heart of the Garden Route.
+            </p>
+        </div>
         </div>
 
       </div>

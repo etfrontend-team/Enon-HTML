@@ -1,34 +1,37 @@
 export default function FullImageWithText() {
   return (
-    <section className="fiwt">
+    <section className="full-image-text">
 
-      {/* Left: full-bleed image */}
-      <div className="fiwt__img-col">
-        <div className="fiwt__img-wrap">
+      <div className="full-image-text__image-column">
+        <div className="full-image-text__image-wrapper">
           <img
-            className="fiwt__img"
+            className="full-image-text__image"
             src="/assets/dining.jpg"
             alt="Fresh herbs from the kitchen garden"
           />
         </div>
       </div>
 
-      {/* Right: sage content panel */}
-      <div className="fiwt__content-col">
-        <div className="fiwt__body">
+      <div className="full-image-text__content-column">
+        <div className="full-image-text__content">
 
-          <div className="fiwt__text-group">
-            <p className="pre-heading"><span>Dining</span></p>
-            <h2 className="fiwt__title">
-              Where the Harvest<br />Becomes the Experience
+          <div className="full-image-text__heading-group">
+            <div className="pre-heading">
+              <span>Dining</span>
+            </div>
+            <div className="title title-dark">
+            <h2 className="full-image-text__title">
+              Where the Harvest
+              Becomes the Experience
             </h2>
+            </div>
           </div>
 
-          <div className="fiwt__desc-wrap">
-            <p className="fiwt__desc">
+          <div className="full-image-text__description-wrapper content content0-dark">
+            <p className="full-image-text__description">
               Every dish begins a few steps from your table. Our kitchen garden
               and working farm supply what the season offers, nothing more,
-              nothing less
+              nothing less.
             </p>
           </div>
 

@@ -7,7 +7,7 @@
 }
 
 .hero-banner {
-  @apply relative h-screen p-15;
+  @apply relative h-dvh p-15;
 }
 
 .hero-banner .hero-banner__inner {
@@ -24,10 +24,11 @@
 
 .hero-banner .hero-banner__bg-overlay {
   @apply absolute inset-0;
-  background-image:
-    linear-gradient(180deg, rgba(121, 113, 101, 0.35) 1.96%, rgba(139, 97, 34, 0) 20.09%),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%),
-    linear-gradient(90deg, rgba(120, 69, 14, 0.15) 0%, rgba(120, 69, 14, 0.15) 100%);
+  
+
+background: linear-gradient(180deg, rgba(121, 113, 101, 0.35) -1.96%, rgba(139, 97, 34, 0) 20.09%), 
+linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), 
+linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
 }
 
 .hero-banner .hero-banner__card-group {
@@ -35,21 +36,11 @@
 }
 
 .hero-banner .hero-banner__card {
-  @apply absolute bg-off-white;
-  width: 310px;
-  height: 380px;
-  left: 50%;
-  top: 30.42%;
-  transform: translateX(-50%);
-  box-shadow: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.1);
+  @apply absolute bg-off-white 1366:aspect-310/380 aspect-300/320 1366:w-310 425:w-300 w-230 left-1/2 425:top-1/2 top-[45%] -translate-1/2 shadow-image-card 425:border-15 border-10 border-off-white;
 }
 
 .hero-banner .hero-banner__card-img-wrap {
-  @apply absolute overflow-hidden;
-  width: 281px;
-  height: 350px;
-  left: calc(33.33% + 99px);
-  top: 32.1%;
+  @apply object-cover size-full overflow-hidden;
 }
 
 .hero-banner .hero-banner__card-img {
@@ -57,60 +48,56 @@
 }
 
 .hero-banner .hero-banner__content {
-  @apply absolute flex flex-col items-start;
-  left: 4.61%;
-  top: 74.97%;
-  width: 58.16%;
-  gap: 36px;
+  @apply flex flex-col items-start 767:gap-20 gap-8 relative z-1 h-full justify-end 1366:pb-72 425:pt-40 1366:pl-50 425:pl-25 425:pb-50 375:p-20 p-15;
+}
+.hero-banner .hero-banner__content h1 {
+  @apply capitalize max-w-500;
+}
+.hero-banner .hero-banner__content .hero-banner__title-wrap {
+  @apply 767:max-w-[62%];
+}
+.hero-banner .hero-banner__content .content {
+  @apply max-w-550 text-left;
 }
 
-.hero-banner .hero-banner__title-wrap {
-  @apply w-full;
+@media only screen and (max-height: 650px) {
+  .hero-banner .hero-banner__content {
+    @apply p-20 gap-16;
+  }
+  .hero-banner .hero-banner__card {
+    @apply 767:w-250 border-10;
+  }
 }
-
-.hero-banner .hero-banner__title {
-  @apply text-off-white font-heading font-medium capitalize;
-  font-size: 51px;
-  line-height: 60px;
-  letter-spacing: 1.02px;
-  font-feature-settings: "liga" 0;
+@media only screen and  (max-width:767px) and (max-height: 800px)  {
+  .hero-banner .hero-banner__card {
+    @apply top-[45%] border-10 375:w-220 w-200;
+  }
 }
-
-.hero-banner .hero-banner__desc {
-  @apply text-off-white font-light;
-  font-size: 16px;
-  line-height: 1.6;
-  letter-spacing: 0.48px;
-  max-width: 562px;
-}
-
-.fiwt {
+.full-image-text {
   @apply flex items-stretch justify-between mx-15;
 }
 
-.fiwt .fiwt__img-col {
-  @apply relative shrink-0 overflow-hidden;
-  width: 696px;
-  height: 801px;
+.full-image-text .full-image-text__image-column {
+  @apply relative shrink-0 overflow-hidden flex-1;
 }
 
-.fiwt .fiwt__img-wrap {
+.full-image-text .full-image-text__image-wrapper {
   @apply absolute inset-0 overflow-hidden pointer-events-none;
 }
 
-.fiwt .fiwt__img {
+.full-image-text .full-image-text__image {
   @apply absolute left-0 w-full max-w-none object-cover;
   height: 130.32%;
   top: -15.13%;
 }
 
-.fiwt .fiwt__content-col {
-  @apply relative shrink-0 bg-sage;
+.full-image-text .full-image-text__content-column {
+  @apply relative shrink-0 bg-sage flex-1;
   width: 698px;
   height: 801px;
 }
 
-.fiwt .fiwt__body {
+.full-image-text .full-image-text__content {
   @apply absolute flex flex-col items-start;
   left: 92px;
   top: 291px;
@@ -118,24 +105,14 @@
   gap: 36px;
 }
 
-.fiwt .fiwt__text-group {
+.full-image-text .full-image-text__heading-group {
   @apply flex flex-col items-start w-full;
   gap: 30px;
 }
 
-.fiwt .fiwt__title {
-  @apply capitalize text-dark-olive;
-  letter-spacing: 0.82px;
-}
-
-.fiwt .fiwt__desc-wrap {
+.full-image-text .full-image-text__description-wrapper {
   @apply w-full;
 }
-
-.fiwt .fiwt__desc {
-  @apply font-light text-body/80;
-}
-
 .dfiwt {
   @apply flex gap-15 mx-15;
 }

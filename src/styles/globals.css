@@ -27,10 +27,12 @@
   --tracking-8: 0.08em;
   --tracking-10: 0.1em;
 
+  --shadow-image-card: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.1);
+
   --breakpoint-2000: 2000px;
   --breakpoint-1920: 1921px;
-  --breakpoint-1600: 1601px;
-  --breakpoint-1512: 1513px;
+  --breakpoint-1600: 1601px;  
+  --breakpoint-1512: 1513px; 
   --breakpoint-1440: 1441px;
   --breakpoint-1439: 1440px;
   --breakpoint-1366: 1367px;
