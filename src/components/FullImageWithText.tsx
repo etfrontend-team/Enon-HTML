@@ -21,7 +21,7 @@ export default function FullImageWithText() {
             alt="Fresh herbs from the kitchen garden"
           />
       </div>
-        <div className="full-image-text__content">
+        <div className="full-image-text__content align-center">
           <div className="full-image-text__heading-group">
             <div className="pre-heading">
               <span>Dining</span>
@@ -39,6 +39,11 @@ export default function FullImageWithText() {
               Every dish begins a few steps from your table. Our kitchen garden
               and working farm supply what the season offers, nothing more,
               nothing less.
+            </p>
+            <p className="full-image-text__description">
+              <a href="">Email: info@enonheights.com</a> 
+              <br></br>
+              <a href="">Tel: 082 5312 413</a>
             </p>
           </div>
           </div>
