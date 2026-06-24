@@ -1,7 +1,8 @@
 export default function FullImageWithText() {
   return (
-    <section className="full-image-text">
-
+    <section className="full-image-text image-right">
+      <div className="container-fluid">
+      <div className="full-image-text-inner image-right">
       <div className="full-image-text__image-column">
         <div className="full-image-text__image-wrapper">
           <img
@@ -13,13 +14,19 @@ export default function FullImageWithText() {
       </div>
 
       <div className="full-image-text__content-column">
+      <div className="full-image-text__content-bg-image">
+          <img
+            className="full-image-text__image"
+            src="/assets/shadow-image-bg.png"
+            alt="Fresh herbs from the kitchen garden"
+          />
+      </div>
         <div className="full-image-text__content">
-
           <div className="full-image-text__heading-group">
             <div className="pre-heading">
               <span>Dining</span>
             </div>
-            <div className="title title-dark">
+            <div className="title title-dark-olive">
             <h2 className="full-image-text__title">
               Where the Harvest
               Becomes the Experience
@@ -27,16 +34,18 @@ export default function FullImageWithText() {
             </div>
           </div>
 
-          <div className="full-image-text__description-wrapper content content0-dark">
+          <div className="full-image-text__description-wrapper content content-dark-light">
             <p className="full-image-text__description">
               Every dish begins a few steps from your table. Our kitchen garden
               and working farm supply what the season offers, nothing more,
               nothing less.
             </p>
           </div>
-
+          </div>
         </div>
       </div>
+      
+        </div>
 
     </section>
   );

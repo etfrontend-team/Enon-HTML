@@ -9,18 +9,18 @@
   --font-heading: "Cormorant Garamond", sans-serif;
   --font-eaves: "mrs-eaves-roman-all-small-ca", serif;
 
-  --color-black: #000000;
+  --color-black: #000000; 
   --color-white: #ffffff;
-  --color-body: #393618;
+  --color-body: #393618; 
   --color-primary: #C25F3A;
   --color-cream: #F8F5E5;
   --color-off-white: #FCFBF5; 
-  --color-dark-olive: #393618;
-  --color-rust: #C25F3A;
-  --color-sage: #CDD5B9; 
+  --color-dark-olive: #393618; 
+  --color-rust: #C25F3A; 
+  --color-sage: #CDD5B9;  
   --color-sage-mist: #D1DCD2;
  
-  --spacing: 1px;
+  --spacing: 1px;  
 
   --tracking-3: 0.03em;
   --tracking-5: 0.05em;   

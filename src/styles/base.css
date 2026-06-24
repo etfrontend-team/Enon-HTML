@@ -5,7 +5,7 @@
     @apply max-1199:px-60 max-1023:px-35 max-425:px-20 mx-auto w-full px-106;
   }
   body {
-    @apply font-body bg-cream m-0 overflow-x-hidden p-0 antialiased relative;
+    @apply font-body bg-cream m-0 font-light overflow-x-hidden p-0 antialiased relative;
   }
   body::after {
     content: '';
@@ -29,7 +29,7 @@
   }
   h2,
   .h2 {
-    @apply text-41 max-1199:text-31 max-1199:leading-[125%] max-425:text-27 max-425:leading-41 leading-51;
+    @apply text-41 max-1199:text-31 max-1199:leading-[125%] max-425:text-27 max-425:leading-35 leading-51;
   }
   h3,
   .h3 {
@@ -87,12 +87,15 @@
   }
   .content p,
   p {
-    @apply text-16 tracking-3 max-767:text-15 leading-[160%];
+    @apply text-16 tracking-3 max-767:text-15 leading-[160%] font-light;
   }
   .content.content-small p {
     @apply text-12 leading-[160%];
   }
+  .pre-heading {
+    @apply flex;
+  }
   .pre-heading span {
-    @apply text-14 tracking-8 text-body max-767:text-13 leading-10 uppercase;
+    @apply text-14 tracking-8 text-body max-767:text-13 leading-10 uppercase font-body font-normal;
   }
   

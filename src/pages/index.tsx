@@ -1,13 +1,15 @@
 import HeroBanner from "@/components/HeroBanner";
 import FullImageWithText from "@/components/FullImageWithText";
-import DiningFullImageText from "@/components/DiningFullImageText";
+import ProprietorQuote from "@/sections/ProprietorQuote";
+import SuiteDetail from "@/sections/SuiteDetail";
 
 export default function Home() {
   return (
     <>
       <HeroBanner />
       <FullImageWithText />
-      {/* <DiningFullImageText /> */}
+      <ProprietorQuote />
+      <SuiteDetail />
     </>
   );
 }
