@@ -147,11 +147,11 @@ linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
 @apply flex 767:items-start items-center max-767:justify-center max-767:max-w-267 max-767:mx-auto max-767:text-center flex-col flex-1 justify-center 767:px-45 767:py-20 767:gap-38 gap-20 767:ml-15 767:border-l border-sage-mist;
 }
 .proprietor-quote .proprietor-quote__names {
-@apply font-eaves text-rust text-18 tracking-5 max-767:text-14 leading-8 flex capitalize;
+@apply font-eaves-petite text-rust text-18 tracking-5 max-767:text-14 leading-8 flex capitalize;
 }
 
 .about-us .about-us-inner {
-@apply flex items-stretch max-767:flex-col max-767:gap-50;
+@apply flex items-stretch max-992:flex-col max-992:gap-50;
 }
 
 .about-us .about-us__content-col {
@@ -159,7 +159,7 @@ linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
 }
 
 .about-us .about-us__content {
-@apply flex flex-col items-start justify-center h-full gap-20 relative 767:py-20 1366:pl-119 767:pl-50;
+@apply flex flex-col items-start justify-center h-full gap-20 relative 992:py-20 1366:pl-119 992:pl-50;
 }
 
 .about-us .about-us__heading-group {
@@ -170,7 +170,7 @@ linear-gradient(0deg, rgba(120, 69, 14, 0.15), rgba(120, 69, 14, 0.15))
 }
 
 .about-us .about-us__image-col {
-@apply relative overflow-hidden flex-1 767:aspect-594/582 aspect-370/361;
+@apply relative overflow-hidden flex-1 992:aspect-594/582 aspect-370/361 h-full;
 }
 .suits-slider {
 @apply relative 1366:pt-180 1199:py-120 pt-100 1366:pb-158 pb-100 bg-[linear-gradient(180deg,#F4F0DF_0%,#F4F0DF00_100%)] border-t border-body/10;
@@ -325,3 +325,140 @@ animation: slideInstagram 240s linear infinite;
 .infinite-image-carousel .infinite-image-carousel__col--stack-offset .infinite-image-carousel__stack-item--bottom {
 @apply relative 767:-left-107 -left-53.5;
 } 
+.enquire-form .enquire-form-outer-wrapper {
+  @apply bg-rust 767:p-20 p-15;
+}
+.enquire-form .enquire-form-inner-wrapper {
+  @apply bg-cream 992:pt-99 992:pb-97 py-70;
+}
+.enquire-form .enquire-form-inner-main {
+  @apply max-w-916 mx-auto w-full px-25;
+}
+.enquire-form .enquire-form__heading-group {
+  @apply flex items-center justify-center flex-col gap-20 text-center;
+}
+.enquire-form .enquire-form__heading-group-main {
+  @apply flex items-center justify-center flex-col 767:gap-25 gap-20 text-center;
+}
+.enquire-form .enquire-form__description-wrapper {
+  @apply max-w-500 mx-auto;
+}
+.enquire-form .enquire-form__description-wrapper p {
+  @apply text-center;
+}
+
+.enquire-form .enquire-form__checkbox-wrapper {
+  @apply relative flex items-center justify-center shrink-0;
+}
+.enquire-form .enquire-form__checkbox {
+  @apply absolute opacity-0 w-0 h-0;
+}
+.enquire-form .enquire-form__checkbox-custom {
+  @apply w-18 h-18 border border-dark-olive bg-transparent shrink-0 transition-colors duration-200;
+}
+.enquire-form .enquire-form__checkbox:checked + .enquire-form__checkbox-custom {
+  @apply border-rust;
+}
+.enquire-form .enquire-form__checkbox:checked + .enquire-form__checkbox-custom::after {
+  content: "";
+  @apply block size-13 bg-rust absolute top-1/2 left-1/2 -translate-1/2;
+}
+.enquire-form .enquire-form__option-label {
+  @apply flex items-start 992:gap-23 gap-20 992:pt-21 992:px-20 992:pb-24 pt-23 pb-26 pr-54 pl-34 bg-cream-2 cursor-pointer transition-colors duration-200;
+}
+.enquire-form .enquire-form__option-info {
+  @apply flex flex-col gap-2 -mt-6;
+}
+.enquire-form .enquire-form__option-name {
+  @apply text-16 font-heading font-medium tracking-5 uppercase text-body;
+}
+.enquire-form .enquire-form__option-desc {
+  @apply text-12 tracking-3 font-body text-body/80 leading-[160%];
+}
+.enquire-form .enquire-form__stay-type-form {
+  @apply w-full 992:mt-55 mt-70;
+}
+.enquire-form .enquire-form-label {
+  @apply 992:text-18 text-16 tracking-8 uppercase text-dark-olive font-normal 992:leading-13 leading-12 font-body 1199:mb-37 mb-50;
+}
+.enquire-form .enquire-form__stay-type-body {
+  @apply flex items-start justify-between gap-30 max-767:flex-col; 
+}
+.enquire-form .enquire-form__suite-list {
+ @apply flex flex-col w-full relative gap-15;
+}
+.enquire-form .enquire-form__suite-image-wrapper {
+  @apply absolute right-40 h-auto max-w-174 w-full pointer-events-none aspect-177/164;
+}
+.enquire-form .enquire-form__suite-image-inner {
+  @apply border-7 border-off-white shadow-image-card-form size-full overflow-hidden;
+}
+.enquire-form .enquire-form__suite-image-motion {
+  @apply absolute inset-0;
+}
+.enquire-form .enquire-form__suite-image {
+  @apply w-full h-full object-cover;
+}
+.enquire-form .enquire-form__section {
+  @apply flex flex-col 992:mt-50 mt-70;
+}
+.enquire-form .enquire-form__fields-grid-group {
+  @apply flex flex-col gap-26; 
+} 
+.enquire-form .enquire-form__section-label {
+  @apply text-12 tracking-widest uppercase text-dark-olive font-medium;
+}
+.enquire-form .enquire-form__fields-grid {
+  @apply grid grid-cols-2 gap-x-24 gap-y-26 max-767:gap-26 max-767:grid-cols-1;
+}
+.enquire-form .enquire-form__field-group {
+  @apply flex flex-col gap-15;
+}
+.enquire-form .enquire-form__field-label {
+  @apply text-14 leading-10 tracking-8 uppercase text-dark-olive font-normal;
+}
+.enquire-form .enquire-form__input,
+.enquire-form .enquire-form__select {
+  @apply w-full border-[0.5px] border-dark-olive bg-transparent px-20 py-7.5 text-14 text-dark-olive outline-none transition-colors duration-200 placeholder:opacity-0;
+}
+.enquire-form .enquire-form__input:focus {
+  @apply border-rust;
+}
+.enquire-form .enquire-form__select-wrapper {
+  @apply relative w-full;
+}
+.enquire-form .enquire-form__select:focus {
+  @apply border-dark-olive;
+}
+.enquire-form .enquire-form__checkbox-inline-label {
+  @apply flex items-center gap-15 cursor-pointer w-fit 767:pl-18 pl-17;
+}
+.enquire-form .enquire-form__checkbox-inline-text {
+  @apply text-12 leading-[160%] tracking-3 text-dark-olive/80;
+}
+.enquire-form .enquire-form__counter {
+  @apply flex items-center w-full border-[0.5px] border-dark-olive bg-transparent px-20 py-7.5 text-16 tracking-5 font-normal text-dark-olive outline-none transition-colors duration-200 placeholder:opacity-0;
+}
+.enquire-form .enquire-form__counter-btn {
+  @apply h-19 mb-2 flex items-center justify-center text-16 font-normal text-dark-olive transition-opacity duration-200 opacity-50 hover:opacity-100 cursor-pointer;
+}
+.enquire-form .enquire-form__counter-value {
+  @apply flex-1 text-center text-14 text-dark-olive;
+}
+.enquire-form .enquire-form__counter-note {
+  @apply text-12 tracking-3 425:leading-9 text-dark-olive/80;
+}
+.enquire-form .enquire-form__input--date,
+.enquire-form .enquire-form__select {
+  @apply cursor-pointer relative;
+}
+.enquire-form .enquire-form__input--date::-webkit-calendar-picker-indicator {
+  @apply absolute inset-0 h-full w-full cursor-pointer opacity-0;
+}
+.enquire-form .enquire-form__input--date,
+.enquire-form select {
+  @apply cursor-pointer appearance-none bg-[url(/assets/input-arrow-icon.svg)] bg-position-[center_right_20px] bg-no-repeat;
+}
+.enquire-form .enquiry-form-sublit-wrapper {
+  @apply mt-38;
+}

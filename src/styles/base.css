@@ -63,9 +63,6 @@ h6,
 .title.title-off-white h6 {
   @apply text-off-white;
 }
-.section {
-  @apply z-10 relative;
-}
 img {
   @apply overflow-hidden select-none;
 }
@@ -92,6 +89,9 @@ img {
 p {
   @apply text-16 tracking-3 max-767:text-15 leading-[160%] font-light;
 }
+.content p a {
+  @apply hover:text-body hover:underline;
+}
 .content.content-small p {
   @apply text-12 leading-[160%];
 }
@@ -100,4 +100,7 @@ p {
 }
 .pre-heading span {
   @apply text-14 tracking-8 text-body max-767:text-13 leading-10 uppercase font-body font-normal;
+}
+section {
+  @apply relative z-10;
 }

@@ -4,6 +4,7 @@ import ProprietorQuote from "@/sections/ProprietorQuote";
 import AboutUs from "@/sections/AboutUs";
 import SuitsSlider from "@/components/SuitsSlider";
 import InfiniteImageCarousel from "@/sections/InfiniteImageCarousel";
+import EnquireForm from "@/sections/EnquireForm";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <SuitsSlider />
       <AboutUs />
       <InfiniteImageCarousel />
+      <EnquireForm />
     </>
   );
 }

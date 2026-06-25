@@ -5,15 +5,17 @@
 @import "./utilities.css";
 
 @theme {
-  --font-body: var(--font-inter);
+  --font-body: "Inter", "Inter Fallback";
   --font-heading: "Cormorant Garamond", sans-serif;
-  --font-eaves: "mrs-eaves-roman-all-small-ca", serif;
+  --font-eaves: "mrs-eaves-roman-all-small-ca", serif; 
+  --font-eaves-petite: "mrs-eaves-roman-petite-caps",serif;
 
   --color-black: #000000; 
   --color-white: #ffffff;
   --color-body: #393618; 
   --color-primary: #C25F3A;
   --color-cream: #F8F5E5;
+  --color-cream-2: #F4F0DF;
   --color-off-white: #FCFBF5; 
   --color-dark-olive: #393618; 
   --color-rust: #C25F3A; 
@@ -28,6 +30,7 @@
   --tracking-10: 0.1em;
 
   --shadow-image-card: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.1);
+  --shadow-image-card-form: 1.1px 1.1px 2.2px 0.55px rgba(0, 0, 0, 0.1);
 
   --breakpoint-2000: 2000px;
   --breakpoint-1920: 1921px;
@@ -159,7 +162,7 @@
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-Regular.eot");
   src:
-    url("/font/CormorantGaramond-Regular.eot?#iefix")
+    url("/font/CormorantGaramond-Regular.eot?#iefix") 
       format("embedded-opentype"),
     url("/font/CormorantGaramond-Regular.woff2") format("woff2"),
     url("/font/CormorantGaramond-Regular.woff") format("woff"),
@@ -169,7 +172,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} 
 
 @font-face {
   font-family: "Cormorant Garamond";
