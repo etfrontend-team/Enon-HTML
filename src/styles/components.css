@@ -1,25 +1,25 @@
 .btn {
-    @apply text-off-white text-20 tracking-5 font-eaves relative inline-block h-39 cursor-pointer overflow-hidden bg-transparent px-30 text-center font-normal uppercase border border-off-white hover:outline-[0.5px];
-    transition: border-color 0.3s ease
-  }
-  .btn-custom {
-    @apply flex;
-  }
-  
-  .btn span.label-up {
-    @apply relative top-0 block leading-37;
-    transform: translateY(0);
-    transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
-  }
-  
-  .btn:hover span.label-up {
-    transform: translateY(-100%);
-  }
-  
-  .cta-link {
-    @apply relative w-fit inline-block cursor-pointer pb-14 uppercase tracking-5 no-underline font-eaves text-20 leading-9 text-rust after:absolute after:bottom-0 after:left-0 after:h-1 after:w-1/4 after:bg-rust after:transition-[width] after:duration-450 after:[transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:after:w-full;
-  }
+  @apply text-off-white text-20 tracking-5 font-eaves relative inline-block h-39 cursor-pointer overflow-hidden bg-transparent px-30 text-center font-normal uppercase border border-off-white hover:outline-[0.5px];
+  transition: border-color 0.3s ease
+}
+.btn-custom {
+  @apply flex;
+}
 
-  .align-center .cta-link::after {
-    @apply left-1/2 -translate-x-1/2;
-  }
+.btn span.label-up {
+  @apply relative top-0 block leading-37;
+  transform: translateY(0);
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn:hover span.label-up {
+  transform: translateY(-100%);
+}
+
+.cta-link {
+  @apply relative w-fit inline-block cursor-pointer pb-14 uppercase tracking-5 no-underline font-eaves text-20 leading-9 text-rust after:absolute after:bottom-0 after:left-0 after:h-1 after:w-1/4 after:bg-rust after:transition-[width] after:duration-450 after:[transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:after:w-full;
+}
+
+.align-center .cta-link::after {
+  @apply left-1/2 -translate-x-1/2;
+}
