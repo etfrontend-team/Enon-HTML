@@ -191,15 +191,14 @@
 
 /* ============ FOOTER ============ */
 footer.site-footer {
-  @apply pt-15 px-15 ;
+  @apply pt-15 px-15 overflow-hidden ;
 }
 footer .footer-bg-wrapper {
   @apply absolute inset-0 size-full z-1;
 }
 
 footer .footer-bg-wrapper .footer__bg-img  {
-  backdrop-filter: blur(50px);
-  -webkit-backdrop-filter: blur(50px);
+  @apply absolute inset-0 size-full blur-[100px];
 }
 footer .footer-inner {
   @apply bg-rust flex flex-col shadow-footer relative z-2;

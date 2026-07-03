@@ -27,16 +27,18 @@ export default function Footer() {
   return (
     <footer className="site-footer relative">
       <div className="footer-bg-wrapper">
+        <div className="relative size-full">
           <img
             className="footer__bg-img img-fluid-cover"
             src="/assets/hero-banner.png"
             alt=""
           />
           <img
-            className="footer__bg-img img-fluid-cover"
+            className="footer__bg-img img-fluid-cover opacity-10 blur-[50px]"
             src="/assets/hero-banner.png"
             alt=""
           />
+        </div>
       </div>
         <div className="footer-inner">
 
