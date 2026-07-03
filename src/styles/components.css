@@ -23,3 +23,8 @@
 .align-center .cta-link::after {
   @apply left-1/2 -translate-x-1/2;
 }
+
+.btn.btn-filled {
+  @apply bg-rust border-rust text-off-white transition-all duration-300 hover:bg-transparent hover:text-rust;
+}
+
