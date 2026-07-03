@@ -197,80 +197,87 @@ footer .footer-bg-wrapper {
   @apply absolute inset-0 size-full z-1;
 }
 
-footer .footer-bg-wrapper .footer__bg-img  {
-  @apply absolute inset-0 size-full blur-[100px];
+footer .footer-bg-wrapper .footer__bg-img {
+  @apply absolute inset-0 size-full;
+}
+
+footer .footer-bg-base {
+  @apply absolute inset-0 size-full;
+}
+
+footer .footer-bg-overlay {
+  @apply absolute inset-0 size-full;
+}
+
+footer .footer-bg-overlay::after {
+  @apply absolute inset-0 backdrop-blur-[50px] content-[""];
 }
 footer .footer-inner {
   @apply bg-rust flex flex-col shadow-footer relative z-2;
 }
 
 footer .footer-main {
-  @apply flex items-stretch justify-between 1366:pt-80 767:pt-80 max-767:pt-100 1366:px-121 767:px-80 max-767:px-50 max-767:grid max-767:grid-cols-2 max-767:gap-x-30;
+  @apply relative z-1 flex items-stretch justify-between 992:grid grid-cols-3 992:pt-80 pt-100 mx-auto w-full 1366:px-120 992:px-80 425:px-50 px-25 max-992:grid max-992:grid-cols-2 max-992:gap-x-30;
 }
 
-footer .footer-col-left,
-footer .footer-col-right {
-  @apply flex flex-col 1366:w-224 767:w-180 767:pt-36 767:justify-between;
-}
+footer .footer-nav-items {
+  @apply flex flex-col 992:pt-20 1199:pt-35 992:gap-45;
+} 
 
-footer .footer-col-left nav ul,
-footer .footer-col-right nav ul {
+footer .footer-nav-items nav ul {
   @apply flex flex-col gap-30 list-none m-0 p-0;
 }
-
-footer .footer-col-left nav a,
-footer .footer-col-right nav a {
-  @apply font-eaves text-24 text-off-white uppercase no-underline tracking-5 leading-none block;
-  transition: opacity 0.3s ease;
+footer .footer-col-right.footer-nav-items nav ul {
+  @apply items-end;
 }
-
-footer .footer-col-left nav ul:has(a:hover) a:not(:hover),
-footer .footer-col-right nav ul:has(a:hover) a:not(:hover) {
-  @apply opacity-70;
+footer nav.navigation-panel a {
+  @apply font-eaves 325:text-24 text-20 text-white uppercase no-underline tracking-5 block 325:leading-10 leading-20 transition-opacity duration-300 ease-in;
 }
-
+footer .footer-col-right nav.navigation-panel a {
+  @apply text-right;
+}
+footer .navigation-panel ul li a {
+  @apply transition-opacity duration-300 ease-in;
+}
+footer .navigation-panel ul:has(a:hover) a:not(:hover) {
+  @apply opacity-50;
+}
 footer .footer-cta {
-  @apply max-767:hidden;
+  @apply max-992:hidden;
 }
 
-footer .footer-cta .btn {
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+footer .footer-contact ul{
+  @apply flex flex-col gap-25 max-992:hidden items-end;
 }
-
-footer .footer-contact {
-  @apply flex flex-col gap-25 max-767:hidden;
+footer .footer-contact.footer-mobile-contact ul {
+  @apply flex items-center ;
 }
-
+footer .footer-contact ul li {
+  @apply flex;
+}
 footer .footer-contact a {
-  @apply font-body text-12 text-off-white no-underline tracking-8 font-normal;
-  transition: opacity 0.3s ease;
+  @apply font-body text-12 text-white no-underline tracking-8 font-normal leading-9;
 }
 
 footer .footer-media {
-  @apply flex-1 flex justify-center items-start max-767:hidden;
+  @apply flex-1 flex justify-center items-start max-992:hidden;
 }
 
 footer .footer-image-frame {
-  @apply bg-off-white shadow-image-card border-off-white border-15 size-330;
+  @apply bg-off-white shadow-image-card border-off-white border-15 aspect-square 1366:max-w-330 992:max-w-280 max-w-330 w-full;
 }
 
-footer .footer-image {
-  @apply object-cover w-full h-full;
+footer .footer-image { 
+  @apply object-cover w-full h-auto;
 }
 
 /* Mobile-only stacked section */
 footer .footer-mobile-section {
-  @apply 767:hidden flex flex-col items-center gap-35 pt-40 pb-5;
+  @apply 992:hidden flex flex-col items-center gap-50 pt-80 425:px-40 px-25 relative z-1;
 }
 
 footer .footer-mobile-contact {
   @apply flex flex-col items-center gap-25;
-}
-
-footer .footer-mobile-contact a {
-  @apply font-body text-12 text-off-white no-underline tracking-8 font-normal text-center;
-  transition: opacity 0.3s ease;
 }
 
 footer .footer-mobile-social {
@@ -278,7 +285,7 @@ footer .footer-mobile-social {
 }
 
 footer .footer-mobile-image {
-  @apply flex justify-center;
+  @apply flex justify-center w-full;
 }
 
 footer .footer-mobile-logo {
@@ -287,9 +294,7 @@ footer .footer-mobile-logo {
 
 footer .footer-mobile-logo img {
   @apply object-contain;
-  filter: brightness(0) invert(1);
 }
-
 /* Social icon links */
 footer .footer-social-link {
   @apply flex items-center justify-center size-18;
@@ -298,12 +303,6 @@ footer .footer-social-link {
 
 footer .footer-social-link img {
   @apply w-full h-full object-contain;
-  filter: brightness(0) invert(1);
-}
-
-footer .footer-mobile-section .footer-mobile-cta .btn {
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
 }
 
 footer .footer-mobile-social:has(a:hover) a:not(:hover),
@@ -313,35 +312,43 @@ footer .footer-social:has(a:hover) a:not(:hover) {
 
 /* Bottom bar */
 footer .footer-bar {
-  @apply flex items-end justify-between 1366:px-121 767:px-80 max-767:px-50 pb-40 max-767:pb-55 mt-auto max-767:justify-center max-767:pt-50;
+  @apply relative z-1 992:grid 992:grid-cols-3 flex flex-col-reverse max-992:gap-50 items-center 1366:px-120 992:px-80 425:px-50 px-25 pb-41 992:pb-40 mt-auto max-992:justify-center pt-43 max-992:pt-50;
 }
-footer .footer-privacy {
-  @apply font-body text-12 text-off-white no-underline uppercase tracking-8 font-normal max-767:text-center;
-  transition: opacity 0.3s ease;
+footer .footer-privacy ul {
+  @apply flex items-center gap-6 max-992:justify-center flex-wrap;
 }
 
-footer .footer-privacy:hover {
-  @apply opacity-70;
+footer .footer-privacy .footer-privacy-item {
+  @apply flex items-center gap-6;
+}
+
+footer .footer-privacy .footer-privacy-separator {
+  @apply font-body text-12 text-white uppercase tracking-8 font-normal;
+}
+
+footer .footer-privacy a {
+  @apply font-body text-12 text-white no-underline uppercase tracking-8 font-normal leading-20;
 }
 
 footer .footer-wordmark {
-  @apply max-767:hidden;
+  @apply flex justify-center;
 }
 
 footer .footer-wordmark img {
   @apply object-contain;
-  filter: brightness(0) invert(1);
 }
 
 footer .footer-social {
-  @apply flex items-center gap-24 max-767:hidden;
+  @apply flex items-center justify-end gap-24 max-992:hidden;
 }
-
+footer .footer-social.footer-mobile-social {
+  @apply flex;
+}
 /* Copyright */
 footer .footer-copyright {
-  @apply flex justify-center px-15 py-20 items-center relative z-2;
+  @apply flex justify-center px-15 pt-30 pb-31 items-center relative z-2;
 }
 
-footer .footer-copyright p {
-  @apply font-body text-12 text-body tracking-8 font-normal;
+footer .footer-copyright .content p {
+  @apply 325:leading-9 tracking-8 font-normal text-center;
 }

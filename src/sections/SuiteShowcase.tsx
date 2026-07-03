@@ -1,4 +1,6 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const MAX_BLUR_PX = 8;
 
@@ -139,14 +141,17 @@ function SuiteCard({
                 style={{ transform: `translateX(-${imageIndex * 100}%)` }}
               >
                 {suite.images.map((src, i) => (
-                  <img
-                    key={i}
-                    className="suite-detail__image"
-                    src={src}
-                    alt={`${suite.name} photo ${i + 1}`}
-                    draggable={false}
-                    onDragStart={(e) => e.preventDefault()}
-                  />
+                  <div key={i} className="suite-detail__image-slide">
+                    <Image
+                      fill
+                      sizes="(max-width: 992px) 100vw, 50vw"
+                      className="suite-detail__image"
+                      src={src}
+                      alt={`${suite.name} photo ${i + 1}`}
+                      draggable={false}
+                      onDragStart={(e) => e.preventDefault()}
+                    />
+                  </div>
                 ))}
               </div>
               <div className="suite-detail__image-overlay" aria-hidden="true" />
@@ -158,7 +163,7 @@ function SuiteCard({
                     onClick={showPrev}
                     aria-label="Previous photo"
                   >
-                    <img src="/assets/prev-arrow.svg" alt="" />
+                    <Image src="/assets/prev-arrow.svg" alt="" role="presentation" width={20} height={20} style={{ width: "auto", height: "auto" }} />
                   </button>
                   <button
                     type="button"
@@ -166,7 +171,7 @@ function SuiteCard({
                     onClick={showNext}
                     aria-label="Next photo"
                   >
-                    <img src="/assets/next-arrow.svg" alt="" />
+                    <Image src="/assets/next-arrow.svg" alt="" role="presentation" width={20} height={20} style={{ width: "auto", height: "auto" }} />
                   </button>
                 </div>
                 <p className="suite-detail__counter">

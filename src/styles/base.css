@@ -4,6 +4,9 @@
 .container-fluid-lg {
   @apply max-1199:px-60 max-1023:px-35 max-425:px-20 mx-auto w-full px-106;
 }
+.container-fluid-md {
+  @apply max-1199:px-60 max-1023:px-35 max-767:px-26 max-425:px-20 mx-auto w-full px-106;
+}
 body {
   @apply font-body bg-cream m-0 font-light overflow-x-hidden p-0 antialiased relative;
 }
@@ -33,15 +36,15 @@ h2,
 }
 h3,
 .h3 {
-  @apply text-27 max-1199:text-20 max-1199:leading-[32.6px] max-425:text-18 max-425:leading-25 leading-41;
+  @apply text-31 max-1199:text-25 max-425:text-20 leading-[125%];
 }
 h4,
 .h4 {
-  @apply text-20 max-425:text-18 max-425:leading-25 leading-[32.6px];
+  @apply text-27 max-1199:text-20 max-1199:leading-[32.6px] max-425:text-18 max-425:leading-25 leading-41;
 }
 h5,
 .h5 {
-  @apply text-18 leading-25;
+  @apply text-20 leading-24;
 }
 h6,
 .h6 {
@@ -84,6 +87,9 @@ img {
 }
 .content.content-dark-light p {
   @apply text-body/80;
+}
+.content .prose p {
+  @apply 992:mb-30 mb-25 last:mb-0;
 }
 .content p,
 p {

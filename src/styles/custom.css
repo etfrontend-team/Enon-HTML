@@ -72,8 +72,11 @@
 .suite-detail__image-track {
     @apply flex size-full transition-transform duration-700 ease-in-out;
 }
+.suite-detail__image-slide {
+    @apply relative size-full shrink-0;
+}
 .suite-detail__image {
-    @apply size-full object-cover shrink-0 select-none;
+    @apply size-full object-cover select-none;
 }
 .suite-detail__image-overlay {
     @apply absolute inset-0 pointer-events-none;

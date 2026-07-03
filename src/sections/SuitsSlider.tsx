@@ -1,4 +1,6 @@
+"use client";
 import { useRef } from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -39,14 +41,14 @@ export default function SuitsSlider() {
             className="suits-slider__btn suits-slider__prev"
             aria-label="Previous suite"
           >
-            <img src="/assets/prev-arrow.svg" alt="" />
+            <Image src="/assets/prev-arrow.svg" alt="" role="presentation" width={24} height={24} style={{ width: "auto", height: "auto" }} />
           </button>
           <button
             ref={nextRef}
             className="suits-slider__btn suits-slider__next"
             aria-label="Next suite"
           >
-            <img src="/assets/next-arrow.svg" alt="" />
+            <Image src="/assets/next-arrow.svg" alt="" role="presentation" width={24} height={24} style={{ width: "auto", height: "auto" }} />
           </button>
         </div>
       </div>
@@ -81,10 +83,14 @@ export default function SuitsSlider() {
           {SUITES.map((suite, index) => (
             <SwiperSlide key={suite.id} className="suits-slider__slide">
               <div className={`suits-slider__card suits-slider__card--${VARIANT_CYCLE[index % VARIANT_CYCLE.length]}`}>
-                <img
+                <Image
+                  fill
+                  sizes="(max-width: 425px) 83vw, (max-width: 640px) 45vw, (max-width: 768px) 40vw, (max-width: 1023px) 45vw, 30vw"
                   src={suite.image}
                   alt={suite.name}
                   className="suits-slider__card-img"
+                  loading={index < 3 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
                 />
                 <div className="suits-slider__card-gradient" />
                 <p className="suits-slider__card-name">{suite.name}</p>
@@ -93,7 +99,7 @@ export default function SuitsSlider() {
           ))}
         </Swiper>
 
-        <div className="suits-slider__pagination" />
+        <div className="suits-slider__pagination custom-pagination-bar" />
       </div>
     </section>
   );

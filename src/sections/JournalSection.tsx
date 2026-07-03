@@ -1,123 +1,103 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import Link from "next/link";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
-const journalPosts = [
+const JOURNALS = [
   {
     id: "1",
-    image: "/images/journal-lemons.jpg",
     date: "10 May 2026",
-    title: "What's growing this spring",
+    title: "What's Growing This Spring",
+    image: "/assets/journal-1.jpg",
     href: "/journal/whats-growing-this-spring",
   },
   {
     id: "2",
-    image: "/images/journal-oysters.jpg",
     date: "20 May 2026",
-    title: "Knysna Oyster season guide",
+    title: "Knysna Oyster Season Guide",
+    image: "/assets/journal-2.jpg",
     href: "/journal/knysna-oyster-season-guide",
   },
   {
     id: "3",
-    image: "/images/journal-whale.jpg",
     date: "10 June 2026",
-    title: "Whale watching in the garden route",
-    href: "/journal/whale-watching-garden-route",
+    title: "Whale Watching in the Garden Route",
+    image: "/assets/journal-3.jpg",
+    href: "/journal/whale-watching-in-the-garden-route",
   },
 ];
 
 export default function JournalSection() {
   return (
-    <section className="journal-section general-padding" id="journal">
+    <section className="journal-section general-padding">
       <div className="container-fluid-lg">
-        <div className="journal-header">
-          <div className="journal-heading-group">
-            <div className="pre-heading">
-              <span>Journal</span>
-            </div>
-            <div className="title title-dark-olive">
-              <h2>Follow our Story</h2>
-            </div>
+        <div className="journal-section-header">
+          <div className="pre-heading">
+            <span>Journal</span>
           </div>
-          <Link href="/journal" aria-label="Read all journals" className="cta-link">
+          <div className="title title-dark-olive">
+            <h2>Follow Our Story</h2>
+          </div>
+          <Link
+            href="/journal"
+            aria-label="Read all journals"
+            className="cta-link"
+          >
             Read all journals
           </Link>
         </div>
       </div>
 
-      <div className="journal-cards-wrap">
+      <div className="journal-section-track">
         <Swiper
+          modules={[Navigation, Pagination]}
+          slidesPerView={3}
+          spaceBetween={25}
+          grabCursor
           loop={false}
           speed={800}
-          spaceBetween={25}
-          slidesPerView={3}
-          slidesOffsetBefore={106}
-          slidesOffsetAfter={106}
           breakpoints={{
-            0: {
-              slidesPerView: "auto",
-              slidesOffsetBefore: 20,
-              slidesOffsetAfter: 0,
-              spaceBetween: 20,
-            },
-            426: {
-              slidesPerView: "auto",
-              slidesOffsetBefore: 35,
-              slidesOffsetAfter: 0,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: "auto",
-              slidesOffsetBefore: 60,
-              slidesOffsetAfter: 60,
-              spaceBetween: 25,
-            },
-            1024: {
-              slidesPerView: 3,
-              slidesOffsetBefore: 60,
-              slidesOffsetAfter: 60,
-              spaceBetween: 25,
-            },
-            1200: {
-              slidesPerView: 3,
-              slidesOffsetBefore: 106,
-              slidesOffsetAfter: 106,
-              spaceBetween: 25,
-            },
+            0: { slidesPerView: 1.2 },
+            426: { slidesPerView: 1.302 },
+            641: { slidesPerView: 2.2 },
+            1024: { slidesPerView: 3 },
           }}
-          modules={[]}
-          aria-label="Journal posts"
-          className="journal-swiper"
+          pagination={{
+            el: ".journal-section-pagination",
+            type: "progressbar",
+          }}
+          className="journal-section-swiper"
+          aria-label="Journal articles"
         >
-          {journalPosts.map((post) => (
-            <SwiperSlide key={post.id} className="journal-slide">
+          {JOURNALS.map((journal) => (
+            <SwiperSlide key={journal.id} className="journal-section-slide">
               <Link
-                href={post.href}
-                aria-label={`Read journal post: ${post.title}`}
-                className="journal-card"
+                href={journal.href}
+                aria-label={`Read journal: ${journal.title}`}
+                className="journal-section-card h-full block"
               >
-                <div className="journal-card-image-wrap">
+                <div className="journal-section-image-wrap">
                   <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={393}
-                    height={656}
-                    className="journal-card-image"
+                    fill
+                    sizes="(max-width: 425px) 83vw, (max-width: 640px) 76vw, (max-width: 1024px) 45vw, 33vw"
+                    src={journal.image}
+                    alt={journal.title}
+                    className="journal-section-image"
                   />
                 </div>
-                <div className="journal-card-content">
-                  <div className="journal-card-date">
-                    <p>{post.date}</p>
-                  </div>
-                  <div className="journal-card-title">
-                    <p>{post.title}</p>
+                <div className="journal-section-card-body">
+                  <span className="journal-section-date">{journal.date}</span>
+                  <div className="title title-dark-olive">
+                    <h5 className="journal-section-title">{journal.title}</h5>
                   </div>
                 </div>
               </Link>
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="journal-section-pagination custom-pagination-bar" />
       </div>
     </section>
   );

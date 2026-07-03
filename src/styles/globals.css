@@ -9,7 +9,7 @@
   --font-body: "Inter", "Inter Fallback";
   --font-heading: "Cormorant Garamond", sans-serif;
   --font-eaves: "mrs-eaves-roman-all-small-ca", serif;
-  --font-eaves-petite: "mrs-eaves-roman-petite-caps", serif;
+  --font-eaves-petite: "mrs-eaves-roman-petite-caps", serif; 
 
   --color-black: #000000;
   --color-white: #ffffff;
@@ -31,6 +31,8 @@
   --tracking-5: 0.05em;
   --tracking-8: 0.08em;
   --tracking-10: 0.1em;
+
+  --aspect-mosaic: 596/709;
 
   --shadow-image-card: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.1);
   --shadow-image-card-form: 1.1px 1.1px 2.2px 0.55px rgba(0, 0, 0, 0.1);
@@ -167,13 +169,13 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} 
 
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-SemiBold.eot");
   src:
-    url("/font/CormorantGaramond-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("/font/CormorantGaramond-SemiBold.eot?#iefix") format("embedded-opentype"), 
     url("/font/CormorantGaramond-SemiBold.woff2") format("woff2"),
     url("/font/CormorantGaramond-SemiBold.woff") format("woff"),
     url("/font/CormorantGaramond-SemiBold.ttf") format("truetype"),
@@ -182,7 +184,7 @@
   font-style: normal;
   font-display: swap;
 }
-
+ 
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-SemiBoldItalic.eot");
@@ -194,5 +196,6 @@
     url("/font/CormorantGaramond-SemiBoldItalic.svg#CormorantGaramond-SemiBoldItalic") format("svg");
   font-weight: 600;
   font-style: italic;
-  font-display: swap;
+  font-display: swap; 
 }
+      

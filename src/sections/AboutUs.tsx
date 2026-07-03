@@ -1,9 +1,13 @@
+import Image from "next/image";
+
 export default function AboutUs() {
   return (
     <section className="about-us general-padding">
       <div className="container-fluid-lg about-us-inner">
-      <div className="about-us__image-col">
-          <img
+        <div className="about-us__image-col">
+          <Image
+            fill
+            sizes="(max-width: 992px) 100vw, 50vw"
             className="about-us__image img-fluid-cover"
             src="/assets/suits-1.jpg"
             alt="Enon Heights suite interior"
@@ -18,7 +22,7 @@ export default function AboutUs() {
               </div>
               <div className="title title-dark-olive">
                 <h2 className="about-us__title">
-                  Built For Those <br></br> Who Notice The Details.
+                  Built For Those <br /> Who Notice The Details.
                 </h2>
               </div>
             </div>
@@ -32,9 +36,7 @@ export default function AboutUs() {
 
           </div>
         </div>
-       
       </div>
-
     </section>
   );
 }

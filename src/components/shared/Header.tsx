@@ -1,4 +1,6 @@
+"use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Our Story", href: "#our-story" },
@@ -8,14 +10,9 @@ const NAV_LINKS = [
   { label: "Location", href: "#location" },
 ];
 
-// TODO: Replace with permanent assets once available in /public/assets/
-const LOGO_SRC =
-  "https://www.figma.com/api/mcp/asset/825d0ae8-37e2-409e-80f5-3cec826b8aa7";
-
-const MENU_IMG_LEFT =
-  "https://www.figma.com/api/mcp/asset/c181edbf-ca05-4c36-80eb-a1ad6c6d420c";
-const MENU_IMG_RIGHT =
-  "https://www.figma.com/api/mcp/asset/b6c0d112-fbf9-45aa-a80b-49482dd4dc21";
+const LOGO_SRC = "/assets/enon-heights-logo.png";
+const MENU_IMG_LEFT = "/assets/menu-image-1.png";
+const MENU_IMG_RIGHT = "/assets/menu-image-2.png";
 
 const SOCIAL_LINKS = [
   { href: "#", src: "/assets/facebook-icon.svg", alt: "Facebook" },
@@ -37,7 +34,7 @@ export default function Header() {
       <header className="site-header">
         <div className="header-inner">
           <a href="/" className="header-logo" aria-label="Enon Heights home">
-            <img src={LOGO_SRC} alt="Enon Heights" />
+            <Image src={LOGO_SRC} alt="Enon Heights" width={53} height={55} style={{ width: "auto", height: "auto" }} />
           </a>
 
           <nav
@@ -106,7 +103,6 @@ export default function Header() {
         aria-label="Navigation menu"
       >
         <div className="menu-panel">
-          {/* Background video */}
           <video
             className="menu-panel__video"
             src="/assets/background-leaves-shadow.mp4"
@@ -114,57 +110,60 @@ export default function Header() {
             loop
             muted
             playsInline
-          />
+            preload="metadata"
+            aria-label="Enon Heights ambient video"
+          >
+            <track kind="captions" srcLang="en" label="English" />
+          </video>
           <div className="menu-inner-container">
-          {/* Decorative images — desktop only (hidden below 1199px) */}
-          <div className="menu-img menu-img--left">
-            <div className="menu-img__frame">
-              <img src={MENU_IMG_LEFT} alt="" className="menu-img__photo" />
+            <div className="menu-img menu-img--left">
+              <div className="menu-img__frame">
+                <Image fill sizes="(max-width: 1366px) 290px, 329px" src={MENU_IMG_LEFT} alt="" role="presentation" className="menu-img__photo" />
+              </div>
             </div>
-          </div>
-          <div className="menu-img menu-img--right">
-            <div className="menu-img__frame">
-              <img src={MENU_IMG_RIGHT} alt="" className="menu-img__photo" />
+            <div className="menu-img menu-img--right">
+              <div className="menu-img__frame">
+                <Image fill sizes="(max-width: 1366px) 290px, 329px" src={MENU_IMG_RIGHT} alt="" role="presentation" className="menu-img__photo" />
+              </div>
             </div>
-          </div>
-          <nav className="menu-nav" aria-label="Menu navigation">
-            <ul>
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} onClick={closeMenu}>
-                    {link.label}
+            <nav className="menu-nav" aria-label="Menu navigation">
+              <ul>
+                {NAV_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} onClick={closeMenu}>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className="menu-footer">
+              <div className="menu-contact">
+                <p className="menu-contact__title">Contact Us</p>
+                <div className="menu-contact__info">
+                  <a href="tel:0825312413">Tel: 082 5312 413</a>
+                  <a href="mailto:info@enonheights.com">Email: info@enonheights.com</a>
+                </div>
+              </div>
+
+              <div className="menu-social">
+                {SOCIAL_LINKS.map((s) => (
+                  <a key={s.alt} href={s.href} aria-label={s.alt} className="menu-social__link">
+                    <Image src={s.src} alt="" role="presentation" width={18} height={18} />
                   </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+                ))}
+              </div>
 
-          <div className="menu-footer">
-            <div className="menu-contact">
-              <p className="menu-contact__title">Contact Us</p>
-              <div className="menu-contact__info">
-                <a href="tel:0825312413">Tel: 082 5312 413</a>
-                <a href="mailto:info@enonheights.com">Email: info@enonheights.com</a>
+              <div className="menu-enquire-mobile">
+                <div className="btn-custom">
+                  <a href="#enquire" className="btn" onClick={closeMenu}>
+                    <span className="label-up">Enquire</span>
+                    <span className="label-up">Enquire</span>
+                  </a>
+                </div>
               </div>
             </div>
-
-            <div className="menu-social">
-              {SOCIAL_LINKS.map((s) => (
-                <a key={s.alt} href={s.href} aria-label={s.alt} className="menu-social__link">
-                  <img src={s.src} alt="" />
-                </a>
-              ))}
-            </div>
-
-            <div className="menu-enquire-mobile">
-              <div className="btn-custom">
-                <a href="#enquire" className="btn" onClick={closeMenu}>
-                  <span className="label-up">Enquire</span>
-                  <span className="label-up">Enquire</span>
-                </a>
-              </div>
-            </div>
-          </div>
           </div>
         </div>
       </div>

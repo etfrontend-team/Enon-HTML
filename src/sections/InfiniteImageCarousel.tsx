@@ -70,7 +70,7 @@ function buildTrackColumns(media: MediaItem[]): React.ReactNode[] {
   for (let cycle = 0; cycle < fullCycles; cycle++) {
     for (const slot of SLOT_PATTERN) {
       const isStack = slot.kind === "stack" || slot.kind === "stack-offset";
-      const isOffset = slot.kind === "stack-offset";
+      const isOffset = slot.kind === "stack-offset"; 
       const colClass = [
         "infinite-image-carousel__col",
         isStack ? "infinite-image-carousel__col--stack" : `infinite-image-carousel__col--${slot.kind}`,
