@@ -1,11 +1,11 @@
 export default function HeroBanner() {
   return (
-    <section className="hero-banner">
+    <section className="hero-banner general-padding">
       <div className="hero-banner__inner">
 
         <div className="hero-banner__bg" aria-hidden="true">
           <img
-            className="hero-banner__bg-img"
+            className="hero-banner__bg-img "
             src="/assets/hero-banner.png"
             alt=""
           />

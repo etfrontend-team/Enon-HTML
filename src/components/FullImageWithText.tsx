@@ -1,6 +1,6 @@
 export default function FullImageWithText() {
   return (
-    <section className="full-image-text image-right">
+    <section className="full-image-text image-right general-padding">
       <div className="container-fluid">
       <div className="full-image-text-inner image-right">
       <div className="full-image-text__image-column">

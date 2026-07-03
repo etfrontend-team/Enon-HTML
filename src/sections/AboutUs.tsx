@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <section className="about-us">
+    <section className="about-us general-padding">
       <div className="container-fluid-lg about-us-inner">
       <div className="about-us__image-col">
           <img

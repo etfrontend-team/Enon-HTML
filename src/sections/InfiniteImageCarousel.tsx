@@ -107,7 +107,7 @@ export default function InfiniteImageCarousel() {
   const trackColumns = buildTrackColumns(MEDIA);
 
   return (
-    <section className="infinite-image-carousel section">
+    <section className="infinite-image-carousel section general-padding">
       <div className="container-fluid-lg">
         <div className="infinite-image-carousel__content align-center">
           <div className="infinite-image-carousel__heading-group">

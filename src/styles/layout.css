@@ -1,14 +1,48 @@
 .site-header {
-  @apply absolute top-15 left-0 right-0 bg-transparent z-200;
+  @apply absolute top-15 left-0 right-0 bg-transparent z-200 transition-all duration-300 ease-out 1366:pt-46 1366:pb-48 py-30;
+}
+.site-header.is-past-top {
+  @apply fixed top-0;
+}
+.site-header.is-scrolled {
+  @apply fixed top-0 py-25;
+}
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+.site-header::before {
+  content: '';
+  @apply absolute top-0 left-0 right-0 h-0 pointer-events-none bg-cream ;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: -2;
+  transition: height 0.3s ease-out;
+}
+.site-header.is-scrolled::before {
+  @apply h-full border border-body/10 shadow-header;
+}
+.site-header::after {
+  content: '';
+  @apply absolute top-0 left-0 right-0 h-0 pointer-events-none opacity-15 mix-blend-multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: -1;
+  transition: height 0.3s ease-out;
+}
+.site-header.is-scrolled::after {
+  height: 100%;
 }
 .site-header .header-inner {
-  @apply relative w-full 1366:px-65 425:px-40 px-30 flex items-center justify-between gap-20 1366:pt-46 1366:pb-48 py-30;
+  @apply relative w-full 1366:px-65 325:px-40 px-30 flex items-center justify-between gap-20;
 }
 .site-header .header-logo {
   @apply block 1366:w-265 425:w-228 w-190 1366:h-28 425:h-25 h-20 shrink-0;
 }
 .site-header .header-logo img {
   @apply w-full h-full object-contain;
+  transition: filter 0.3s ease-out;
+}
+.site-header.is-scrolled .header-logo img {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(20%) saturate(1050%) hue-rotate(22deg) brightness(92%) contrast(96%);
 }
 .site-header .header-nav {
   @apply max-1023:hidden;
@@ -19,7 +53,10 @@
 }
 .site-header .header-nav a {
   @apply font-eaves 1199:text-20 text-18 text-off-white no-underline uppercase relative pb-14 tracking-5 after:absolute after:bottom-0 after:left-0 after:h-px after:bg-off-white after:w-0 hover:after:w-full;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease-out, color 0.3s ease-out;
+}
+.site-header.is-scrolled .header-nav a {
+  @apply text-dark-olive after:bg-dark-olive;
 }
 .site-header .header-nav a::after {
   transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -36,11 +73,28 @@
 .site-header .header-enquire-wrap {
   @apply max-1023:hidden;
 }
-.site-header .btn {
-  backdrop-filter: blur(5px);
+.site-header.is-scrolled .header-enquire-wrap .btn {
+  @apply bg-rust border-transparent;
 }
 .site-header .header-menu-btn {
-  @apply bg-transparent border-0 cursor-pointer p-0 flex items-center justify-center shrink-0;
+  @apply bg-transparent border-0 cursor-pointer p-0 flex items-center justify-center shrink-0 767:w-27 w-24;
+}
+.site-header .header-menu-icon {
+  @apply relative block 767:h-18 h-16 767:w-27 w-24;
+}
+.site-header .header-menu-icon__light,
+.site-header .header-menu-icon__dark {
+  @apply absolute inset-0;
+  transition: opacity 0.3s ease-out;
+}
+.site-header .header-menu-icon__dark {
+  @apply opacity-0;
+}
+.site-header.is-scrolled .header-menu-icon__light {
+  @apply opacity-0;
+}
+.site-header.is-scrolled .header-menu-icon__dark {
+  @apply opacity-100;
 }
 
 .menu-overlay {
@@ -63,7 +117,7 @@
   @apply flex flex-1 items-center justify-center 1199:absolute top-1/2 left-1/2 1199:-translate-1/2;
 }
 .menu-overlay .menu-nav ul {
-  @apply flex flex-col items-center list-none m-0 p-0 375:gap-30 gap-20;
+  @apply flex flex-col items-center list-none m-0 p-0 375:gap-30 gap-20 max-767:pt-55;
 }
 .menu-overlay .menu-nav a {
   @apply font-eaves text-white uppercase text-center no-underline 375:text-24 text-20 leading-10 tracking-5 h-10 block;
@@ -84,7 +138,7 @@
   @apply flex flex-col text-center 375:gap-25 gap-20 items-center;
 }
 .menu-overlay .menu-contact__info a {
-  @apply font-body text-white text-center capitalize text-12 tracking-8 leading-9 no-underline w-max transition-all duration-300 ease-in-out;
+  @apply font-body text-white text-center text-12 tracking-8 leading-9 no-underline w-max transition-all duration-300 ease-in-out font-normal;
 }
 .menu-overlay .menu-contact__info:has(a:hover) a:not(:hover) {
   @apply opacity-80;
@@ -109,6 +163,9 @@
   @apply absolute max-1199:hidden top-1/2 -translate-y-1/2;
 }
 @media only screen and (max-height: 650px) {
+  .menu-overlay .menu-nav ul {
+    @apply pt-0;
+  } 
   .menu-overlay .menu-img {
     @apply hidden;
   }
@@ -127,4 +184,165 @@
 }
 .menu-overlay .menu-img__photo {
   @apply object-cover size-full;
+}
+.general-padding {
+  @apply py-100;
+}
+
+/* ============ FOOTER ============ */
+footer.site-footer {
+  @apply pt-15 px-15 ;
+}
+footer .footer-bg-wrapper {
+  @apply absolute inset-0 size-full z-1;
+}
+
+footer .footer-bg-wrapper .footer__bg-img  {
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+}
+footer .footer-inner {
+  @apply bg-rust flex flex-col shadow-footer relative z-2;
+}
+
+footer .footer-main {
+  @apply flex items-stretch justify-between 1366:pt-80 767:pt-80 max-767:pt-100 1366:px-121 767:px-80 max-767:px-50 max-767:grid max-767:grid-cols-2 max-767:gap-x-30;
+}
+
+footer .footer-col-left,
+footer .footer-col-right {
+  @apply flex flex-col 1366:w-224 767:w-180 767:pt-36 767:justify-between;
+}
+
+footer .footer-col-left nav ul,
+footer .footer-col-right nav ul {
+  @apply flex flex-col gap-30 list-none m-0 p-0;
+}
+
+footer .footer-col-left nav a,
+footer .footer-col-right nav a {
+  @apply font-eaves text-24 text-off-white uppercase no-underline tracking-5 leading-none block;
+  transition: opacity 0.3s ease;
+}
+
+footer .footer-col-left nav ul:has(a:hover) a:not(:hover),
+footer .footer-col-right nav ul:has(a:hover) a:not(:hover) {
+  @apply opacity-70;
+}
+
+footer .footer-cta {
+  @apply max-767:hidden;
+}
+
+footer .footer-cta .btn {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+footer .footer-contact {
+  @apply flex flex-col gap-25 max-767:hidden;
+}
+
+footer .footer-contact a {
+  @apply font-body text-12 text-off-white no-underline tracking-8 font-normal;
+  transition: opacity 0.3s ease;
+}
+
+footer .footer-media {
+  @apply flex-1 flex justify-center items-start max-767:hidden;
+}
+
+footer .footer-image-frame {
+  @apply bg-off-white shadow-image-card border-off-white border-15 size-330;
+}
+
+footer .footer-image {
+  @apply object-cover w-full h-full;
+}
+
+/* Mobile-only stacked section */
+footer .footer-mobile-section {
+  @apply 767:hidden flex flex-col items-center gap-35 pt-40 pb-5;
+}
+
+footer .footer-mobile-contact {
+  @apply flex flex-col items-center gap-25;
+}
+
+footer .footer-mobile-contact a {
+  @apply font-body text-12 text-off-white no-underline tracking-8 font-normal text-center;
+  transition: opacity 0.3s ease;
+}
+
+footer .footer-mobile-social {
+  @apply flex items-center gap-24;
+}
+
+footer .footer-mobile-image {
+  @apply flex justify-center;
+}
+
+footer .footer-mobile-logo {
+  @apply flex justify-center;
+}
+
+footer .footer-mobile-logo img {
+  @apply object-contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Social icon links */
+footer .footer-social-link {
+  @apply flex items-center justify-center size-18;
+  transition: opacity 0.3s ease;
+}
+
+footer .footer-social-link img {
+  @apply w-full h-full object-contain;
+  filter: brightness(0) invert(1);
+}
+
+footer .footer-mobile-section .footer-mobile-cta .btn {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+footer .footer-mobile-social:has(a:hover) a:not(:hover),
+footer .footer-social:has(a:hover) a:not(:hover) {
+  @apply opacity-70;
+}
+
+/* Bottom bar */
+footer .footer-bar {
+  @apply flex items-end justify-between 1366:px-121 767:px-80 max-767:px-50 pb-40 max-767:pb-55 mt-auto max-767:justify-center max-767:pt-50;
+}
+footer .footer-privacy {
+  @apply font-body text-12 text-off-white no-underline uppercase tracking-8 font-normal max-767:text-center;
+  transition: opacity 0.3s ease;
+}
+
+footer .footer-privacy:hover {
+  @apply opacity-70;
+}
+
+footer .footer-wordmark {
+  @apply max-767:hidden;
+}
+
+footer .footer-wordmark img {
+  @apply object-contain;
+  filter: brightness(0) invert(1);
+}
+
+footer .footer-social {
+  @apply flex items-center gap-24 max-767:hidden;
+}
+
+/* Copyright */
+footer .footer-copyright {
+  @apply flex justify-center px-15 py-20 items-center relative z-2;
+}
+
+footer .footer-copyright p {
+  @apply font-body text-12 text-body tracking-8 font-normal;
 }

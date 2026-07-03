@@ -7,35 +7,39 @@
 @theme {
   --font-body: "Inter", "Inter Fallback";
   --font-heading: "Cormorant Garamond", sans-serif;
-  --font-eaves: "mrs-eaves-roman-all-small-ca", serif; 
-  --font-eaves-petite: "mrs-eaves-roman-petite-caps",serif;
+  --font-eaves: "mrs-eaves-roman-all-small-ca", serif;
+  --font-eaves-petite: "mrs-eaves-roman-petite-caps", serif;
 
-  --color-black: #000000; 
+  --color-black: #000000;
   --color-white: #ffffff;
-  --color-body: #393618; 
+  --color-body: #393618;
   --color-primary: #C25F3A;
   --color-cream: #F8F5E5;
   --color-cream-2: #F4F0DF;
-  --color-off-white: #FCFBF5; 
-  --color-dark-olive: #393618; 
-  --color-rust: #C25F3A; 
-  --color-sage: #CDD5B9;  
+  --color-off-white: #FCFBF5;
+  --color-dark-olive: #393618;
+  --color-rust: #C25F3A;
+  --color-rust-light: #D3663E;
+  --color-sage: #CDD5B9;
   --color-sage-mist: #D1DCD2;
- 
-  --spacing: 1px;  
 
+  --spacing: 1px;
+
+  --tracking-2: 0.02em;
   --tracking-3: 0.03em;
-  --tracking-5: 0.05em;   
+  --tracking-5: 0.05em;
   --tracking-8: 0.08em;
   --tracking-10: 0.1em;
 
   --shadow-image-card: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.1);
   --shadow-image-card-form: 1.1px 1.1px 2.2px 0.55px rgba(0, 0, 0, 0.1);
+  --shadow-header: 1.1px 1.1px 2.2px 1.1px rgba(0, 0, 0, 0.05);
+  --shadow-footer: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
   --breakpoint-2000: 2000px;
   --breakpoint-1920: 1921px;
-  --breakpoint-1600: 1601px;  
-  --breakpoint-1512: 1513px; 
+  --breakpoint-1600: 1601px;
+  --breakpoint-1512: 1513px;
   --breakpoint-1440: 1441px;
   --breakpoint-1439: 1440px;
   --breakpoint-1366: 1367px;
@@ -49,19 +53,18 @@
   --breakpoint-576: 577px;
   --breakpoint-425: 426px;
   --breakpoint-375: 375px;
+  --breakpoint-325: 325px;
 }
 
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-BoldItalic.eot");
   src:
-    url("/font/CormorantGaramond-BoldItalic.eot?#iefix")
-      format("embedded-opentype"),
+    url("/font/CormorantGaramond-BoldItalic.eot?#iefix") format("embedded-opentype"),
     url("/font/CormorantGaramond-BoldItalic.woff2") format("woff2"),
     url("/font/CormorantGaramond-BoldItalic.woff") format("woff"),
     url("/font/CormorantGaramond-BoldItalic.ttf") format("truetype"),
-    url("/font/CormorantGaramond-BoldItalic.svg#CormorantGaramond-BoldItalic")
-      format("svg");
+    url("/font/CormorantGaramond-BoldItalic.svg#CormorantGaramond-BoldItalic") format("svg");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -89,8 +92,7 @@
     url("/font/CormorantGaramond-Italic.woff2") format("woff2"),
     url("/font/CormorantGaramond-Italic.woff") format("woff"),
     url("/font/CormorantGaramond-Italic.ttf") format("truetype"),
-    url("/font/CormorantGaramond-Italic.svg#CormorantGaramond-Italic")
-      format("svg");
+    url("/font/CormorantGaramond-Italic.svg#CormorantGaramond-Italic") format("svg");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -104,8 +106,7 @@
     url("/font/CormorantGaramond-Light.woff2") format("woff2"),
     url("/font/CormorantGaramond-Light.woff") format("woff"),
     url("/font/CormorantGaramond-Light.ttf") format("truetype"),
-    url("/font/CormorantGaramond-Light.svg#CormorantGaramond-Light")
-      format("svg");
+    url("/font/CormorantGaramond-Light.svg#CormorantGaramond-Light") format("svg");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -115,13 +116,11 @@
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-LightItalic.eot");
   src:
-    url("/font/CormorantGaramond-LightItalic.eot?#iefix")
-      format("embedded-opentype"),
+    url("/font/CormorantGaramond-LightItalic.eot?#iefix") format("embedded-opentype"),
     url("/font/CormorantGaramond-LightItalic.woff2") format("woff2"),
     url("/font/CormorantGaramond-LightItalic.woff") format("woff"),
     url("/font/CormorantGaramond-LightItalic.ttf") format("truetype"),
-    url("/font/CormorantGaramond-LightItalic.svg#CormorantGaramond-LightItalic")
-      format("svg");
+    url("/font/CormorantGaramond-LightItalic.svg#CormorantGaramond-LightItalic") format("svg");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -135,8 +134,7 @@
     url("/font/CormorantGaramond-Medium.woff2") format("woff2"),
     url("/font/CormorantGaramond-Medium.woff") format("woff"),
     url("/font/CormorantGaramond-Medium.ttf") format("truetype"),
-    url("/font/CormorantGaramond-Medium.svg#CormorantGaramond-Medium")
-      format("svg");
+    url("/font/CormorantGaramond-Medium.svg#CormorantGaramond-Medium") format("svg");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -146,13 +144,11 @@
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-MediumItalic.eot");
   src:
-    url("/font/CormorantGaramond-MediumItalic.eot?#iefix")
-      format("embedded-opentype"),
+    url("/font/CormorantGaramond-MediumItalic.eot?#iefix") format("embedded-opentype"),
     url("/font/CormorantGaramond-MediumItalic.woff2") format("woff2"),
     url("/font/CormorantGaramond-MediumItalic.woff") format("woff"),
     url("/font/CormorantGaramond-MediumItalic.ttf") format("truetype"),
-    url("/font/CormorantGaramond-MediumItalic.svg#CormorantGaramond-MediumItalic")
-      format("svg");
+    url("/font/CormorantGaramond-MediumItalic.svg#CormorantGaramond-MediumItalic") format("svg");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -162,29 +158,25 @@
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-Regular.eot");
   src:
-    url("/font/CormorantGaramond-Regular.eot?#iefix") 
-      format("embedded-opentype"),
+    url("/font/CormorantGaramond-Regular.eot?#iefix") format("embedded-opentype"),
     url("/font/CormorantGaramond-Regular.woff2") format("woff2"),
     url("/font/CormorantGaramond-Regular.woff") format("woff"),
     url("/font/CormorantGaramond-Regular.ttf") format("truetype"),
-    url("/font/CormorantGaramond-Regular.svg#CormorantGaramond-Regular")
-      format("svg");
+    url("/font/CormorantGaramond-Regular.svg#CormorantGaramond-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} 
+}
 
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-SemiBold.eot");
   src:
-    url("/font/CormorantGaramond-SemiBold.eot?#iefix")
-      format("embedded-opentype"),
+    url("/font/CormorantGaramond-SemiBold.eot?#iefix") format("embedded-opentype"),
     url("/font/CormorantGaramond-SemiBold.woff2") format("woff2"),
     url("/font/CormorantGaramond-SemiBold.woff") format("woff"),
     url("/font/CormorantGaramond-SemiBold.ttf") format("truetype"),
-    url("/font/CormorantGaramond-SemiBold.svg#CormorantGaramond-SemiBold")
-      format("svg");
+    url("/font/CormorantGaramond-SemiBold.svg#CormorantGaramond-SemiBold") format("svg");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -194,13 +186,11 @@
   font-family: "Cormorant Garamond";
   src: url("/font/CormorantGaramond-SemiBoldItalic.eot");
   src:
-    url("/font/CormorantGaramond-SemiBoldItalic.eot?#iefix")
-      format("embedded-opentype"),
+    url("/font/CormorantGaramond-SemiBoldItalic.eot?#iefix") format("embedded-opentype"),
     url("/font/CormorantGaramond-SemiBoldItalic.woff2") format("woff2"),
     url("/font/CormorantGaramond-SemiBoldItalic.woff") format("woff"),
     url("/font/CormorantGaramond-SemiBoldItalic.ttf") format("truetype"),
-    url("/font/CormorantGaramond-SemiBoldItalic.svg#CormorantGaramond-SemiBoldItalic")
-      format("svg");
+    url("/font/CormorantGaramond-SemiBoldItalic.svg#CormorantGaramond-SemiBoldItalic") format("svg");
   font-weight: 600;
   font-style: italic;
   font-display: swap;

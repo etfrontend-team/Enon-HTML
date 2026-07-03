@@ -36,7 +36,7 @@ export default function EnquireForm() {
     };
 
     return (
-        <section className="section enquire-form">
+        <section className="section enquire-form general-padding">
             <div className="container-fluid">
                 <div className="enquire-form-outer-wrapper">
                     <div className="enquire-form-inner-wrapper">

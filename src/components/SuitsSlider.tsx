@@ -19,7 +19,7 @@ export default function SuitsSlider() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="suits-slider">
+    <section className="suits-slider general-padding">
       <div className="suits-slider__header container-fluid-lg">
         <div className="suits-slider__content">
           <div className="suits-slider__heading-group">
@@ -54,10 +54,10 @@ export default function SuitsSlider() {
       <div className="suits-slider__track">
         <Swiper
           modules={[Navigation, Pagination]}
-          slidesPerView="auto"
+          slidesPerView={1.2}
           spaceBetween={15}
           grabCursor
-          loop
+          loop={false}
           speed={800}
           onBeforeInit={(swiper) => {
             const nav = swiper.params.navigation;
@@ -65,6 +65,12 @@ export default function SuitsSlider() {
               nav.prevEl = prevRef.current;
               nav.nextEl = nextRef.current;
             }
+          }}
+          breakpoints={{
+            1023: { slidesPerView: 3.31 },
+            769: { slidesPerView: 2.5 },
+            641: { slidesPerView: 2.2 },
+            426: { slidesPerView: 1.31 },
           }}
           pagination={{
             el: ".suits-slider__pagination",

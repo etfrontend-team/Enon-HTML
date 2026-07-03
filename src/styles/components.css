@@ -17,7 +17,7 @@
 }
 
 .cta-link {
-  @apply relative w-fit inline-block cursor-pointer pb-14 uppercase tracking-5 no-underline font-eaves text-20 leading-9 text-rust after:absolute after:bottom-0 after:left-0 after:h-1 after:w-1/4 after:bg-rust after:transition-[width] after:duration-450 after:[transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] hover:after:w-full;
+  @apply relative w-fit inline-block cursor-pointer pb-14 uppercase tracking-5 no-underline font-eaves text-20 leading-9 text-rust after:absolute after:bottom-0 after:left-0 after:h-1 after:w-1/4 after:bg-rust after:transition-[width] after:duration-450 after:ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:after:w-full;
 }
 
 .align-center .cta-link::after {

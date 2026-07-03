@@ -1,6 +1,6 @@
 export default function ProprietorQuote() {
   return (
-    <section className="proprietor-quote">
+    <section className="proprietor-quote general-padding">
       <div className="proprietor-quote__card-inner">
       <div className="proprietor-quote__card bg-off-white">
 

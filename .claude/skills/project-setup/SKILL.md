@@ -133,7 +133,7 @@ function slugToTitle(pathname: string): string {
 
 export default function DefaultLayout({ children }: { children: ReactNode }) {
   const { pathname } = useRouter();
-  const title = `MHO | ${slugToTitle(pathname)}`;
+  const title = `ENON | ${slugToTitle(pathname)}`;
 
   return (
     <>
