@@ -15,19 +15,22 @@
 .feature-grid__inner .title h4 {
     @apply leading-12! max-1024:leading-15!;
 }
+.hero-banner + .suite-detail{
+    @apply pt-80 border-t-0
+}
 
 .suite-detail {
-    @apply sticky top-0 min-h-screen flex items-center py-60 max-767:py-40 bg-cream z-9 transition-[filter] duration-100 ease-linear will-change-[filter];
+    @apply sticky border-t border-solid border-dark-olive/10 top-0 max-767:static min-h-screen flex items-center py-60 max-767:py-100 bg-cream z-9 transition-[filter] duration-100 ease-linear will-change-[filter] ;
 }
 .suite-detail--even {
     @apply border-0 border-t border-solid border-dark-olive/10;
     background: linear-gradient(to bottom, #F4F0DF, #F8F5E5);
 }
 .suite-detail__inner {
-    @apply flex items-center justify-between gap-60 max-1199:gap-40 max-992:flex-col max-992:gap-30 max-w-1243 mx-auto;
+    @apply flex items-center justify-between gap-60 max-1199:gap-40 max-992:flex-col max-992:gap-35 max-w-1243 mx-auto;
 }
 .suite-detail__content-column {
-    @apply flex-1 flex flex-col gap-30 max-767:gap-20;
+    @apply flex-1 flex flex-col gap-30;
 }
 .suite-detail__heading-group {
     @apply flex flex-col gap-20;
@@ -36,7 +39,7 @@
     @apply flex gap-40 max-767:gap-20 flex-wrap;
 }
 .suite-detail__tab {
-    @apply font-eaves leading-[100%] text-20 max-767:text-16 tracking-5 text-dark-olive uppercase bg-transparent transition-all duration-300 delay-75 pb-15 cursor-pointer relative;
+    @apply font-eaves leading-[100%] text-20  tracking-5 text-dark-olive uppercase bg-transparent transition-all duration-300 delay-75 pb-15 cursor-pointer relative;
 }
 .suite-detail__tab::after{
     @apply absolute bottom-4 left-0 w-0 h-1 bg-dark-olive transition-[width] duration-300 delay-75 content-[''] pointer-events-none; 
@@ -61,13 +64,13 @@
     @apply font-heading leading-[100%] text-24 uppercase text-dark-olive;
 }
 .suite-detail__cta-group {
-    @apply flex items-end gap-40 max-767:gap-20 flex-wrap;
+    @apply flex items-end gap-40  flex-wrap;
 }
 .suite-detail__image-column {
     @apply relative flex-1 max-992:w-full;
 }
 .suite-detail__image-wrapper {
-    @apply relative w-full overflow-hidden aspect-593/651 max-992:aspect-square cursor-grab active:cursor-grabbing touch-pan-y;
+    @apply relative w-full overflow-hidden aspect-593/651  cursor-grab active:cursor-grabbing touch-pan-y;
 }
 .suite-detail__image-track {
     @apply flex size-full transition-transform duration-700 ease-in-out;
@@ -94,4 +97,15 @@
 .suite-detail__counter {
     @apply font-eaves text-20 tracking-5 text-off-white;
 }
-
+.suite-detail__title{
+    @apply text-30
+}
+.suite-detail__description{
+    @apply text-16!
+}
+.suite-detail .container-fluid-lg {
+    @apply max-576:px-15;
+}
+.suite-detail__content-column{
+    @apply max-576:px-20
+}

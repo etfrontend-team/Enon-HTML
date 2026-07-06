@@ -132,7 +132,7 @@ function SuiteCard({
           <div className="suite-detail__image-column">
             <div
               className="suite-detail__image-wrapper"
-              onPointerDown={handlePointerDown}
+              onPointerDown={handlePointerDown} 
               onPointerUp={handlePointerUp}
               onPointerCancel={() => (dragStartX.current = null)}
             >
@@ -163,7 +163,7 @@ function SuiteCard({
                     onClick={showPrev}
                     aria-label="Previous photo"
                   >
-                    <Image src="/assets/prev-arrow.svg" alt="" role="presentation" width={20} height={20} style={{ width: "auto", height: "auto" }} />
+                    <Image src="/assets/prev-white-arrow.svg" alt="" role="presentation" width={20} height={20} style={{ width: "auto", height: "auto" }} />
                   </button>
                   <button
                     type="button"
@@ -171,7 +171,7 @@ function SuiteCard({
                     onClick={showNext}
                     aria-label="Next photo"
                   >
-                    <Image src="/assets/next-arrow.svg" alt="" role="presentation" width={20} height={20} style={{ width: "auto", height: "auto" }} />
+                    <Image src="/assets/next-white-arrow.svg" alt="" role="presentation" width={20} height={20} style={{ width: "auto", height: "auto" }} />
                   </button>
                 </div>
                 <p className="suite-detail__counter">
@@ -193,6 +193,11 @@ export default function SuiteShowcase() {
   useEffect(() => {
     let ticking = false;
     const measure = () => {
+      if (window.innerWidth < 768) {
+        setBlurs(SUITES.map(() => 0));
+        ticking = false;
+        return;
+      }
       const vh = window.innerHeight;
       const next = SUITES.map((_, i) => {
         const incoming = sectionEls.current[i + 1];

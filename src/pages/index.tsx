@@ -9,10 +9,12 @@ import EnquireForm from "@/sections/EnquireForm";
 import JournalSection from "@/sections/JournalSection";
 import FullTextImage from "@/sections/FullTextImage";
 import StayFAQs from "@/sections/FaqSection";
+import GallerySection from "@/sections/GallerySection";
 export default function Home() {
   return (
     <>
       <HeroBanner />
+      <GallerySection/>
       {/* <FullImageWithText /> */}
       <ProprietorQuote />
       <SuitsSlider />

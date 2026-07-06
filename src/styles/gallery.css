@@ -1,0 +1,12 @@
+
+.gallery-image-wrapper .varient-1 {
+    @apply col-span-6! h-560;
+}
+
+/* .gallery-image-wrapper img {
+
+} */
+
+.gallery-image-wrapper .varient-1 img {
+    @apply h-[inherit] object-cover w-full;
+}
