@@ -1,12 +1,104 @@
 
 .gallery-image-wrapper .varient-1 {
-    @apply col-span-6! h-560;
+    @apply col-span-6 h-200 576:h-375 768:h-450 1024:h-560;
+}
+.gallery-image-wrapper .varient-2 {
+    @apply col-span-12 h-150 576:h-375 768:h-450 1024:h-500;
 }
 
-/* .gallery-image-wrapper img {
+.gallery-image-wrapper .varient-3 {
+    @apply col-span-4 h-110 576:h-250 768:h-300 1024:h-339;
+}
 
-} */
+.gallery-image-wrapper .varient-4 {
+    @apply col-span-8 h-110 576:h-375 768:h-450 1024:h-500;
+}
 
-.gallery-image-wrapper .varient-1 img {
+.gallery-image-wrapper .varient-5 {
+    @apply col-span-4 h-110 576:h-375 768:h-450 1024:h-500;
+}
+
+
+.gallery-image-wrapper img {
     @apply h-[inherit] object-cover w-full;
+}
+
+.varient-wrapper {
+    @apply relative;
+}
+
+.gallery-image-wrapper .caption-details {
+    @apply absolute bottom-25 left-25 max-768:hidden;
+}
+
+.gallery-image-wrapper .caption-details span {
+    @apply uppercase text-white font-heading text-20 block font-medium tracking-[1px] leading-15;
+}
+
+.gallery-section .gallery-cta {
+    @apply pt-50 1024:pt-100 flex justify-center items-center;
+}
+
+
+
+.btn.btn-dark {
+    @apply text-body border-body;
+}
+
+.filter-block {
+    @apply pb-54 pl-30 768:pl-15;
+}
+
+.filter-block ul {
+    @apply flex items-center gap-40 max-767:flex-col max-767:items-start max-767:gap-0 max-767:overflow-hidden max-767:min-h-0 max-767:w-full;
+}
+
+.filter-block ul li {
+    @apply max-767:w-full;
+}
+
+.filter-block ul li button {
+    @apply relative font-eaves leading-normal text-body text-20 font-normal tracking-[1px] max-767:inline-block max-767:text-left max-767:uppercase max-767:py-6;
+}
+
+.filter-block ul li button::after {
+    @apply content-[''] absolute left-0 -bottom-4 h-[1px] w-full bg-body origin-left scale-x-0 transition-transform duration-300 ease-in-out max-767:bottom-8;
+}
+
+.filter-block ul li button.active::after {
+    @apply scale-x-100 max-767:bg-body;
+}
+
+.filter-block ul li button.active {
+    @apply max-767:text-body;
+}
+
+/* mobile accordion toggle */
+.filter-block .filter-toggle {
+    @apply hidden max-767:flex items-center gap-15 font-eaves text-20 tracking-[1px] uppercase text-body;
+}
+
+.filter-block .filter-toggle-label {
+    @apply relative pb-6;
+}
+
+.filter-block .filter-toggle-label::after {
+    @apply content-[''] absolute left-0 bottom-0 h-[1px] w-full bg-body;
+}
+
+.filter-block .filter-toggle-icon {
+    @apply text-body transition-transform duration-300 ease-in-out shrink-0;
+}
+
+.filter-block.is-open .filter-toggle-icon {
+    @apply rotate-180;
+}
+
+/* collapsible wrapper: grid-rows trick for smooth height animation */
+.filter-block .filter-dropdown {
+    @apply max-767:grid max-767:grid-rows-[0fr] max-767:transition-[grid-template-rows] max-767:duration-300 max-767:ease-in-out;
+}
+
+.filter-block.is-open .filter-dropdown {
+    @apply max-767:grid-rows-[1fr];
 }
