@@ -28,7 +28,7 @@ h6 {
 }
 h1,
 .h1 {
-  @apply text-51 max-1199:text-41 max-1199:leading-51 max-767:text-38 max-767:leading-[120%] max-425:text-34 max-425:leading-[125%] leading-60 tracking-2;
+  @apply text-51 max-1199:text-41 max-1199:leading-51 max-767:text-38 leading-[120%] max-425:text-34 tracking-2;
 }
 h2,
 .h2 {

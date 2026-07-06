@@ -12,7 +12,7 @@
   --font-eaves: "mrs-eaves-roman-all-small-ca", serif;
   --font-eaves-petite: "mrs-eaves-roman-petite-caps", serif; 
 
-  --color-black: #000000;
+  --color-black: #000000; 
   --color-white: #ffffff; 
   --color-off-white: #FFFEF6;
   --color-body: #393618;
@@ -40,9 +40,15 @@
   --shadow-image-card-form: 1.1px 1.1px 2.2px 0.55px rgba(0, 0, 0, 0.1);
   --shadow-header: 1.1px 1.1px 2.2px 1.1px rgba(0, 0, 0, 0.05);
   --shadow-footer: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --shadow-frame: inset 108px 0 0 0 #FCFBF5, inset -108px 0 0 0 #FCFBF5, inset 0 148px 0 0 #FCFBF5, inset 0 -148px 0 0 #FCFBF5;
+  --shadow-frame-hover: inset 96px 0 0 0 #FCFBF5, inset -96px 0 0 0 #FCFBF5, inset 0 136px 0 0 #FCFBF5, inset 0 -136px 0 0 #FCFBF5;
+  --shadow-frame-mobile: inset 55px 0 0 0 #FCFBF5, inset -55px 0 0 0 #FCFBF5, inset 0 156px 0 0 #FCFBF5, inset 0 -156px 0 0 #FCFBF5;
+  --shadow-frame-mobile-hover: inset 47px 0 0 0 #FCFBF5, inset -47px 0 0 0 #FCFBF5, inset 0 144px 0 0 #FCFBF5, inset 0 -144px 0 0 #FCFBF5;
+  --shadow-frame-sm: inset 35px 0 0 0 #FCFBF5, inset -35px 0 0 0 #FCFBF5, inset 0 120px 0 0 #FCFBF5, inset 0 -120px 0 0 #FCFBF5;
+  --shadow-frame-sm-hover: inset 27px 0 0 0 #FCFBF5, inset -27px 0 0 0 #FCFBF5, inset 0 95px 0 0 #FCFBF5, inset 0 -95px 0 0 #FCFBF5;
 
-  --breakpoint-2000: 2000px;
-  --breakpoint-1920: 1921px;
+  --breakpoint-2000: 2000px; 
+  --breakpoint-1920: 1921px; 
   --breakpoint-1600: 1601px;
   --breakpoint-1512: 1513px;
   --breakpoint-1440: 1441px;

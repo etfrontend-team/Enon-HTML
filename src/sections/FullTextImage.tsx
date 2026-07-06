@@ -25,18 +25,20 @@ export default function FullTextImage() {
             <div className="full-text-image__shadow" aria-hidden="true">
               <img src="/assets/shadow-image-bg.png" alt="" />
             </div>
-            <div className="pre-heading">
-              <span>{preHeading}</span>
+            <div className="full-text-image-content_wrapper">
+              <div className="pre-heading">
+                <span>{preHeading}</span>
+              </div>
+              <div className="title title-dark-olive">
+                <h2>{heading}</h2>
+              </div>
+              <div className="full-text-image-desc content content-body content-dark-light">
+                <p>{body}</p>
+              </div>
+              <Link href={cta.href} aria-label={cta.label} className="cta-link mt-12">
+                {cta.label}
+              </Link>
             </div>
-            <div className="title title-dark-olive">
-              <h2>{heading}</h2>
-            </div>
-            <div className="full-text-image-desc content content-body content-dark-light">
-              <p>{body}</p>
-            </div>
-            <Link href={cta.href} aria-label={cta.label} className="cta-link mt-12">
-              {cta.label}
-            </Link>
           </div>
 
           <div className="full-text-image-grid">

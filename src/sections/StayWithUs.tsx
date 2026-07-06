@@ -21,42 +21,42 @@ export default function StayWithUs() {
             fill
             sizes="100vw"
             className="stay-with-us-bg-img"
+            loading="eager"
           />
-        </div> 
+        </div>
         <div className="stay-with-us-inner">
-            <div className="stay-with-us-content">
-              <div className="stay-with-us-frame" aria-hidden="true" />
-              <div className="inner-container relative">
-                <div className="title title-dark-olive">
-                  <h2>Stay With Us</h2>
-                </div>
-
-                <div className="stay-with-us-card align-center">
-                  <div className="btn-custom">
-                    <Link
-                      href={stayData.bookHref}
-                      aria-label="Book your stay at Enon Heights"
-                      className="btn"
-                    >
-                      <span className="label-up">Book Now</span>
-                      <span className="label-up">Book Now</span>
-                    </Link>
-                  </div>
-                  <Link
-                    href={stayData.enquireHref}
-                    aria-label="Enquire about staying at Enon Heights"
-                    className="cta-link light"
-                  >
-                    Enquire
-                  </Link>
-                </div>
-
-                <div className="content content-dark-light">
-                  <p>{stayData.description}</p>
-                </div>
+          <div className="stay-with-us-content">
+            <div className="stay-with-us-frame" aria-hidden="true" />
+            <div className="inner-container">
+              <div className="title title-dark-olive">
+                <h2>Stay With Us</h2>
               </div>
 
+              <div className="stay-with-us-card align-center">
+                <div className="btn-custom">
+                  <Link
+                    href={stayData.bookHref}
+                    aria-label="Book your stay at Enon Heights"
+                    className="btn"
+                  >
+                    <span className="label-up">Book Now</span>
+                    <span className="label-up">Book Now</span>
+                  </Link>
+                </div>
+                <Link
+                  href={stayData.enquireHref}
+                  aria-label="Enquire about staying at Enon Heights"
+                  className="cta-link light"
+                >
+                  Enquire
+                </Link>
+              </div>
+
+              <div className="content content-dark-light">
+                <p>{stayData.description}</p>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </section>

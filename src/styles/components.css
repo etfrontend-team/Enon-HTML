@@ -1,5 +1,5 @@
 .btn {
-  @apply text-off-white text-20 tracking-5 font-eaves relative inline-block h-39 cursor-pointer overflow-hidden bg-transparent px-30 text-center font-normal uppercase border border-off-white hover:outline-[0.5px];
+  @apply text-off-white text-20 tracking-5 font-eaves relative inline-block h-39 cursor-pointer overflow-hidden bg-transparent px-30 text-center font-normal uppercase border border-off-white hover:outline-[0.5px] whitespace-nowrap;
   transition: border-color 0.3s ease
 }
 .btn-custom {
