@@ -5,16 +5,14 @@
   @apply fixed top-0;
 }
 .site-header.is-scrolled {
-  @apply fixed top-0 py-25;
+  @apply fixed top-0 py-25 backdrop-blur-xs;
 }
 .site-header.is-hidden {
   transform: translateY(-100%);
 }
 .site-header::before {
-  content: '';
-  @apply absolute top-0 left-0 right-0 h-0 pointer-events-none bg-cream ;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  content: ''; 
+  @apply absolute top-0 left-0 right-0 h-0 pointer-events-none bg-cream/90;
   z-index: -2;
   transition: height 0.3s ease-out;
 }
@@ -35,10 +33,10 @@
   @apply relative w-full 1366:px-65 325:px-40 px-30 flex items-center justify-between gap-20;
 }
 .site-header .header-logo {
-  @apply block relative overflow-hidden 1366:w-265 425:w-228 w-190 1366:h-28 425:h-25 h-20 shrink-0;
+  @apply block 1366:w-265 425:w-228 w-190 1366:h-28 425:h-25 h-20 shrink-0 relative;
 }
 .site-header .header-logo img {
-  @apply object-contain;
+  @apply w-full h-full object-contain;
   transition: filter 0.3s ease-out;
 }
 .site-header.is-scrolled .header-logo img {
@@ -49,7 +47,7 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .site-header .header-nav ul {
-  @apply flex items-center list-none m-0 p-0 1366:gap-30 gap-16;
+  @apply flex items-center list-none m-0 p-0 1366:gap-30 gap-16 justify-center flex-wrap;
 }
 .site-header .header-nav a {
   @apply font-eaves 1199:text-20 text-18 text-off-white no-underline uppercase relative pb-14 tracking-5 after:absolute after:bottom-0 after:left-0 after:h-px after:bg-off-white after:w-0 hover:after:w-full;
@@ -111,28 +109,31 @@
   @apply absolute inset-0 w-full h-full object-cover pointer-events-none mix-blend-multiply opacity-25;
 }
 .menu-overlay .menu-inner-container {
-  @apply relative flex flex-col items-center h-full mx-127;
+  @apply relative flex flex-col items-center h-full 768:mx-127 max-768:px-15;
 }
 .menu-overlay .menu-nav {
-  @apply flex flex-1 items-center justify-center 1199:absolute top-1/2 left-1/2 1199:-translate-1/2;
+  @apply flex flex-1 items-center justify-center 1199:absolute top-1/2 left-1/2 1199:-translate-1/2 max-767:w-full;
 }
 .menu-overlay .menu-nav ul {
-  @apply flex flex-col items-center list-none m-0 p-0 375:gap-30 gap-20 max-767:pt-55;
+  @apply flex flex-col items-center list-none m-0 p-0 375:gap-30 gap-20 max-767:mt-55 max-767:w-full max-h-335 overflow-y-auto max-767:max-h-371 pt-1 pb-4;
+}
+.menu-overlay .menu-nav ul::-webkit-scrollbar {
+  @apply w-0; 
 }
 .menu-overlay .menu-nav a {
-  @apply font-eaves text-white uppercase text-center no-underline 375:text-24 text-20 leading-10 tracking-5 h-10 block;
+  @apply font-eaves text-white uppercase text-center no-underline 375:text-24 text-20 leading-10 tracking-5  block;
 }
 .menu-overlay .menu-nav ul:has(a:hover) a:not(:hover) {
   @apply opacity-80;
 }
 .menu-overlay .menu-footer {
-  @apply flex flex-col items-center w-full gap-25 1199:pb-48 pb-35 mt-auto;
+  @apply flex flex-col items-center w-auto gap-25 1199:pb-48 pb-35 mt-auto;
 }
 .menu-overlay .menu-contact {
   @apply flex flex-col items-center text-center 1199:gap-40 375:gap-30 gap-25;
 }
 .menu-overlay .menu-contact__title {
-  @apply font-eaves text-white uppercase text-center no-underline text-24 leading-10 tracking-5 h-10 block;
+  @apply font-eaves text-white uppercase text-center no-underline text-24 leading-10 tracking-5  block;
 }
 .menu-overlay .menu-contact__info {
   @apply flex flex-col text-center 375:gap-25 gap-20 items-center;
@@ -164,7 +165,7 @@
 }
 @media only screen and (max-height: 650px) {
   .menu-overlay .menu-nav ul {
-    @apply pt-0;
+    @apply mt-0;
   } 
   .menu-overlay .menu-img {
     @apply hidden;
@@ -188,7 +189,6 @@
 .general-padding {
   @apply py-100;
 }
-
 /* ============ FOOTER ============ */
 footer.site-footer {
   @apply pt-15 px-15 overflow-hidden relative z-9 ;
@@ -352,3 +352,18 @@ footer .footer-copyright {
 footer .footer-copyright .content p {
   @apply 325:leading-9 tracking-8 font-normal text-center;
 }
+@media only screen and (max-width: 1366px) and (max-height: 750px) {
+  .menu-overlay .menu-nav ul,
+  .menu-overlay .menu-contact {
+    @apply gap-24;
+  }
+  .menu-overlay .menu-contact__info {
+    @apply gap-16;
+  }
+  .menu-overlay .menu-footer {
+    @apply gap-20 pb-24;
+  }
+  .menu-overlay .menu-nav ul {
+    @apply max-767:max-h-318;
+  }
+} 
