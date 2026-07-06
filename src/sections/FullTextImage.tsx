@@ -21,7 +21,7 @@ export default function FullTextImage() {
       <div className="container-fluid">
         <div className="full-text-image-inner">
 
-          <div className="full-text-image-content">
+          <div className="full-text-image-content bg-sage">
             <div className="full-text-image__shadow" aria-hidden="true">
               <img src="/assets/shadow-image-bg.png" alt="" />
             </div>

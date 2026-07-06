@@ -305,7 +305,7 @@
 }
 
 .full-text-image .full-text-image-content {
-  @apply flex flex-col items-start gap-20 w-full shrink-0 relative overflow-hidden justify-center 992:py-50 pt-116 pb-115 1199:px-92 px-25 bg-sage max-992:min-h-515;
+  @apply flex flex-col items-start gap-20 w-full shrink-0 relative overflow-hidden justify-center 992:py-50 pt-116 pb-115 1199:px-92 px-25 max-992:min-h-515;
 }
 
 .full-text-image .full-text-image__shadow {

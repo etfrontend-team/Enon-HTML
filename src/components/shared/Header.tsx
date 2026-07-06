@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Location", href: "#location" },
 ];
 
-const LOGO_SRC = "/assets/enon-heights-logo.png";
+const LOGO_SRC = "/assets/site-logo.png";
 const MENU_IMG_LEFT = "/assets/menu-image-1.png";
 const MENU_IMG_RIGHT = "/assets/menu-image-2.png";
 
@@ -33,7 +33,7 @@ export default function Header() {
     <>
       <header className="site-header">
         <div className="header-inner">
-          <a href="/" className="header-logo" aria-label="Enon Heights home">
+          <a href="/" className="header-logo relative" aria-label="Enon Heights home">
             <Image fill src={LOGO_SRC} alt="Enon Heights" sizes="(max-width: 425px) 190px, (max-width: 1366px) 228px, 265px" style={{ objectFit: "contain" }} />
           </a>
 
@@ -127,7 +127,7 @@ export default function Header() {
               </div>
             </div>
             <nav className="menu-nav" aria-label="Menu navigation">
-              <ul>
+              <ul data-lenis-prevent>
                 {NAV_LINKS.map((link) => (
                   <li key={link.href}>
                     <a href={link.href} onClick={closeMenu}>
