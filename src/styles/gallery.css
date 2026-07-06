@@ -39,12 +39,6 @@
     @apply pt-50 1024:pt-100 flex justify-center items-center;
 }
 
-
-
-.btn.btn-dark {
-    @apply text-body border-body;
-}
-
 .filter-block {
     @apply pb-54 pl-30 768:pl-15;
 }

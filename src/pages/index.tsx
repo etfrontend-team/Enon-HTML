@@ -10,11 +10,11 @@ import JournalSection from "@/sections/JournalSection";
 import FullTextImage from "@/sections/FullTextImage";
 import StayFAQs from "@/sections/FaqSection";
 import GallerySection from "@/sections/GallerySection";
+import StayWithUs from "@/sections/StayWithUs";
 export default function Home() {
   return (
     <>
       <HeroBanner />
-      <GallerySection/>
       {/* <FullImageWithText /> */}
       <ProprietorQuote />
       <SuitsSlider />
@@ -24,6 +24,7 @@ export default function Home() {
       <FullTextImage />
       <StayFAQs />
       <JournalSection />
+      <StayWithUs />
       {/* <EnquireForm /> */}
     </>
   );

@@ -840,3 +840,56 @@
 .faq-section .faq-section-answer {
   @apply 425:px-40 px-25 pt-8 425:pb-57 pb-54;
 }
+
+/* Stay With Us Section */
+.stay-with-us {
+  @apply relative overflow-hidden flex items-center justify-center 1199:min-h-700 767:min-h-600 min-h-550;
+}
+
+.stay-with-us .stay-with-us-bg {
+  @apply absolute inset-0 pointer-events-none;
+}
+
+.stay-with-us .stay-with-us-bg-img {
+  @apply absolute inset-0 size-full object-cover;
+}
+
+/* Off-white frame — sits on top of bg, its border IS the visible frame */
+.stay-with-us .stay-with-us-frame {
+  @apply absolute inset-0 pointer-events-none border-off-white 1199:border-y-25 1199:border-x-25 767:border-y-20 767:border-x-20 border-y-15 border-x-15;
+}
+
+.stay-with-us .stay-with-us-inner {
+  @apply relative z-10 flex items-center justify-center w-full h-full 1199:py-120 767:py-90 py-70;
+}
+
+.stay-with-us .stay-with-us-content {
+  @apply flex flex-col items-center text-center gap-30 max-767:gap-24;
+}
+
+/* Inner dark blurred card with hover expand */
+.stay-with-us .stay-with-us-card {
+  @apply relative flex flex-col items-center justify-center gap-20 1199:px-80 1199:py-60 767:px-60 767:py-50 px-50 py-40 overflow-hidden;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stay-with-us .stay-with-us-card::before {
+  @apply absolute inset-0 bg-black/40 z-0;
+  content: "";
+}
+
+.stay-with-us .stay-with-us-card::after {
+  @apply absolute inset-0 z-0;
+  content: "";
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.stay-with-us .stay-with-us-card:hover {
+  @apply scale-105;
+}
+
+.stay-with-us .stay-with-us-card .btn,
+.stay-with-us .stay-with-us-card .cta-link {
+  @apply relative z-1;
+}
