@@ -25,6 +25,15 @@ export default function ExclusiveUseSection() {
                         />
                     </div>
                     <div className="content-block">
+                        <Image
+                            className="bg-img"
+                            src="/images/exclusive-use-content-bg.webp"
+                            alt="Enon Heights suite bedroom"
+                            aria-hidden="true"
+                            width={1440}
+                            height={617}
+                            loading="lazy"
+                        />
                         <div className="details-wrapper">
                             <div className="pre-heading pb-30"><span>EXCLUSIVE USE</span></div>
                             <div className="title title-dark-olive"><h2>The whole property, for your group alone.</h2></div>

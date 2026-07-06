@@ -4,7 +4,7 @@ import HeroBanner from "@/sections/HeroBanner";
 import SuiteShowcase from "@/sections/SuiteShowcase";
 
 
-export default function Home() {
+export default function Stay() {
   return (
     <>
       <HeroBanner />

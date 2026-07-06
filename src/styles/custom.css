@@ -15,7 +15,7 @@
 .feature-grid__inner .title h4 {
     @apply leading-12! max-1024:leading-15!;
 }
-.hero-banner + .suite-detail{
+.hero-banner + .suite-showcase-stack .suite-detail:first-child{
     @apply pt-80 border-t-0
 }
 
@@ -150,11 +150,31 @@
 }
 
 .exclusive-use-wrapper .content-block-wrapper .content-block .details-wrapper {
-    @apply 1439:max-w-442 1600:max-w-9/12 mr-auto;
+    @apply 1439:max-w-442 1600:max-w-9/12 mr-auto relative z-1;
 }
 
-.exclusive-use-wrapper .content-block-wrapper .content-block::before {
-    @apply absolute w-full h-full inset-0 content-['']  pointer-events-none;
-    background: url(/images/exclusive-use-content-bg.webp) center / cover no-repeat;
+.exclusive-use-wrapper .content-block-wrapper .content-block .bg-img {
+    @apply absolute w-full h-full inset-0 object-cover pointer-events-none;
 }
 /*Exclusive use section end*/
+
+
+
+/*Price listing start*/
+.price-list-wrapper .price-block {
+    @apply flex gap-15;
+}
+
+.price-list-wrapper .price-block .img-block {
+    @apply w-279 border border-body/10 bg-off-white p-15 aspect-279/237;
+}
+
+.price-list-wrapper .price-block .img-block img {
+    @apply w-full h-full object-cover;
+}
+
+.price-list-wrapper .price-block .content-block {
+    @apply border border-body/10 bg-off-white px-60 py-72 flex-1;
+}
+
+/*Price listing end*/

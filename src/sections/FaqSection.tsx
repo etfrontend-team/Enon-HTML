@@ -39,7 +39,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="faq-section general-padding">
+    <section className="faq-section general-padding relative z-9">
     <div className="container-fluid-lg">
       <div className="faq-section-heading-row">
         <div className="title title-dark-olive">

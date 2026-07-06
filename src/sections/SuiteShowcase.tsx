@@ -43,13 +43,11 @@ function SuiteCard({
   index,
   blur,
   sectionRef,
-  isLast
 }: {
   suite: Suite;
   index: number;
   blur: number;
   sectionRef: (el: HTMLElement | null) => void;
-  isLast: boolean;
 }) {
   const [activeTab, setActiveTab] = useState<Tab>("Details");
   const [imageIndex, setImageIndex] = useState(0);
@@ -78,8 +76,8 @@ function SuiteCard({
   return (
     <section
       ref={sectionRef}
-      className={`suite-detail ${isLast ? 'relative!' : ''}  ${isOdd ? "suite-detail--odd" : "suite-detail--even"}`}
-      style={blur > 0.05 ? { filter: `blur(${blur.toFixed(2)}px)` } : undefined}
+      className={`suite-detail ${isOdd ? "suite-detail--odd" : "suite-detail--even"}`}
+      style={blur > 0.05 ? { filter: `blur(${blur.toFixed(2)}px)`, pointerEvents: "none" } : undefined}
     >
       <div className="container-fluid-lg">
         <div className="suite-detail__inner">
@@ -226,11 +224,10 @@ export default function SuiteShowcase() {
   }, []);
 
   return (
-    <>
+    <div className="suite-showcase-stack">
       {SUITES.map((suite, index) => (
         <SuiteCard
           key={suite.id}
-          isLast={index === SUITES.length - 1 ? true : false }
           suite={suite}
           index={index}
           blur={blurs[index]}
@@ -239,6 +236,6 @@ export default function SuiteShowcase() {
           }}
         />
       ))}
-    </>
+    </div>
   );
 }
