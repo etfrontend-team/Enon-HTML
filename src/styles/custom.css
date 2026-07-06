@@ -161,20 +161,48 @@
 
 
 /*Price listing start*/
+.price-list-wrapper {
+    @apply flex flex-col gap-15;
+}
+
 .price-list-wrapper .price-block {
-    @apply flex gap-15;
+    @apply flex gap-15 max-992:flex-col;
 }
 
 .price-list-wrapper .price-block .img-block {
-    @apply w-279 border border-body/10 bg-off-white p-15 aspect-279/237;
+    @apply w-279 max-992:w-full border border-body/10 bg-off-white/50 transition-colors duration-700 ease-in-out p-15 aspect-279/237 max-992:aspect-4/3 max-992:overflow-hidden;
+}
+
+.price-list-wrapper .price-block:hover .img-block,
+.price-list-wrapper .price-block:hover .content-block {
+    @apply bg-off-white;
 }
 
 .price-list-wrapper .price-block .img-block img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full! object-cover;
 }
 
 .price-list-wrapper .price-block .content-block {
-    @apply border border-body/10 bg-off-white px-60 py-72 flex-1;
+    @apply border border-body/10 bg-off-white/50 transition-colors duration-700 ease-in-out p-40 1199:px-60 1199:py-72 flex-1 max-992:px-55 max-992:py-67;
 }
 
+.price-list-wrapper .price-block .content-block .pricing-block span{
+    @apply text-body block text-18 1199:text-24 font-medium font-heading;
+}
+
+.price-list-section .header-wrapper span {
+    @apply text-12 text-body/80 block 1024:pl-10 font-light tracking-3 capitalize leading-[160%];
+}
+
+.price-list-section .peak-season-block {
+    @apply mt-50 bg-off-white/40 border border-body/10 px-40 py-34 max-768:text-center 768:px-60 768:py-53;
+}
+
+.price-list-section .peak-season-block span {
+    @apply uppercase text-primary text-12 font-normal tracking-3 leading-[160%];
+}
+
+.price-list-section .peak-season-block .content p {
+    @apply text-12!;
+}
 /*Price listing end*/
