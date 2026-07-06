@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "Our Story", href: "#our-story" },
@@ -157,10 +158,10 @@ export default function Header() {
 
               <div className="menu-enquire-mobile">
                 <div className="btn-custom">
-                  <a href="#enquire" className="btn" onClick={closeMenu}>
+                  <Link href="#enquire" className="btn" onClick={closeMenu}>
                     <span className="label-up">Enquire</span>
                     <span className="label-up">Enquire</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

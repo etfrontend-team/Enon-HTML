@@ -95,6 +95,9 @@ img {
 p {
   @apply text-16 tracking-3 max-767:text-15 leading-[160%] font-light;
 }
+.content p {
+  @apply mb-20 last:mb-0;
+}
 .content p a {
   @apply hover:text-body hover:underline;
 }
