@@ -90,7 +90,7 @@ export default function JournalSection() {
                 <div className="journal-section-card-body">
                   <span className="journal-section-date">{journal.date}</span>
                   <div className="title title-dark-olive">
-                    <h5 className="journal-section-title">{journal.title}</h5>
+                    <h6 className="journal-section-title">{journal.title}</h6>
                   </div>
                 </div>
               </Link>

@@ -174,7 +174,7 @@
 }
 
 .proprietor-quote .proprietor-quote__stamp {
-  @apply absolute z-10 pointer-events-none 1366:right-27 1366:top-27 right-21 top-21 1366:max-w-158 max-w-126;
+  @apply absolute z-10 pointer-events-none overflow-hidden 1366:right-27 1366:top-27 right-21 top-21 1366:w-158 1366:h-158 w-126 h-126;
 }
 
 .proprietor-quote .proprietor-quote__photo-col {
@@ -784,4 +784,59 @@
 
 .journal-section .journal-section-date {
   @apply font-eaves text-rust text-18 leading-8 tracking-5 m-0;
+}
+
+/* FAQ Section */
+.faq-section .faq-section-heading-row {
+  @apply text-center 992:mb-60 mb-50;
+}
+
+.faq-section .faq-section-body {
+  @apply flex 992:relative 992:gap-25 gap-15 max-992:flex-col-reverse items-stretch;
+}
+
+.faq-section .faq-section-body > div {
+  @apply 992:w-1/2 w-full;
+}
+.faq-section .faq-section-image-col {
+  @apply relative aspect-596/650 max-992:aspect-370/420;
+}
+
+.faq-section .faq-section-image {
+  @apply object-cover object-center;
+}
+
+.faq-section .faq-section-accordion-col {
+  @apply flex flex-col;
+}
+
+.faq-section .faq-section-list {
+  @apply flex flex-col gap-15;
+}
+
+.faq-section .faq-section-item {
+  @apply border border-dark-olive/10;
+  background: linear-gradient(90deg, rgba(205, 213, 185, 0.1) 0%, rgba(205, 213, 185, 0.1) 100%), linear-gradient(90deg, #FFFEF6 0%, #FFFEF6 100%);
+  transition: background 0.25s ease;
+}
+
+.faq-section .faq-section-item:hover,
+.faq-section .faq-section-item.is-open {
+  background: #FFFEF6;
+}
+
+.faq-section .faq-section-trigger {
+  @apply flex items-center justify-between w-full bg-transparent border-0 cursor-pointer text-left 425:px-40 px-25 425:py-28 py-20 gap-20;
+}
+
+.faq-section .faq-section-icon {
+  @apply shrink-0 flex items-center justify-center w-12 h-12 transition-transform duration-300 ease-in-out;
+}
+
+.faq-section .faq-section-icon.is-open {
+  @apply rotate-45 transition-transform duration-300 ease-in-out;
+}
+
+.faq-section .faq-section-answer {
+  @apply 425:px-40 px-25 pt-8 425:pb-57 pb-54;
 }

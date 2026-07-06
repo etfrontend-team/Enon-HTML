@@ -36,19 +36,19 @@ h2,
 }
 h3,
 .h3 {
-  @apply text-31 max-1199:text-25 max-425:text-20 leading-[125%];
+  @apply text-31 max-1199:text-25 max-425:text-20 leading-[125%] tracking-2;
 }
 h4,
 .h4 {
-  @apply text-27 max-1199:text-20 max-1199:leading-[32.6px] max-425:text-18 max-425:leading-25 leading-41;
+  @apply text-27 max-1199:text-20 max-1199:leading-[32.6px] max-425:text-18 max-425:leading-25 leading-41 tracking-2;
 }
 h5,
 .h5 {
-  @apply text-20 leading-24;
+  @apply text-24 max-1199:text-22 leading-[125%];
 }
 h6,
 .h6 {
-  @apply text-16 leading-22;
+  @apply text-20 leading-[125%];
 }
 .title.title-dark-olive h1,
 .title.title-dark-olive h2,

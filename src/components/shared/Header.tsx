@@ -34,7 +34,7 @@ export default function Header() {
       <header className="site-header">
         <div className="header-inner">
           <a href="/" className="header-logo" aria-label="Enon Heights home">
-            <Image src={LOGO_SRC} alt="Enon Heights" width={53} height={55} style={{ width: "auto", height: "auto" }} />
+            <Image fill src={LOGO_SRC} alt="Enon Heights" sizes="(max-width: 425px) 190px, (max-width: 1366px) 228px, 265px" style={{ objectFit: "contain" }} />
           </a>
 
           <nav

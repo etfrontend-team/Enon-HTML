@@ -49,13 +49,13 @@ export default function ProprietorQuote() {
         >
           <div className="proprietor-quote__stamp" aria-hidden="true">
             <Image
+              fill
               src="/assets/enon-heights-logo.png"
               alt=""
               role="presentation"
-              width={158}
-              height={158}
+              sizes="(max-width: 1366px) 126px, 158px"
               className="proprietor-quote__stamp-arc"
-              style={{ width: "auto", height: "auto" }}
+              style={{ objectFit: "contain" }}
             />
           </div>
           <div className="proprietor-quote__photo-col">

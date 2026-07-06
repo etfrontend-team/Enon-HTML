@@ -8,7 +8,7 @@ import InfiniteImageCarousel from "@/sections/InfiniteImageCarousel";
 import EnquireForm from "@/sections/EnquireForm";
 import JournalSection from "@/sections/JournalSection";
 import FullTextImage from "@/sections/FullTextImage";
-
+import StayFAQs from "@/sections/FaqSection";
 export default function Home() {
   return (
     <>
@@ -20,6 +20,7 @@ export default function Home() {
       <AboutUsMosaic />
       <InfiniteImageCarousel />
       <FullTextImage />
+      <StayFAQs />
       <JournalSection />
       {/* <EnquireForm /> */}
     </>

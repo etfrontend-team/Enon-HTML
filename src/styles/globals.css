@@ -12,7 +12,8 @@
   --font-eaves-petite: "mrs-eaves-roman-petite-caps", serif; 
 
   --color-black: #000000;
-  --color-white: #ffffff;
+  --color-white: #ffffff; 
+  --color-off-white: #FFFEF6;
   --color-body: #393618;
   --color-primary: #C25F3A;
   --color-cream: #F8F5E5;
@@ -52,16 +53,16 @@
   --breakpoint-992: 993px;
   --breakpoint-768: 769px;
   --breakpoint-767: 768px;
-  --breakpoint-640: 641px;
+  --breakpoint-640: 641px; 
   --breakpoint-576: 577px;
   --breakpoint-425: 426px;
-  --breakpoint-375: 375px;
+  --breakpoint-375: 375px;  
   --breakpoint-325: 325px;
 }
 
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("/font/CormorantGaramond-BoldItalic.eot");
+  src: url("/font/CormorantGaramond-BoldItalic.eot"); 
   src:
     url("/font/CormorantGaramond-BoldItalic.eot?#iefix") format("embedded-opentype"),
     url("/font/CormorantGaramond-BoldItalic.woff2") format("woff2"),

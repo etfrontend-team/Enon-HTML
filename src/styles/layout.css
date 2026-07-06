@@ -35,10 +35,10 @@
   @apply relative w-full 1366:px-65 325:px-40 px-30 flex items-center justify-between gap-20;
 }
 .site-header .header-logo {
-  @apply block 1366:w-265 425:w-228 w-190 1366:h-28 425:h-25 h-20 shrink-0;
+  @apply block relative overflow-hidden 1366:w-265 425:w-228 w-190 1366:h-28 425:h-25 h-20 shrink-0;
 }
 .site-header .header-logo img {
-  @apply w-full h-full object-contain;
+  @apply object-contain;
   transition: filter 0.3s ease-out;
 }
 .site-header.is-scrolled .header-logo img {
