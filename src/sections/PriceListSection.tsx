@@ -62,7 +62,7 @@ function SuiteContent({
                 <div className="title title-dark-olive mb-36 max-992:mb-0 max-1199:mb-24 max-992:order-1"><h3>{title}</h3></div>
                 <div className="content content-dark-light max-w-408 mr-auto max-992:mx-auto max-992:order-3"><p>{description}</p></div>
             </div>
-            <div className="col-span-4 flex flex-col  items-center max-992:contents">
+            <div className="col-span-4 flex flex-col items-center max-992:contents">
                 <div className="pricing-block mb-36 max-992:mb-0 max-1199:mb-24 max-992:order-2">
                     <span>{price}</span>
                 </div>
