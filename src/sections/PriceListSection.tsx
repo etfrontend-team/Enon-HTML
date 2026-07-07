@@ -205,7 +205,9 @@ export default function PriceListSection() {
                         <div className="grid grid-cols-12 gap-24 max-992:flex max-992:flex-col max-992:items-center max-992:text-center max-992:gap-20">
                             <div className="col-span-9 1024:col-span-8 max-992:contents"></div>
                             <div className="col-span-3 1024:col-span-4 flex flex-col 1199:justify-center 1024:items-center max-992:contents">
-                                <span>Price per Guest (16  years & Up)</span>
+                                <div className="content content-dark-light content-small">
+                                    <p>Price per Guest (16  years & Up)</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -221,9 +223,9 @@ export default function PriceListSection() {
                         PEAK SEASON: October — April
                     </span>
 
-                    <div className="content content-dark-light mt-15 max-w-600 mr-auto max-992:mx-auto">
+                    <div className="content content-dark-light content-small mt-15 max-w-600 mr-auto max-992:mx-auto">
                         <p>Peak season rates apply from 1 October to 30 April. Off-peak rates available May to September. Contact us for specific date pricing.</p>
-                        </div>
+                    </div>
                 </div>
             </div>
         </section>

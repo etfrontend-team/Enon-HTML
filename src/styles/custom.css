@@ -1,213 +1,11 @@
-.feature-grid__inner{
-    @apply flex overflow-x-auto snap-x snap-mandatory gap-10 py-24 max-1024:py-16 bg-off-white;
-    box-shadow: 0px 2.2px 4.4px rgba(0, 0, 0, 0.05);
-}
-.feature-grid__inner .title{
-    @apply text-center
-}
-.feature-grid__inner .item{
-    @apply flex flex-col items-center justify-center py-24 max-1024:py-10 border-0 border-l border-solid border-dark-olive/50 first:border-l-0 shrink-0 basis-1/2 snap-start md:basis-1/3 lg:basis-0 lg:grow lg:shrink lg:min-w-0;
-}
-.hero-banner:has(.feature-grid){
-    @apply flex flex-col
-}
-.feature-grid__inner .title h4 {
-    @apply leading-12! max-1024:leading-15!;
-}
-.hero-banner + .suite-showcase-stack .suite-detail:first-child{
-    @apply pt-80 border-t-0
-}
-
-.suite-detail {
-    @apply sticky border-t border-solid border-dark-olive/10 top-0 max-767:static min-h-screen flex items-center py-60 max-767:py-100 bg-cream z-9 transition-[filter] duration-100 ease-linear will-change-[filter] ;
-}
-.suite-detail--even {
-    @apply border-0 border-t border-solid border-dark-olive/10;
-    background: linear-gradient(to bottom, #F4F0DF, #F8F5E5);
-}
-.suite-detail__inner {
-    @apply flex items-center justify-between gap-60 max-1199:gap-40 max-992:flex-col max-992:gap-35 max-w-1243 mx-auto;
-}
-.suite-detail__content-column {
-    @apply flex-1 flex flex-col gap-30;
-}
-.suite-detail__heading-group {
-    @apply flex flex-col gap-20;
-}
-.suite-detail__tabs {
-    @apply flex gap-40 max-767:gap-20 flex-wrap;
-}
-.suite-detail__tab {
-    @apply font-eaves leading-[100%] text-20  tracking-5 text-dark-olive uppercase bg-transparent transition-all duration-300 delay-75 pb-15 cursor-pointer relative;
-}
-.suite-detail__tab::after{
-    @apply absolute bottom-4 left-0 w-0 h-1 bg-dark-olive transition-[width] duration-300 delay-75 content-[''] pointer-events-none; 
-}
-
-.suite-detail__tab--active::after {
-    @apply w-full;
-}
-.suite-detail__panel {
-    @apply flex flex-col gap-30;
-}
-.suite-detail__list {
-    @apply flex flex-col gap-10 list-none p-0 m-0;
-}
-.suite-detail__list-item {
-    @apply flex items-center gap-8 leading-[100%] text-14 font-light text-body/80 tracking-2 capitalize;
-}
-.suite-detail__dot {
-    @apply size-4 bg-body/60 shrink-0;
-}
-.suite-detail__price {
-    @apply font-heading leading-[100%] text-24 uppercase text-dark-olive;
-}
-.suite-detail__cta-group {
-    @apply flex items-end gap-40  flex-wrap;
-}
-.suite-detail__image-column {
-    @apply relative flex-1 max-992:w-full;
-}
-.suite-detail__image-wrapper {
-    @apply relative w-full overflow-hidden aspect-593/651  cursor-grab active:cursor-grabbing touch-pan-y;
-}
-.suite-detail__image-track {
-    @apply flex size-full transition-transform duration-700 ease-in-out;
-}
-.suite-detail__image-slide {
-    @apply relative size-full shrink-0;
-}
-.suite-detail__image {
-    @apply size-full object-cover select-none;
-}
-.suite-detail__image-overlay {
-    @apply absolute inset-0 pointer-events-none;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 72.667%, rgba(0, 0, 0, 0.8) 100%);
-}
-.suite-detail__nav {
-    @apply absolute left-0 right-0 bottom-25 max-992:bottom-15 flex items-center justify-between px-35 max-992:px-20 z-2;
-}
-.suite-detail__nav-arrows {
-    @apply flex items-center gap-10;
-}
-.suite-detail__nav-btn {
-    @apply bg-transparent border-0 cursor-pointer p-0 flex items-center justify-center;
-}
-.suite-detail__counter {
-    @apply font-eaves text-20 tracking-5 text-off-white;
-}
-.suite-detail__title{
-    @apply text-30
-}
-.suite-detail__description{
-    @apply text-16!
-}
-.suite-detail .container-fluid-lg {
-    @apply max-576:px-15;
-}
-.suite-detail__content-column{
-    @apply max-576:px-20
-}
-
-.media-overlay-content-inner {
-    @apply relative 1199:min-h-798;
-}
-
-.media-overlay-content-inner::after {
-    @apply absolute inset-0 content-[''];
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%);
-}
-
-.media-overlay-content-inner .media-overlay-content-bg img {
-    @apply h-full w-full absolute inset-0;
-}
-
-.media-overlay-content-inner .media-overlay-content-grid {
-    @apply grid grid-cols-12 gap-15 p-15 640:p-40 768:p-60 1199:p-90 relative z-1;
-}
-
-.media-overlay-content-inner .media-overlay-content-image {
-    @apply col-span-12 992:col-span-6 relative max-992:order-2 max-992:min-h-586;
-}
-
-.media-overlay-content-inner .media-overlay-content-image img {
-    @apply w-full h-full object-cover absolute inset-0;
-}
-
-.media-overlay-content-inner .media-overlay-content-image::after {
-    @apply absolute inset-0 content-[''] pointer-events-none;
-    box-shadow: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.10);
-}
-
-.media-overlay-content-inner .media-overlay-content-text {
-    @apply col-span-12 992:col-span-6 bg-off-white min-h-586 640:min-h-617 relative p-30 640:p-50 1199:p-74 border border-body/20 overflow-hidden flex flex-col justify-center;
-}
-
-.media-overlay-content-inner .media-overlay-content-details {
-    @apply 1439:max-w-442 1600:max-w-9/12 mr-auto relative z-1;
-}
-
-.media-overlay-content-inner .media-overlay-content-text-bg {
-    @apply absolute w-full h-full inset-0 object-cover pointer-events-none;
-}
-
-.price-list-wrapper {
-    @apply flex flex-col gap-15;
-}
-
-.price-list-wrapper .price-block {
-    @apply flex gap-15 max-992:flex-col;
-}
-
-.price-list-wrapper .price-block .img-block {
-    @apply w-279 max-992:w-full border border-body/10 bg-off-white/50 transition-colors duration-700 ease-in-out p-15 aspect-279/237 max-992:aspect-4/3 max-992:overflow-hidden;
-}
-
-.price-list-wrapper .price-block:hover .img-block,
-.price-list-wrapper .price-block:hover .content-block {
-    @apply bg-off-white;
-}
-
-.price-list-wrapper .price-block .img-block img {
-    @apply w-full h-full! object-cover;
-}
-
-.price-list-wrapper .price-block .content-block {
-    @apply border border-body/10 bg-off-white/50 transition-colors duration-700 ease-in-out p-40 1199:px-60 1199:py-72 flex-1 max-992:px-55 max-992:py-67;
-}
-
-.price-list-wrapper .price-block .content-block .pricing-block span{
-    @apply text-body block text-18 1199:text-24 font-medium font-heading;
-}
-
-.price-list-section .header-wrapper span {
-    @apply text-12 text-body/80 block 1024:pl-10 font-light tracking-3 capitalize leading-[160%];
-}
-
-.price-list-section .peak-season-block {
-    @apply mt-50 bg-off-white/40 border border-body/10 px-40 py-34 max-768:text-center 768:px-60 768:py-53;
-}
-
-.price-list-section .peak-season-block span {
-    @apply uppercase text-primary text-12 font-normal tracking-3 leading-[160%];
-}
-
-.price-list-section .peak-season-block .content p {
-    @apply text-12!;
-}
-/*Price listing end*/
-
-
-
-/*Image figure start*/
 .image-figure-wrapper {
     @apply flex flex-col gap-[10.4%] max-992:gap-35 max-w-1168 mx-auto;
 }
 
-/* fixed card sizes — big 559, small 417; gap 121 (all from Figma) */
 .image-figure-wrapper .figure-block {
     @apply flex gap-121 items-start justify-start max-992:flex-col max-992:gap-35;
 }
+
 .image-figure-wrapper .figure-block--reverse {
     @apply justify-end;
 }
@@ -215,23 +13,27 @@
 .image-figure-wrapper .figure-block .figure-card:nth-child(1) {
     @apply w-559 max-992:w-full;
 }
+
 .image-figure-wrapper .figure-block .figure-card:nth-child(2) {
     @apply w-417 max-992:w-full;
 }
+
 .image-figure-wrapper .figure-block--reverse .figure-card:nth-child(1) {
     @apply w-417 max-992:w-full;
 }
+
 .image-figure-wrapper .figure-block--reverse .figure-card:nth-child(2) {
     @apply w-559 max-992:w-full;
 }
 
-/* small card sits ~71px lower than the big one */
 .image-figure-wrapper .figure-block .figure-card:nth-child(2) {
     @apply mt-[71px] max-992:mt-0;
 }
+
 .image-figure-wrapper .figure-block--reverse .figure-card:nth-child(1) {
     @apply mt-[71px] max-992:mt-0;
 }
+
 .image-figure-wrapper .figure-block--reverse .figure-card:nth-child(2) {
     @apply mt-0;
 }
@@ -241,13 +43,12 @@
     box-shadow: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.08);
 }
 
-/* square images (matches Figma); mobile keeps square too, full width */
 .image-figure-wrapper .figure-card .img-block {
     @apply relative w-full overflow-hidden aspect-square;
 }
 
 .image-figure-wrapper .figure-card .parallax-inner {
-    @apply absolute inset-x-0 -top-[15%] h-[130%];
+    @apply absolute inset-x-0 top-[-15%] h-[130%];
 }
 
 .image-figure-wrapper .figure-card .parallax-inner img {
@@ -261,4 +62,3 @@
 .image-figure-wrapper .figure-card .content-block .title {
     @apply mb-30 max-992:mb-15;
 }
-/*Image figure end*/

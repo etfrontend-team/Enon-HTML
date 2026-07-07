@@ -1281,7 +1281,7 @@
 }
 
 .price-list-section .header-wrapper span {
-  @apply text-12 text-body/80 block 1024:pl-10 font-light tracking-3 capitalize leading-[160%];
+  @apply block 1024:pl-10;
 }
 
 .price-list-section .peak-season-block {
@@ -1290,8 +1290,4 @@
 
 .price-list-section .peak-season-block span {
   @apply uppercase text-primary text-12 font-normal tracking-3 leading-[160%];
-}
-
-.price-list-section .peak-season-block .content p {
-  @apply text-12!;
 }
