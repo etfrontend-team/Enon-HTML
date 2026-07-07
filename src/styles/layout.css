@@ -72,7 +72,7 @@
   @apply max-1023:hidden;
 }
 .site-header.is-scrolled .header-enquire-wrap .btn {
-  @apply bg-rust border-transparent;
+  @apply bg-rust border-rust text-off-white transition-all duration-300 hover:bg-transparent hover:text-rust;
 }
 .site-header .header-menu-btn {
   @apply bg-transparent border-0 cursor-pointer p-0 flex items-center justify-center shrink-0 767:w-27 w-24;
@@ -237,7 +237,7 @@ footer .footer-col-right nav.navigation-panel a {
   @apply text-right;
 }
 footer .navigation-panel ul li a {
-  @apply transition-opacity duration-300 ease-in;
+  @apply transition-opacity duration-300 ease-in break-all;
 }
 footer .navigation-panel ul:has(a:hover) a:not(:hover) {
   @apply opacity-50;

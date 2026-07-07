@@ -1,41 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const stayData = {
+const mediaCtaData = {
   heading: "Stay With Us",
   description:
-    "Excepteur efficient emerging, minim veniam anim aute carefully curated.",
+    "Come and experience a truly remarkable stay.",
   bookHref: "/enquire",
   enquireHref: "/enquire",
   bgSrc: "/assets/stay-with-us-bg.webp",
 };
 
-export default function StayWithUs() {
+export default function MediaCtaCards() {
   return (
-    <section className="stay-with-us general-padding">
-      <div className="stay-with-us-container">
-        <div className="stay-with-us-bg">
+    <section className="media-cta-cards general-padding">
+      <div className="media-cta-cards-container">
+        <div className="media-cta-cards-bg">
           <Image
-            src={stayData.bgSrc}
+            src={mediaCtaData.bgSrc}
             alt="Enon Heights landscape"
             fill
             sizes="100vw"
-            className="stay-with-us-bg-img"
+            className="media-cta-cards-bg-img"
             loading="eager"
           />
         </div>
-        <div className="stay-with-us-inner">
-          <div className="stay-with-us-content">
-            <div className="stay-with-us-frame" aria-hidden="true" />
-            <div className="inner-container">
+        <div className="media-cta-cards-inner">
+          <div className="media-cta-cards-content">
+            <div className="media-cta-cards-frame" aria-hidden="true" />
+            <div className="media-cta-cards-text">
               <div className="title title-dark-olive">
                 <h2>Stay With Us</h2>
               </div>
 
-              <div className="stay-with-us-card align-center">
+              <div className="media-cta-cards-card align-center">
                 <div className="btn-custom">
                   <Link
-                    href={stayData.bookHref}
+                    href={mediaCtaData.bookHref}
                     aria-label="Book your stay at Enon Heights"
                     className="btn"
                   >
@@ -44,7 +44,7 @@ export default function StayWithUs() {
                   </Link>
                 </div>
                 <Link
-                  href={stayData.enquireHref}
+                  href={mediaCtaData.enquireHref}
                   aria-label="Enquire about staying at Enon Heights"
                   className="cta-link light"
                 >
@@ -53,7 +53,7 @@ export default function StayWithUs() {
               </div>
 
               <div className="content content-dark-light">
-                <p>{stayData.description}</p>
+                <p>{mediaCtaData.description}</p>
               </div>
             </div>
           </div>

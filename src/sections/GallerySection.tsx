@@ -2,12 +2,60 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const FILTERS = ["All", "Rooms", "Grounds", "Dining", "Experiences", "Location"];
+
+const INITIAL_COUNT = 8;
+const BATCH_SIZE = 5;
+
+type GalleryVariant = "varient-1" | "varient-2" | "varient-3" | "varient-4" | "varient-5";
+
+interface GalleryItem {
+    src: string;
+    alt: string;
+    variant: GalleryVariant;
+    caption: string;
+    category: string;
+}
+
+const galleryItems: GalleryItem[] = [
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-1", caption: "Caption", category: "Rooms" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-1", caption: "Caption", category: "Rooms" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-2", caption: "Caption", category: "Grounds" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-3", caption: "Caption", category: "Dining" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-3", caption: "Caption", category: "Dining" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-3", caption: "Caption", category: "Experiences" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-4", caption: "Caption", category: "Grounds" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-5", caption: "Caption", category: "Location" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-5", caption: "Caption", category: "Location" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-4", caption: "Caption", category: "Grounds" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-3", caption: "Caption", category: "Rooms" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-3", caption: "Caption", category: "Rooms" },
+    { src: "/assets/about-mosaic-1.jpg", alt: "Enon Heights suite bedroom", variant: "varient-3", caption: "Caption", category: "Experiences" },
+];
 
 export default function GallerySection() {
     const [open, setOpen] = useState(false);
     const [active, setActive] = useState("All");
+    const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+    const [batchStart, setBatchStart] = useState(0);
+
+    const filtered = active === "All" ? galleryItems : galleryItems.filter((item) => item.category === active);
+    const visible = filtered.slice(0, visibleCount);
+    const hasMore = visibleCount < filtered.length;
+
+    function handleFilterChange(filter: string) {
+        setActive(filter);
+        setOpen(false);
+        setVisibleCount(INITIAL_COUNT);
+        setBatchStart(0);
+    }
+
+    function handleLoadMore() {
+        setBatchStart(visibleCount);
+        setVisibleCount((c) => c + BATCH_SIZE);
+    }
 
     return (
         <section className="gallery-section general-padding">
@@ -42,10 +90,7 @@ export default function GallerySection() {
                                 <li key={f}>
                                     <button
                                         className={active === f ? "active" : ""}
-                                        onClick={() => {
-                                            setActive(f);
-                                            setOpen(false);
-                                        }}
+                                        onClick={() => handleFilterChange(f)}
                                     >
                                         {f}
                                     </button>
@@ -54,181 +99,48 @@ export default function GallerySection() {
                         </ul>
                     </div>
                 </div>
+
                 <div className="gallery-image-wrapper grid grid-cols-12 gap-15">
-                    <div className="varient-wrapper varient-1">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-                    <div className="varient-wrapper varient-1">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-                    <div className="varient-wrapper varient-2">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-                    <div className="varient-wrapper varient-3">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-                    <div className="varient-wrapper varient-3">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-                    <div className="varient-wrapper varient-3">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-
-                    <div className="varient-wrapper varient-4">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-
-                    <div className="varient-wrapper varient-5">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-
-                    <div className="varient-wrapper varient-5">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-
-                    <div className="varient-wrapper varient-4">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-
-                    <div className="varient-wrapper varient-3">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-                    <div className="varient-wrapper varient-3">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
-                    <div className="varient-wrapper varient-3">
-                        <Image
-                            src="/assets/about-mosaic-1.jpg"
-                            alt="Enon Heights suite bedroom"
-                            width={700}
-                            height={560}
-                            loading="lazy"
-                        />
-                        <div className="caption-details">
-                            <span>Caption</span>
-                        </div>
-                    </div>
+                    {visible.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className={`varient-wrapper ${item.variant}`}
+                            initial={index >= batchStart ? { opacity: 0, y: 24 } : false}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.5,
+                                ease: [0.25, 0.46, 0.45, 0.94],
+                                delay: index >= batchStart ? (index - batchStart) * 0.08 : 0,
+                            }}
+                        >
+                            <Image
+                                src={item.src}
+                                alt={item.alt}
+                                width={700}
+                                height={560}
+                                loading="lazy"
+                            />
+                            <div className="caption-details">
+                                <span>{item.caption}</span>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
 
-                <div className="gallery-cta ">
-                    <button
-                        type="button"
-                        aria-label="Load More"
-                        className="btn btn-dark"
-                    >
-                        <span className="label-up">Learn More</span>
-                        <span className="label-up">Learn More</span>
-                    </button>
-                </div>
+                {hasMore && (
+                    <div className="gallery-cta">
+                        <button
+                            type="button"
+                            aria-label="Load more gallery images"
+                            className="btn btn-dark"
+                            onClick={handleLoadMore}
+                        >
+                            <span className="label-up">Load More</span>
+                            <span className="label-up">Load More</span>
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
-    )
+    );
 }
