@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 interface FigureItem {
@@ -11,91 +11,113 @@ interface FigureItem {
     description: string;
 }
 
-function FigureCard({ image, imageAlt, title, description }: FigureItem) {
-    const ref = useRef<HTMLElement>(null);
+interface FigureCardProps extends FigureItem {
+    size: "large" | "small";
+}
 
-    // subtle parallax — image drifts within its clipped frame as the section scrolls
+function FigureCard({ image, imageAlt, title, description, size }: FigureCardProps) {
+    const ref = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start end", "end start"],
     });
-    const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
+    const yLarge = useTransform(scrollYProgress, [0, 1], [54, -54]);
+    const ySmall = useTransform(scrollYProgress, [0, 1], [180, -180]);
+
+    const [isDesktop, setIsDesktop] = useState(true);
+    useEffect(() => {
+        const mq = window.matchMedia("(min-width: 769px)");
+        setIsDesktop(mq.matches);
+        const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+        mq.addEventListener("change", handler);
+        return () => mq.removeEventListener("change", handler);
+    }, []);
+
+    const y = isDesktop ? (size === "small" ? ySmall : yLarge) : 0;
+ 
     return (
-        <figure className="figure-card" ref={ref}>
-            <div className="frame">
-                <div className="img-block">
-                    <motion.div className="parallax-inner" style={{ y }}>
+        <figure className={`figure-card figure-card-${size}`} ref={ref}>
+            <motion.div className="figure-card-motion" style={{ y }}>
+                <div className="frame">
+                    <div className="img-block">
                         <Image
                             src={image}
                             alt={imageAlt}
                             width={559}
                             height={559}
                             loading="lazy"
+                            className="img-fluid-cover"
                         />
-                    </motion.div>
+                    </div>
                 </div>
-            </div>
-            <figcaption className="content-block">
-                <div className="title title-dark-olive mb-15"><h4>{title}</h4></div>
-                <div className="content content-dark-light max-w-360"><p>{description}</p></div>
-            </figcaption>
+                <figcaption className="content-block">
+                    <div className="title title-dark-olive"><h3>{title}</h3></div>
+                    <div className="content content-dark-light"><p>{description}</p></div>
+                </figcaption>
+            </motion.div>
         </figure>
-    );
-}
-
-interface FigureBlockProps {
-    items: [FigureItem, FigureItem];
-    reverse?: boolean;
-}
-
-function FigureBlock({ items, reverse = false }: FigureBlockProps) {
-    return (
-        <div className={`figure-block${reverse ? " figure-block--reverse" : ""}`}>
-            <FigureCard {...items[0]} />
-            <FigureCard {...items[1]} />
-        </div>
     );
 }
 
 const figures: FigureItem[] = [
     {
         image: "/assets/about-mosaic-1.jpg",
-        imageAlt: "Enon Heights farm feature",
-        title: "Farm Feature 1",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+        imageAlt: "Freshly picked produce from Enon Heights farm",
+        title: "Freshly Picked",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque porttitor nisl ut diam gravida, viverra rhoncus velit pharetra.",
     },
     {
         image: "/assets/about-mosaic-1.jpg",
-        imageAlt: "Enon Heights farm feature",
-        title: "Farm Feature 2",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+        imageAlt: "The private courtyard at Enon Heights",
+        title: "Private Courtyard",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque porttitor nisl elementum.",
     },
     {
         image: "/assets/about-mosaic-1.jpg",
-        imageAlt: "Enon Heights farm feature",
-        title: "Farm Feature 3",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+        imageAlt: "Locally sourced ingredients at Enon Heights",
+        title: "Locally Sourced",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque porttitor nisl ut diam gravida, viverra.",
     },
     {
         image: "/assets/about-mosaic-1.jpg",
-        imageAlt: "Enon Heights farm feature",
-        title: "Farm Feature 4",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+        imageAlt: "Special occasions hosted at Enon Heights",
+        title: "Special Occasions",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque porttitor nisl ut diam gravida, viverra rhoncus velit pharetra.",
     },
 ];
 
 export default function ImageFigureSection() {
+    const rows: FigureItem[][] = [];
+    for (let i = 0; i < figures.length; i += 2) {
+        rows.push(figures.slice(i, i + 2));
+    }
+
     return (
-        <section className="image-figure-section general-padding">
-            <div className="container-fluid-md">
+        <section className="image-figure-section general-padding bg-linear-cream border-body/10 border-t">
+            <div className="container-fluid-lg">
                 <div className="image-figure-wrapper">
-                    <FigureBlock items={[figures[0], figures[1]]} />
-                    <FigureBlock items={[figures[2], figures[3]]} reverse />
+                    {rows.map((row, rowIndex) => {
+                        const isReversed = rowIndex % 2 === 1 && row.length === 2;
+
+                        return (
+                            <div
+                                key={rowIndex}
+                                className={`figure-block${isReversed ? " figure-block-reversed" : ""}`}
+                            >
+                                {row.map((item, itemIndex) => {
+                                    let size: "large" | "small";
+                                    if (row.length === 2) {
+                                        const largeIndex = isReversed ? 1 : 0;
+                                        size = itemIndex === largeIndex ? "large" : "small";
+                                    } else {
+                                        size = rowIndex % 2 === 0 ? "large" : "small";
+                                    }
+                                    return <FigureCard key={item.title} {...item} size={size} />;
+                                })}
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

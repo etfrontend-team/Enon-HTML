@@ -832,7 +832,7 @@
   @apply 992:w-1/2 w-full;
 }
 .faq-section .faq-section-image-col {
-  @apply relative aspect-596/650 max-992:aspect-370/420;
+  @apply relative max-992:aspect-370/420;
 }
 
 .faq-section .faq-section-image {
@@ -985,6 +985,10 @@
   @apply z-10 will-change-transform;
 }
 
+.explore-cards .explore-cards-card-side::after {
+  @apply absolute inset-0 bg-black/20 pointer-events-none z-1 content-[""];
+}
+
 .explore-cards .explore-cards-media {
   @apply absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-in;
 }
@@ -994,7 +998,7 @@
 }
 
 .explore-cards .explore-cards-overlay {
-  @apply absolute inset-0 flex items-center justify-center bg-grey/40 992:backdrop-blur-[5px] backdrop-blur-[3.6px] 992:my-75 992:mx-50 m-25;
+  @apply absolute inset-0 flex items-center justify-center bg-grey/40 992:backdrop-blur-[5px] backdrop-blur-[3.6px] 992:my-75 992:mx-50 m-25 z-2;
 }
 
 .explore-cards .explore-cards-mobile .explore-cards-card-center {
@@ -1126,7 +1130,7 @@
   background: linear-gradient(to bottom, #F4F0DF, #F8F5E5);
 }
 .suite-detail__inner {
-  @apply flex items-center justify-between gap-60 max-1199:gap-40 max-992:flex-col max-992:gap-35 max-w-1243 mx-auto;
+  @apply flex items-center justify-between gap-60 max-1199:gap-40 max-992:flex-col max-992:items-start max-992:gap-35 max-w-1243 mx-auto;
 }
 .suite-detail__content-column {
   @apply flex-1 flex flex-col gap-30;
@@ -1290,4 +1294,62 @@
 
 .price-list-section .peak-season-block span {
   @apply uppercase text-primary text-12 font-normal tracking-3 leading-[160%];
+}
+
+.gallery-carousel {
+  @apply relative;
+}
+
+.gallery-carousel .gallery-carousel-wrapper {
+  @apply relative;
+}
+
+.gallery-carousel .gallery-carousel-viewport {
+  @apply overflow-hidden w-full;
+}
+
+.gallery-carousel .gallery-carousel-track {
+  @apply flex gap-15 will-change-transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.gallery-carousel .gallery-carousel-slide {
+  @apply shrink-0 relative overflow-hidden 1366:min-h-600 767:min-h-450 min-h-321 1366:max-w-1090 992:max-w-700 767:max-w-550 576:max-w-400 max-w-290 w-full;
+}
+
+.gallery-carousel .gallery-carousel-media-wrap {
+  @apply relative w-full h-full overflow-hidden;
+}
+
+.gallery-carousel .gallery-carousel-img {
+  @apply object-cover;
+}
+
+.gallery-carousel .gallery-carousel-overlay {
+  @apply absolute inset-0 pointer-events-none;
+}
+
+.gallery-carousel .gallery-carousel-caption-wrap {
+  @apply absolute inset-0 flex items-end px-25 pb-20 pointer-events-none z-1;
+}
+
+.gallery-carousel .gallery-carousel-caption {
+  @apply font-heading font-medium 767:text-20 text-17 uppercase tracking-5 text-white;
+}
+
+.gallery-carousel .gallery-carousel-btn {
+  @apply absolute top-1/2 -translate-y-1/2 z-10 flex items-center justify-center cursor-pointer size-40 max-767:hidden;
+}
+
+.gallery-carousel .gallery-carousel-prev {
+  @apply 1366:left-68.5 992:left-40 left-25;
+}
+
+.gallery-carousel .gallery-carousel-next {
+  @apply 1366:right-68.5 992:right-40 right-25;
+}
+
+.gallery-carousel .gallery-carousel-chevron {
+  @apply w-auto h-auto;
 }

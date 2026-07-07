@@ -1,23 +1,28 @@
 .container-fluid {
   @apply w-full px-15;
 }
+
 .container-fluid-lg {
   @apply max-1199:px-60 max-1023:px-35 max-425:px-20 mx-auto w-full px-106;
 }
+
 .container-fluid-md {
   @apply max-1199:px-60 max-1023:px-35 max-767:px-26 max-425:px-20 mx-auto w-full px-106;
 }
+
 body {
   @apply font-body bg-cream m-0 font-light overflow-x-hidden p-0 antialiased relative;
 }
+
 body::after {
-  content: '';
-  @apply fixed inset-0 z-9 pointer-events-none opacity-15 mix-blend-multiply;
+  @apply fixed inset-0 z-9 pointer-events-none opacity-15 mix-blend-multiply content-[""];
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
+
 body.menu-open {
   @apply overflow-hidden;
 }
+
 h1,
 h2,
 h3,
@@ -26,30 +31,37 @@ h5,
 h6 {
   @apply font-heading font-medium capitalize;
 }
+
 h1,
 .h1 {
   @apply text-51 max-1199:text-41 max-1199:leading-51 max-767:text-38 leading-[120%] max-425:text-34 tracking-2;
 }
+
 h2,
 .h2 {
   @apply text-41 max-1199:text-31 max-1199:leading-[125%] max-425:text-27 max-425:leading-35 leading-51 tracking-2;
 }
+
 h3,
 .h3 {
-  @apply text-31 max-1199:text-25 max-425:text-20 leading-[125%] tracking-2;
+  @apply text-31 max-1199:text-25 max-425:text-24 leading-[125%] tracking-2;
 }
+
 h4,
 .h4 {
   @apply text-27 max-1199:text-20 max-1199:leading-[32.6px] max-425:text-18 max-425:leading-25 leading-41 tracking-2;
 }
+
 h5,
 .h5 {
   @apply text-24 max-1199:text-22 leading-[125%];
 }
+
 h6,
 .h6 {
   @apply text-20 leading-[125%];
 }
+
 .title.title-dark-olive h1,
 .title.title-dark-olive h2,
 .title.title-dark-olive h3,
@@ -58,6 +70,7 @@ h6,
 .title.title-dark-olive h6 {
   @apply text-dark-olive;
 }
+
 .title.title-off-white h1,
 .title.title-off-white h2,
 .title.title-off-white h3,
@@ -66,9 +79,11 @@ h6,
 .title.title-off-white h6 {
   @apply text-off-white;
 }
+
 img {
   @apply overflow-hidden select-none;
 }
+
 .img-fluid-cover {
   @apply h-full w-full object-cover;
 }
@@ -76,43 +91,64 @@ img {
 .img-fluid-contain {
   @apply h-full w-full object-contain;
 }
+
 .content p strong {
   @apply font-bold;
 }
+
 .content.content-off-white p {
   @apply text-off-white;
 }
+
 .content.content-dark p {
   @apply text-body;
 }
+
 .content.content-dark-light p {
   @apply text-body/80;
 }
+
 .content .prose p {
   @apply 992:mb-30 mb-25 last:mb-0;
 }
+
 .content p,
 p {
-  @apply text-16 tracking-3 max-767:text-15 leading-[160%] font-light;
+  @apply text-16 tracking-3 max-375:text-15 leading-[160%] font-light;
 }
+
 .content p {
   @apply mb-20 last:mb-0;
 }
+
+.content p strong {
+  @apply font-medium;
+}
+
 .content p a {
   @apply hover:text-body hover:underline;
 }
+
 .content.content-small p {
   @apply text-12 leading-[160%];
 }
+
 .pre-heading {
   @apply flex;
 }
+
 .pre-heading span {
   @apply text-14 tracking-8 text-body max-767:text-13 leading-10 uppercase font-body font-normal;
 }
+
 section {
   @apply relative z-10;
 }
+
 body::-webkit-scrollbar {
   @apply w-0;
+}
+
+.bg-linear-cream {
+  @apply bg-[linear-gradient(180deg,#F4F0DF_0%,#F4F0DF00_100%)];
 }

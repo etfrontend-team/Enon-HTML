@@ -1,64 +1,36 @@
 .image-figure-wrapper {
-    @apply flex flex-col gap-[10.4%] max-992:gap-35 max-w-1168 mx-auto;
+    @apply flex flex-col 1199:gap-150 992:gap-100 gap-50 max-w-1168 mx-auto;
 }
 
 .image-figure-wrapper .figure-block {
-    @apply flex gap-121 items-start justify-start max-992:flex-col max-992:gap-35;
+    @apply flex gap-121 items-start justify-start max-768:flex-col max-1199:gap-50;
 }
 
-.image-figure-wrapper .figure-block--reverse {
+.image-figure-wrapper .figure-block-reversed {
     @apply justify-end;
 }
 
-.image-figure-wrapper .figure-block .figure-card:nth-child(1) {
-    @apply w-559 max-992:w-full;
+.image-figure-wrapper .figure-card-large {
+    @apply flex-1 min-w-0 768:max-w-559 max-768:w-full;
 }
 
-.image-figure-wrapper .figure-block .figure-card:nth-child(2) {
-    @apply w-417 max-992:w-full;
-}
-
-.image-figure-wrapper .figure-block--reverse .figure-card:nth-child(1) {
-    @apply w-417 max-992:w-full;
-}
-
-.image-figure-wrapper .figure-block--reverse .figure-card:nth-child(2) {
-    @apply w-559 max-992:w-full;
-}
-
-.image-figure-wrapper .figure-block .figure-card:nth-child(2) {
-    @apply mt-[71px] max-992:mt-0;
-}
-
-.image-figure-wrapper .figure-block--reverse .figure-card:nth-child(1) {
-    @apply mt-[71px] max-992:mt-0;
-}
-
-.image-figure-wrapper .figure-block--reverse .figure-card:nth-child(2) {
-    @apply mt-0;
+.image-figure-wrapper .figure-card-small {
+    @apply flex-1 min-w-0 1199:max-w-417 768:max-w-380 mt-71 max-768:w-full max-768:mt-0;
 }
 
 .image-figure-wrapper .figure-card .frame {
-    @apply bg-off-white border border-body/10 p-15;
-    box-shadow: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.08);
+    @apply bg-off-white border border-body/10 p-15 shadow-[2.2px_2.2px_4.4px_1.1px_#0000000D];
 }
 
 .image-figure-wrapper .figure-card .img-block {
     @apply relative w-full overflow-hidden aspect-square;
 }
 
-.image-figure-wrapper .figure-card .parallax-inner {
-    @apply absolute inset-x-0 top-[-15%] h-[130%];
-}
-
-.image-figure-wrapper .figure-card .parallax-inner img {
-    @apply w-full h-full object-cover;
-}
 
 .image-figure-wrapper .figure-card .content-block {
-    @apply mt-35 max-992:mt-20;
+    @apply mt-25 px-15 flex gap-20 flex-col items-start;
 }
 
-.image-figure-wrapper .figure-card .content-block .title {
-    @apply mb-30 max-992:mb-15;
+.image-figure-wrapper .figure-card .content {
+    @apply 768:max-w-450;
 }

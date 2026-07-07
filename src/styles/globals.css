@@ -49,8 +49,8 @@
 
   --breakpoint-2000: 2000px; 
   --breakpoint-1920: 1921px; 
-  --breakpoint-1600: 1601px;
-  --breakpoint-1512: 1513px;
+  --breakpoint-1600: 1601px;  
+  --breakpoint-1512: 1513px;  
   --breakpoint-1440: 1441px;
   --breakpoint-1439: 1440px;
   --breakpoint-1366: 1367px;
@@ -59,7 +59,7 @@
   --breakpoint-1023: 1024px;
   --breakpoint-992: 993px;
   --breakpoint-768: 769px;
-  --breakpoint-767: 768px;
+  --breakpoint-767: 768px; 
   --breakpoint-640: 641px; 
   --breakpoint-576: 577px;
   --breakpoint-425: 426px;
