@@ -4,7 +4,6 @@
 @import "./layout.css";
 @import "./utilities.css";
 @import "./custom.css";
-@import "./gallery.css";
 
 @theme {
   --font-body: "Inter", "Inter Fallback";
@@ -25,6 +24,7 @@
   --color-rust-light: #D3663E;
   --color-sage: #CDD5B9;
   --color-sage-mist: #D1DCD2;
+  --color-grey: #BBBBBB;
 
   --spacing: 1px;
 

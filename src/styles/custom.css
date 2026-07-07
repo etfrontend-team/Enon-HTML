@@ -1,4 +1,3 @@
-
 .feature-grid__inner{
     @apply flex overflow-x-auto snap-x snap-mandatory gap-10 py-24 max-1024:py-16 bg-off-white;
     box-shadow: 0px 2.2px 4.4px rgba(0, 0, 0, 0.05);
@@ -110,57 +109,48 @@
     @apply max-576:px-20
 }
 
-
-
-
-
-/*Exclusive use section start*/
-.exclusive-use-wrapper {
+.media-overlay-content-inner {
     @apply relative 1199:min-h-798;
 }
 
-.exclusive-use-wrapper::after {
+.media-overlay-content-inner::after {
     @apply absolute inset-0 content-[''];
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%);
 }
 
-.exclusive-use-wrapper .bg-img-block img{
+.media-overlay-content-inner .media-overlay-content-bg img {
     @apply h-full w-full absolute inset-0;
 }
 
-.exclusive-use-wrapper .content-block-wrapper {
+.media-overlay-content-inner .media-overlay-content-grid {
     @apply grid grid-cols-12 gap-15 p-15 640:p-40 768:p-60 1199:p-90 relative z-1;
 }
 
-.exclusive-use-wrapper .content-block-wrapper .img-block  {
+.media-overlay-content-inner .media-overlay-content-image {
     @apply col-span-12 992:col-span-6 relative max-992:order-2 max-992:min-h-586;
 }
 
-.exclusive-use-wrapper .content-block-wrapper .img-block img {
+.media-overlay-content-inner .media-overlay-content-image img {
     @apply w-full h-full object-cover absolute inset-0;
 }
 
-.exclusive-use-wrapper .content-block-wrapper .img-block::after {
+.media-overlay-content-inner .media-overlay-content-image::after {
     @apply absolute inset-0 content-[''] pointer-events-none;
     box-shadow: 2.2px 2.2px 4.4px 1.1px rgba(0, 0, 0, 0.10);
 }
 
-.exclusive-use-wrapper .content-block-wrapper .content-block {
+.media-overlay-content-inner .media-overlay-content-text {
     @apply col-span-12 992:col-span-6 bg-off-white min-h-586 640:min-h-617 relative p-30 640:p-50 1199:p-74 border border-body/20 overflow-hidden flex flex-col justify-center;
 }
 
-.exclusive-use-wrapper .content-block-wrapper .content-block .details-wrapper {
+.media-overlay-content-inner .media-overlay-content-details {
     @apply 1439:max-w-442 1600:max-w-9/12 mr-auto relative z-1;
 }
 
-.exclusive-use-wrapper .content-block-wrapper .content-block .bg-img {
+.media-overlay-content-inner .media-overlay-content-text-bg {
     @apply absolute w-full h-full inset-0 object-cover pointer-events-none;
 }
-/*Exclusive use section end*/
 
-
-
-/*Price listing start*/
 .price-list-wrapper {
     @apply flex flex-col gap-15;
 }

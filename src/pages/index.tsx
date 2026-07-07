@@ -5,7 +5,8 @@ import SuitsSlider from "@/sections/SuitsSlider";
 import InfiniteImageCarousel from "@/sections/InfiniteImageCarousel";
 import JournalSection from "@/sections/JournalSection";
 import FullTextImage from "@/sections/FullTextImage";
-import StayWithUs from "@/sections/StayWithUs";
+import MediaCtaCards from "@/sections/MediaCtaCards";
+import ExploreCards from "@/sections/ExploreCards";
 export default function Home() {
   return (
     <>
@@ -16,7 +17,8 @@ export default function Home() {
       <FullTextImage />
       <InfiniteImageCarousel />
       <JournalSection />
-      <StayWithUs />
+      <MediaCtaCards />
+      <ExploreCards />
     </>
   );
 }
