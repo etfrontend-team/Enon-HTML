@@ -1,0 +1,10 @@
+<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="27" cy="27" r="27" fill="url(#location-pin-glow-gradient)"/>
+<defs>
+<radialGradient id="location-pin-glow-gradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(27 27) rotate(90) scale(27)">
+<stop stop-color="#F8F5E5"/>
+<stop offset="0.331731" stop-color="#F8F5E5" stop-opacity="0.793269"/>
+<stop offset="1" stop-color="#F8F5E5" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

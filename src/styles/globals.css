@@ -4,6 +4,8 @@
 @import "./layout.css";
 @import "./utilities.css";
 @import "./custom.css";
+@import "./style.css";
+
 
 @theme {
   --font-body: "Inter", "Inter Fallback";
@@ -48,6 +50,7 @@
   --shadow-frame-mobile-hover: inset 47px 0 0 0 #FCFBF5, inset -47px 0 0 0 #FCFBF5, inset 0 144px 0 0 #FCFBF5, inset 0 -144px 0 0 #FCFBF5;
   --shadow-frame-sm: inset 35px 0 0 0 #FCFBF5, inset -35px 0 0 0 #FCFBF5, inset 0 120px 0 0 #FCFBF5, inset 0 -120px 0 0 #FCFBF5;
   --shadow-frame-sm-hover: inset 27px 0 0 0 #FCFBF5, inset -27px 0 0 0 #FCFBF5, inset 0 95px 0 0 #FCFBF5, inset 0 -95px 0 0 #FCFBF5;
+  --shadow-experience-card: 2.2px 2.2px 2.2px rgba(0, 0, 0, 0.05);
 
   --breakpoint-2000: 2000px; 
   --breakpoint-1920: 1921px; 
@@ -208,4 +211,3 @@
   font-style: italic;
   font-display: swap; 
 }
-      

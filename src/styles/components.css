@@ -33,4 +33,3 @@
 .btn.btn-filled {
   @apply bg-rust border-rust text-off-white transition-all duration-300 hover:bg-transparent hover:text-rust;
 }
-
