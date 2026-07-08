@@ -54,7 +54,7 @@ export default function SuiteSlider() {
 
                 </button>
 
-                <div className="suite-slider-track">
+                <div className="suite-slider-track container-fluid-lg">
                     <Swiper
                         modules={[Navigation, Pagination]}
                         slidesPerView={1}
