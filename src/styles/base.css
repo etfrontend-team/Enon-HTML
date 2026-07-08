@@ -15,7 +15,8 @@ body {
 }
 
 body::after {
-  @apply fixed inset-0 z-9 pointer-events-none opacity-15 mix-blend-multiply content-[""];
+  content: '';
+  @apply fixed inset-0 z-9 pointer-events-none opacity-15 mix-blend-multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
@@ -139,6 +140,10 @@ p {
 
 .pre-heading span {
   @apply text-14 tracking-8 text-body max-767:text-13 leading-10 uppercase font-body font-normal;
+}
+
+.pre-heading.title-off-white span {
+  @apply text-off-white;
 }
 
 section {

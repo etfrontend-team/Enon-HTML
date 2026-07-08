@@ -1,36 +1,57 @@
-.image-figure-wrapper {
-    @apply flex flex-col 1199:gap-150 992:gap-100 gap-50 max-w-1168 mx-auto;
-}
-
-.image-figure-wrapper .figure-block {
-    @apply flex gap-121 items-start justify-start max-768:flex-col max-1199:gap-50;
-}
-
-.image-figure-wrapper .figure-block-reversed {
-    @apply justify-end;
-}
-
-.image-figure-wrapper .figure-card-large {
-    @apply flex-1 min-w-0 768:max-w-559 max-768:w-full;
-}
-
-.image-figure-wrapper .figure-card-small {
-    @apply flex-1 min-w-0 1199:max-w-417 768:max-w-380 mt-71 max-768:w-full max-768:mt-0;
-}
-
-.image-figure-wrapper .figure-card .frame {
-    @apply bg-off-white border border-body/10 p-15 shadow-[2.2px_2.2px_4.4px_1.1px_#0000000D];
-}
-
-.image-figure-wrapper .figure-card .img-block {
-    @apply relative w-full overflow-hidden aspect-square;
-}
-
-
-.image-figure-wrapper .figure-card .content-block {
-    @apply mt-25 px-15 flex gap-20 flex-col items-start;
-}
-
-.image-figure-wrapper .figure-card .content {
-    @apply 768:max-w-450;
-}
+.gallery-carousel {
+    @apply relative;
+  }
+  
+  .gallery-carousel .gallery-carousel-wrapper {
+    @apply relative;
+  }
+  
+  .gallery-carousel .gallery-carousel-viewport {
+    @apply overflow-hidden w-full;
+  }
+  
+  .gallery-carousel .gallery-carousel-track {
+    @apply flex gap-15 will-change-transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  .gallery-carousel .gallery-carousel-slide {
+    @apply shrink-0 relative overflow-hidden 1366:min-h-600 767:min-h-450 min-h-321 1366:max-w-1090 992:max-w-700 767:max-w-550 576:max-w-400 max-w-290 w-full;
+  }
+  
+  .gallery-carousel .gallery-carousel-media-wrap {
+    @apply relative w-full h-full overflow-hidden;
+  }
+  
+  .gallery-carousel .gallery-carousel-img {
+    @apply object-cover;
+  }
+  
+  .gallery-carousel .gallery-carousel-overlay {
+    @apply absolute inset-0 pointer-events-none;
+  }
+  
+  .gallery-carousel .gallery-carousel-caption-wrap {
+    @apply absolute inset-0 flex items-end px-25 pb-20 pointer-events-none z-1;
+  }
+  
+  .gallery-carousel .gallery-carousel-caption {
+    @apply font-heading font-medium 767:text-20 text-17 uppercase tracking-5 text-white;
+  }
+  
+  .gallery-carousel .gallery-carousel-btn {
+    @apply absolute top-1/2 -translate-y-1/2 z-10 flex items-center justify-center cursor-pointer size-40 max-767:hidden;
+  }
+  
+  .gallery-carousel .gallery-carousel-prev {
+    @apply 1366:left-68.5 992:left-40 left-25;
+  }
+  
+  .gallery-carousel .gallery-carousel-next {
+    @apply 1366:right-68.5 992:right-40 right-25;
+  }
+  
+  .gallery-carousel .gallery-carousel-chevron {
+    @apply w-auto h-auto;
+  }
