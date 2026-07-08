@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useRef, useEffect } from "react";
-import { motion, useMotionValue, useAnimationFrame, animate } from "framer-motion";
+import { motion, useMotionValue, useTransform, useAnimationFrame, animate } from "framer-motion";
 
-const SPEED = 1.5;      
-const SPEED_MOBILE = 1.4; 
+const SPEED = 2;
+const SPEED_MOBILE = 3;
 
 interface GallerySlide {
     image: string;
@@ -58,24 +58,28 @@ export default function GalleryCarousel() {
     const isPaused = useRef(false);
     const isManual = useRef(false);
     const halfWidth = useRef(0);
+    const boxWidth = useRef(0);
     const speedRef = useRef(SPEED);
     const x = useMotionValue(0);
-
-    const measure = () => {
-        if (trackRef.current) {
-            halfWidth.current = trackRef.current.scrollWidth / 2;
-        }
-        speedRef.current = window.innerWidth < 768 ? SPEED_MOBILE : SPEED;
-    };
+    const xPercent = useTransform(x, (val) =>
+      boxWidth.current > 0 ? `${(val / boxWidth.current) * 100}%` : "0%",
+    );
 
     useEffect(() => {
+        const measure = () => {
+          if (trackRef.current) {
+            halfWidth.current = trackRef.current.scrollWidth / 2;
+            boxWidth.current = trackRef.current.offsetWidth;
+          }
+          speedRef.current = window.innerWidth < 768 ? SPEED_MOBILE : SPEED;
+        };
         measure();
         const ro = new ResizeObserver(measure);
         if (trackRef.current) ro.observe(trackRef.current);
         return () => ro.disconnect();
-    }, []);
-
-    useAnimationFrame((_, delta) => {
+      }, []);
+    
+      useAnimationFrame((_, delta) => {
         if (isPaused.current || isManual.current || halfWidth.current === 0) return;
         const half = halfWidth.current;
         const pxPerMs = (half * speedRef.current) / 100 / 1000;
@@ -83,7 +87,7 @@ export default function GalleryCarousel() {
         if (newX <= -half) newX += half;
         if (newX > 0) newX -= half;
         x.set(newX);
-    });
+      });
 
     const slideNext = () => {
         if (halfWidth.current === 0) return;
@@ -118,7 +122,7 @@ export default function GalleryCarousel() {
                     <motion.div
                         ref={trackRef}
                         className="gallery-carousel-track"
-                        style={{ x }}
+                        style={{ x: xPercent }}
                     >
                         {loopedSlides.map((slide, index) => (
                             <div key={index} className="gallery-carousel-slide">

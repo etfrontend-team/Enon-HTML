@@ -16,7 +16,7 @@
   --color-off-white: #FFFEF6;
   --color-body: #393618;
   --color-primary: #C25F3A;
-  --color-cream: #F8F5E5;
+  --color-cream: #F8F5E5; 
   --color-cream-2: #F4F0DF;
   --color-off-white: #FCFBF5;
   --color-dark-olive: #393618;
@@ -25,6 +25,8 @@
   --color-sage: #CDD5B9;
   --color-sage-mist: #D1DCD2;
   --color-grey: #BBBBBB;
+  --color-blue: #C1D1C3;
+  --color-green: #BCC7A2;
 
   --spacing: 1px;
 
