@@ -1486,3 +1486,44 @@
 .gallery-carousel .gallery-carousel-chevron {
   @apply w-auto h-auto;
 }
+
+.scroll-reveal-gallery {
+  @apply relative w-full w-full overflow-x-clip;
+}
+
+.scroll-reveal-gallery-desktop {
+  @apply max-992:hidden;
+}
+
+.scroll-reveal-gallery-mobile {
+  @apply 992:hidden;
+}
+
+/* Sticky Container */
+.scroll-reveal-gallery-sticky {
+  @apply sticky top-0 h-screen w-full overflow-hidden flex items-center justify-between gap-25;
+}
+
+/* Side cards - Initially positioned in the flex flow */
+.scroll-reveal-gallery-side {
+  @apply relative shrink-0 overflow-hidden;
+}
+
+/* Center Image - This now sits behind/over everyone and uses clip-path */
+.scroll-reveal-gallery-center-wrapper {
+  @apply pointer-events-none;
+}
+
+.scroll-reveal-gallery-center-wrapper img {
+  /* This ensures the image doesn't scale, only the "window" (clip-path) does */
+  @apply w-screen h-screen object-cover;
+}
+
+/* Parallax scaling to avoid white edges */
+.scroll-reveal-gallery-side-inner {
+  @apply absolute inset-0 scale-125;
+}
+
+.scroll-reveal-gallery-center-clip {
+  will-change: clip-path;
+}

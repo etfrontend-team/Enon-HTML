@@ -81,6 +81,15 @@ h6,
   @apply text-off-white;
 }
 
+.title.title-white h1,
+.title.title-white h2,
+.title.title-white h3,
+.title.title-white h4,
+.title.title-white h5,
+.title.title-white h6 {
+  @apply text-white;
+}
+
 img {
   @apply overflow-hidden select-none;
 }
@@ -99,6 +108,10 @@ img {
 
 .content.content-off-white p {
   @apply text-off-white;
+}
+
+.content.content-white p {
+  @apply text-white;
 }
 
 .content.content-dark p {
@@ -144,6 +157,10 @@ p {
 
 .pre-heading.title-off-white span {
   @apply text-off-white;
+}
+
+.pre-heading.title-white span {
+  @apply text-white;
 }
 
 section {
