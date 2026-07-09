@@ -63,7 +63,7 @@
 }
 
 .contact-map .contact-map__content {
-  @apply flex w-1/2 max-1512:w-514 flex-col items-start gap-30 max-992:mt-0 max-767:w-full max-767:max-w-365 max-767:gap-25;
+  @apply flex w-1/2 max-1512:w-514 max-1199:w-400 max-992:w-full flex-col items-start gap-30 max-992:mt-0 max-767:w-full max-767:max-w-365 max-767:gap-25;
 }
 
 .contact-map .contact-map__group {
@@ -112,7 +112,7 @@
 }
 
 .contact-map .contact-map__map {
-  @apply relative w-1/2 max-1512:w-593 h-651 shrink-0 overflow-hidden max-1199:w-[48vw] max-992:h-534 max-992:w-full max-992:max-w-410;
+  @apply relative w-1/2 max-1512:w-593 max-1439:w-1/2 max-992:w-full h-651 shrink-0 overflow-hidden max-992:h-534;
 }
 
 .contact-map .contact-map__iframe {
