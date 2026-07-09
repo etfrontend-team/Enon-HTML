@@ -56,6 +56,71 @@
 
 /* location map end */
 
+/* Contact Map Section start */
+
+.contact-map .contact-map__inner {
+  @apply mx-auto flex w-full items-center justify-between gap-121 max-1199:gap-60 max-992:flex-col max-992:items-center max-992:gap-50;
+}
+
+.contact-map .contact-map__content {
+  @apply flex w-1/2 max-1512:w-514 max-1199:w-400 max-992:w-full flex-col items-start gap-30 max-992:mt-0 max-767:w-full max-767:max-w-365 max-767:gap-25;
+}
+
+.contact-map .contact-map__group {
+  @apply flex w-full flex-col items-start gap-30 max-767:gap-25;
+}
+
+.contact-map .contact-map__location-group {
+  @apply gap-25;
+}
+
+.contact-map .contact-map__heading-group {
+  @apply flex w-full flex-col items-start gap-25 text-body;
+}
+
+.contact-map .contact-map__eyebrow {
+  @apply font-body text-14 font-normal uppercase leading-[normal] tracking-8 text-body max-767:text-13;
+}
+
+.contact-map .contact-map__title,
+.contact-map .contact-map__subheading {
+  @apply font-heading text-24 font-medium capitalize leading-[125%] tracking-2 text-body max-767:text-22;
+}
+
+.contact-map .contact-map__title {
+  @apply w-459 max-767:w-full;
+}
+
+.contact-map .contact-map__subheading {
+  @apply w-full;
+}
+
+.contact-map .contact-map__text {
+  @apply flex w-378 flex-col items-start font-body text-16 font-light not-italic leading-[160%] tracking-3 text-body/80 max-767:w-full;
+}
+
+.contact-map .contact-map__contact-list {
+  @apply gap-15;
+}
+
+.contact-map .contact-map__text a {
+  @apply text-body/80 no-underline transition-colors duration-300 hover:text-rust;
+}
+
+.contact-map .contact-map__directions {
+  @apply relative w-fit pb-15 font-eaves text-20 uppercase leading-none tracking-5 text-rust no-underline after:absolute after:bottom-0 after:left-0 after:h-1 after:w-46 after:bg-current after:content-[''] after:transition-[width] after:duration-450 after:ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:after:w-full max-767:after:w-26;
+}
+
+.contact-map .contact-map__map {
+  @apply relative w-1/2 max-1512:w-593 max-1439:w-1/2 max-992:w-full h-651 shrink-0 overflow-hidden max-992:h-534;
+}
+
+.contact-map .contact-map__iframe {
+  @apply block size-full border-0;
+}
+
+/* Contact Map Section end */
+
 /* Suite Slider Section start */
 .offer-suite-slider {
   @apply relative border-t border-body/10;
@@ -314,7 +379,7 @@
 }
 
 .thankyou-hero .thankyou-hero__content {
-  @apply flex max-1512:w-514 flex-col items-start gap-25 max-1199:w-450 max-992:w-full max-992:max-w-450 max-992:items-center max-992:text-center;
+  @apply flex w-1/2 max-1512:w-514 flex-col items-start gap-25 max-1199:w-450 max-992:w-full max-992:max-w-450 max-992:items-center max-992:text-center;
 }
 
 .thankyou-hero .thankyou-hero__heading-group {
@@ -342,7 +407,7 @@
 }
 
 .thankyou-hero .thankyou-hero__image {
-  @apply relative w-593 h-665  shrink-0 overflow-hidden max-1199:h-[565px] max-1199:w-[440px] max-992:hidden;
+  @apply relative w-1/2 max-1512:w-593 h-665  shrink-0 overflow-hidden max-1199:h-[565px] max-1199:w-[440px] max-992:hidden;
 }
 
 .thankyou-hero .thankyou-hero__image-img {
