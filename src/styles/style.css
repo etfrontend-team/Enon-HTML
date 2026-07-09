@@ -285,6 +285,65 @@
   @apply text-14 font-medium leading-[160%] tracking-3 text-body/80;
 }
 
+/* Thank You Hero Section */
+
+.thankyou-hero.hero-banner {
+  @apply min-h-906 max-767:min-h-[942px];
+}
+
+.thankyou-hero .hero-banner__inner,
+.thankyou-hero .hero-banner__bg {
+  @apply bg-green;
+}
+
+.thankyou-hero .thankyou-hero__bg-video {
+  @apply object-cover object-center mix-blend-multiply;
+}
+
+.thankyou-hero .thankyou-hero__bg-overlay {
+  @apply bg-none;
+}
+
+.thankyou-hero .thankyou-hero__layout {
+  @apply absolute left-91 right-91 top-135 z-3 flex h-665 items-center justify-between gap-60 max-1199:left-55 max-1199:right-55 max-1199:gap-40 max-992:left-35 max-992:right-35 max-767:left-25 max-767:right-25 max-992:top-271 max-992:h-auto max-992:flex-col max-992:items-center max-992:justify-start max-992:gap-0;
+}
+
+.thankyou-hero .thankyou-hero__content {
+  @apply flex max-1512:w-514 flex-col items-start gap-25 max-1199:w-450 max-992:w-full max-992:max-w-450 max-992:items-center max-992:text-center;
+}
+
+.thankyou-hero .thankyou-hero__heading-group {
+  @apply flex w-full flex-col items-start gap-25 text-off-white max-992:items-center max-992:gap-30 max-992:text-center;
+}
+
+.thankyou-hero .thankyou-hero__eyebrow {
+  @apply font-body text-14 font-normal uppercase leading-[normal] tracking-8 text-off-white max-992:text-13;
+}
+
+.thankyou-hero .thankyou-hero__title {
+  @apply max-1512:max-w-459 text-51 leading-51 tracking-2 text-off-white max-1199:w-full max-1199:text-41 max-1199:leading-51 max-992:w-343 max-992:text-center max-992:text-38 max-992:tracking-2;
+}
+
+.thankyou-hero .thankyou-hero__details {
+  @apply flex w-full flex-col items-start gap-35 max-992:items-center;
+}
+
+.thankyou-hero .thankyou-hero__details p {
+  @apply max-1512:max-w-411 max-992:max-w-full text-16 font-light leading-[160%] tracking-3 text-off-white/80 max-1199:w-full max-767:text-center;
+}
+
+.thankyou-hero .thankyou-hero__button {
+  @apply border-rust bg-rust text-cream backdrop-blur-[5px] hover:bg-rust hover:text-cream;
+}
+
+.thankyou-hero .thankyou-hero__image {
+  @apply relative w-593 h-665  shrink-0 overflow-hidden max-1199:h-[565px] max-1199:w-[440px] max-992:hidden;
+}
+
+.thankyou-hero .thankyou-hero__image-img {
+  @apply max-w-none object-cover !h-[111.8%] !w-[108.47%] !-left-[0.14%] !-top-[7.01%];
+}
+
 /* Experience Section */
 .experience-section .experience-cards-grid {
   @apply grid-cols-2 gap-x-60 gap-y-100 max-992:gap-x-30 max-767:gap-50 max-1199:gap-x-50 max-1199:gap-y-70 max-767:grid-cols-1;
