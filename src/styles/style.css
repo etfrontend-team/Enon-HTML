@@ -200,6 +200,91 @@
   @apply max-w-455 max-767:max-w-[340.8px];
 }
 
+/* More Offers Section */
+.more-offers {
+  @apply relative overflow-hidden border-t border-body/10 pt-160 pb-160 max-767:pt-100 max-767:pb-100;
+  background: linear-gradient(180deg, #F4F0DF 0%, rgba(244, 240, 223, 0) 100%);
+}
+
+.more-offers .container-fluid-lg {
+  @apply max-767:px-35 max-425:px-20;
+}
+
+.more-offers .more-offers__inner {
+  @apply relative z-1 mx-auto w-full max-w-full;
+}
+
+.more-offers .more-offers__eyebrow {
+  @apply ml-15 font-body text-14 font-normal uppercase leading-[normal] tracking-8 text-body max-767:text-13;
+}
+
+.more-offers .more-offers__grid {
+  @apply mt-55 grid w-full grid-cols-2 gap-43 max-1199:gap-35 max-992:mt-35 max-767:grid-cols-1 max-767:gap-50;
+}
+
+.more-offers .more-offer-card {
+  @apply flex w-full flex-col;
+}
+
+.more-offers .more-offer-card__media {
+  @apply relative w-full bg-off-white p-15 shadow-experience-card;
+}
+
+.more-offers .more-offer-card__image-wrap {
+  @apply relative w-full overflow-hidden aspect-[563/419] max-767:aspect-[340/253.74];
+}
+
+.more-offers .more-offer-card__image {
+  @apply absolute left-0 max-w-none object-fill transition-transform duration-500 ease-out;
+  width: 100% !important;
+}
+
+.more-offers .more-offer-card:hover .more-offer-card__image {
+  transform: scale(1.03);
+}
+
+.more-offers .more-offer-card__image--midweek {
+  top: -47.72% !important;
+  height: 167.96% !important;
+}
+
+.more-offers .more-offer-card__image--exclusive {
+  top: -34.33% !important;
+  height: 134.37% !important;
+}
+
+.more-offers .more-offer-card__body {
+  @apply mt-25 flex w-full max-1512:max-w-514 flex-col items-start gap-25 pl-15 max-767:mx-auto max-767:w-[340.8px] max-767:max-w-full;
+}
+
+.more-offers .more-offer-card:nth-child(2) .more-offer-card__body {
+  @apply 768:pl-23;
+}
+
+.more-offers .more-offer-card__title {
+  @apply w-full max-w-459 max-767:max-w-full;
+}
+
+.more-offers .more-offer-card__title h3 {
+  @apply text-31 leading-[125%] tracking-2 max-767:text-25;
+}
+
+.more-offers .more-offer-card__details {
+  @apply flex w-full flex-col items-start gap-35;
+}
+
+.more-offers .more-offer-card__copy {
+  @apply flex w-full flex-col items-start gap-25;
+}
+
+.more-offers .more-offer-card__description {
+  @apply max-1512:max-w-514 text-16 font-light leading-[160%] tracking-3 text-body/80 max-767:max-w-full;
+}
+
+.more-offers .more-offer-card__valid {
+  @apply text-14 font-medium leading-[160%] tracking-3 text-body/80;
+}
+
 /* Experience Section */
 .experience-section .experience-cards-grid {
   @apply grid-cols-2 gap-x-60 gap-y-100 max-992:gap-x-30 max-767:gap-50 max-1199:gap-x-50 max-1199:gap-y-70 max-767:grid-cols-1;

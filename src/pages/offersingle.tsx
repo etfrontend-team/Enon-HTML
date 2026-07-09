@@ -1,6 +1,7 @@
 import HeroBanner from "@/sections/HeroBanner";
 import SuiteSlider from "@/sections/SuiteSlider";
 import FeatureCards from "@/sections/FeatureCards";
+import MoreOffers from "@/sections/MoreOffers";
 import ProprietorQuote from "@/sections/ProprietorQuote";
 
 export default function OfferSingle() {
@@ -10,6 +11,7 @@ export default function OfferSingle() {
       <SuiteSlider />
       <FeatureCards />
       <ProprietorQuote />
+      <MoreOffers />
     </>
   );
 }
