@@ -1,14 +1,14 @@
 import HeroBanner from "@/sections/HeroBanner";
-import SuiteSlider from "@/sections/SuiteSlider";
 import FeatureCards from "@/sections/FeatureCards";
 import MoreOffers from "@/sections/MoreOffers";
 import ProprietorQuote from "@/sections/ProprietorQuote";
+import OfferSuiteSlider from "@/sections/OfferSuiteSlider";
 
 export default function OfferSingle() {
   return (
     <>
       <HeroBanner />
-      <SuiteSlider />
+      <OfferSuiteSlider />
       <FeatureCards />
       <ProprietorQuote />
       <MoreOffers />

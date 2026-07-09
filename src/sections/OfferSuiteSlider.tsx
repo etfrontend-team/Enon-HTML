@@ -14,9 +14,9 @@ const SUITES = [
     { id: "05", image: "/assets/suits-3.png", title: "Stay Product Name", features: "Key Features | Key Features | Key Features" },
 ];
 
-export default function SuiteSlider() {
+export default function OfferSuiteSlider() {
     return (
-        <section className="suite-slider general-padding">
+        <section className="offer-suite-slider general-padding">
             <div className="suite-slider-header container-fluid-lg">
                 <div className="suite-slider-heading-group">
                     <div className="title title-dark-olive">
