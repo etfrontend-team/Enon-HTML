@@ -62,8 +62,12 @@
   @apply mx-auto flex w-full items-center justify-between gap-121 max-1199:gap-60 max-992:flex-col max-992:items-center max-992:gap-50;
 }
 
+.contact-map .container-fluid-lg {
+  @apply max-576:px-15;
+}
+
 .contact-map .contact-map__content {
-  @apply flex w-1/2 max-1512:w-514 max-1199:w-400 max-992:w-full flex-col items-start gap-30 max-992:mt-0 max-767:w-full max-767:max-w-365 max-767:gap-25;
+  @apply flex w-1/2 max-1512:w-514 max-1199:w-400 max-992:w-full flex-col items-start gap-30 max-992:mt-0 max-767:w-full max-767:max-w-365 max-767:gap-25 max-576:px-20;
 }
 
 .contact-map .contact-map__group {
@@ -464,4 +468,95 @@
 .experience-section .experience-cta {
   @apply pt-50 1024:pt-100 flex justify-center items-center;
 }
+
+/* Getting Zigzag Tabbing Section start */
+.getting-zigzag .getting-zigzag__inner {
+  @apply flex w-full items-center justify-between gap-[9.93%] max-992:flex-col max-992:gap-50 max-767:gap-40;
+}
+
+.getting-zigzag .container-fluid-lg {
+  @apply max-576:px-15;
+}
+
+.getting-zigzag .getting-zigzag__content {
+  @apply flex basis-[41.82%] flex-col items-start max-992:w-full max-992:basis-auto max-992:pt-0 max-576:px-20;
+}
+
+.getting-zigzag .getting-zigzag__heading {
+  @apply flex w-full flex-col items-start gap-20 text-body;
+}
+
+.getting-zigzag .getting-zigzag__eyebrow {
+  @apply font-body text-14 font-normal uppercase leading-[normal] tracking-8 text-body max-767:text-13;
+}
+
+.getting-zigzag .getting-zigzag__title {
+  @apply max-w-[89.3%] font-heading text-41 font-medium capitalize leading-[125%] tracking-2 text-body max-767:max-w-full max-767:text-31;
+}
+
+.getting-zigzag .getting-zigzag__tabs {
+  @apply mt-30 flex flex-wrap gap-30 max-767:gap-20;
+}
+
+.getting-zigzag .getting-zigzag__tab {
+  @apply relative cursor-pointer appearance-none border-0 bg-transparent p-0 pb-15 font-eaves text-20 uppercase leading-[100%] tracking-5 text-dark-olive transition-all delay-75 duration-300;
+}
+
+.getting-zigzag .getting-zigzag__tab::after {
+  @apply pointer-events-none absolute bottom-4 left-0 h-1 w-0 bg-dark-olive transition-[width] delay-75 duration-300 content-[''];
+}
+
+.getting-zigzag .getting-zigzag__tab--active::after {
+  @apply w-full;
+}
+
+.getting-zigzag .getting-zigzag__panel {
+  @apply mt-25 flex w-full flex-col items-start gap-25 max-767:gap-30;
+}
+
+.getting-zigzag .getting-zigzag__description {
+  @apply max-w-[87.35%] font-body text-16 font-light leading-[160%] tracking-3 text-body/80 max-767:max-w-full;
+}
+
+.getting-zigzag .getting-zigzag__list {
+  @apply m-0 flex w-full max-w-[88.72%] list-none flex-col items-start gap-5 p-0 max-767:max-w-full;
+}
+
+.getting-zigzag .getting-zigzag__list li {
+  @apply relative pl-12 font-body text-14 font-light capitalize leading-[160%] tracking-3 text-body/80 before:absolute before:left-0 before:top-8 before:size-4 before:bg-body/60 before:content-[''];
+}
+
+.getting-zigzag .getting-zigzag__images {
+  @apply grid aspect-[593/550] max-1512:aspect-[593/680.5] basis-[48.25%] shrink-0 gap-15 overflow-hidden max-992:w-full max-992:basis-auto max-992:aspect-[410/515];
+}
+
+.getting-zigzag .getting-zigzag__images--count-3 {
+  @apply grid-cols-2 grid-rows-2;
+}
+
+.getting-zigzag .getting-zigzag__images--count-2 {
+  @apply grid-cols-1 grid-rows-2;
+}
+
+.getting-zigzag .getting-zigzag__images--count-1 {
+  @apply grid-cols-1 grid-rows-1;
+}
+
+.getting-zigzag .getting-zigzag__image {
+  @apply relative overflow-hidden;
+}
+
+.getting-zigzag .getting-zigzag__images--count-3 .getting-zigzag__image:first-child {
+  @apply col-span-2;
+}
+
+.getting-zigzag .getting-zigzag__image-img {
+  @apply block size-full object-cover;
+}
+
+.getting-zigzag .getting-zigzag__images--count-3 .getting-zigzag__image:first-child .getting-zigzag__image-img {
+  @apply !h-[129.33%] !w-full !-top-[29.27%];
+}
+
+/* Getting Zigzag Tabbing Section end */
 /* Experience Section end */
