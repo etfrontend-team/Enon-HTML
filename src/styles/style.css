@@ -1,3 +1,5 @@
+/* location map start  */
+
 .location-map .location-map-inner {
   @apply relative w-full overflow-hidden aspect-1410/720 max-576:aspect-410/692;
 }
@@ -52,7 +54,9 @@
   @apply absolute -left-12 top-1/2 -translate-y-1/2 z-0 block pointer-events-none rotate-[90deg];
 }
 
-/* Suite Slider Section */
+/* location map end */
+
+/* Suite Slider Section start */
 .suite-slider {
   @apply relative border-t border-body/10;
   background: linear-gradient(180deg, #F4F0DF 0%, rgba(244, 240, 223, 0) 100%);
@@ -139,7 +143,9 @@
   @apply bg-body/60;
 }
 
-/* Feature Cards Section */
+/* Suite Slider Section end */
+
+/* Feature Cards Section start */
 .feature-cards {
   @apply relative border-t border-body/10 bg-[linear-gradient(180deg,#F4F0DF_0%,#F4F0DF00_100%)];
 }
@@ -200,10 +206,11 @@
   @apply max-w-455 max-767:max-w-[340.8px];
 }
 
-/* More Offers Section */
+/* Feature Cards Section end */
+
+/* More Offers Section start */
 .more-offers {
-  @apply relative overflow-hidden border-t border-body/10 pt-160 pb-160 max-767:pt-100 max-767:pb-100;
-  background: linear-gradient(180deg, #F4F0DF 0%, rgba(244, 240, 223, 0) 100%);
+  @apply relative overflow-hidden border-t border-body/10 bg-[linear-gradient(180deg,#F4F0DF_0%,#F4F0DF00_100%)] pt-160 pb-160 max-767:pt-100 max-767:pb-100;
 }
 
 .more-offers .container-fluid-lg {
@@ -235,22 +242,19 @@
 }
 
 .more-offers .more-offer-card__image {
-  @apply absolute left-0 max-w-none object-fill transition-transform duration-500 ease-out;
-  width: 100% !important;
+  @apply absolute left-0 max-w-none !w-full object-fill transition-transform duration-500 ease-out;
 }
 
 .more-offers .more-offer-card:hover .more-offer-card__image {
-  transform: scale(1.03);
+  @apply scale-[1.03];
 }
 
 .more-offers .more-offer-card__image--midweek {
-  top: -47.72% !important;
-  height: 167.96% !important;
+  @apply !-top-[47.72%] !h-[167.96%];
 }
 
 .more-offers .more-offer-card__image--exclusive {
-  top: -34.33% !important;
-  height: 134.37% !important;
+  @apply !-top-[34.33%] !h-[134.37%];
 }
 
 .more-offers .more-offer-card__body {
@@ -285,10 +289,12 @@
   @apply text-14 font-medium leading-[160%] tracking-3 text-body/80;
 }
 
-/* Thank You Hero Section */
+/* More Offers Section end */
+
+/* Thank You Hero Section start */
 
 .thankyou-hero.hero-banner {
-  @apply min-h-906 max-767:min-h-[942px];
+  @apply min-h-906 max-767:min-h-screen;
 }
 
 .thankyou-hero .hero-banner__inner,
@@ -305,7 +311,7 @@
 }
 
 .thankyou-hero .thankyou-hero__layout {
-  @apply absolute left-91 right-91 top-135 z-3 flex h-665 items-center justify-between gap-60 max-1199:left-55 max-1199:right-55 max-1199:gap-40 max-992:left-35 max-992:right-35 max-767:left-25 max-767:right-25 max-992:top-271 max-992:h-auto max-992:flex-col max-992:items-center max-992:justify-start max-992:gap-0;
+  @apply absolute left-91 right-91 top-135 z-3 flex h-665 items-center justify-between gap-60 max-1199:left-55 max-1199:right-55 max-1199:gap-40 max-992:left-35 max-992:right-35 max-767:left-25 max-767:right-25 max-992:top-180 max-992:h-auto max-992:flex-col max-992:items-center max-992:justify-start max-992:gap-0;
 }
 
 .thankyou-hero .thankyou-hero__content {
@@ -313,7 +319,7 @@
 }
 
 .thankyou-hero .thankyou-hero__heading-group {
-  @apply flex w-full flex-col items-start gap-25 text-off-white max-992:items-center max-992:gap-30 max-992:text-center;
+  @apply flex w-full flex-col items-start gap-25 text-off-white max-992:items-center max-992:text-center;
 }
 
 .thankyou-hero .thankyou-hero__eyebrow {
@@ -344,7 +350,9 @@
   @apply max-w-none object-cover !h-[111.8%] !w-[108.47%] !-left-[0.14%] !-top-[7.01%];
 }
 
-/* Experience Section */
+/* Thank You Hero Section end */
+
+/* Experience Section start */
 .experience-section .experience-cards-grid {
   @apply grid-cols-2 gap-x-60 gap-y-100 max-992:gap-x-30 max-767:gap-50 max-1199:gap-x-50 max-1199:gap-y-70 max-767:grid-cols-1;
 }
@@ -392,3 +400,4 @@
 .experience-section .experience-cta {
   @apply pt-50 1024:pt-100 flex justify-center items-center;
 }
+/* Experience Section end */
