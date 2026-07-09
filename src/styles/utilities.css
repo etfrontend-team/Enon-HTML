@@ -1527,3 +1527,7 @@
 .scroll-reveal-gallery-center-clip {
   will-change: clip-path;
 }
+
+.journal-list-section .journal-list {
+  @apply grid grid-cols-12 gap-x-25 gap-y-50 768:gap-y-100;
+}

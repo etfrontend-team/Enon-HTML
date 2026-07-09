@@ -1,3 +1,23 @@
-.journal-list-section .journal-list {
-    @apply grid grid-cols-12 gap-x-25 gap-y-50 768:gap-y-100;
+.zig-zag-block-wrapper .content-block {
+    @apply flex-1 text-left;
+}
+
+.zig-zag-block-wrapper .image-block {
+  @apply flex flex-1 1366:min-w-593 max-w-full flex-col gap-15 aspect-410/515 576:aspect-593/680;
+}
+
+.zig-zag-block-wrapper .image-block__row {
+  @apply min-h-0 flex-1;
+}
+
+.zig-zag-block-wrapper .image-block__row--split {
+  @apply flex gap-15;
+}
+
+.zig-zag-block-wrapper .image-block__row--split .image-block__img {
+  @apply w-1/2;
+}
+
+.zig-zag-block-wrapper .image-block__img {
+  @apply h-full w-full object-cover;
 }
