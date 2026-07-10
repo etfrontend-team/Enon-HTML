@@ -18,9 +18,11 @@ const galleryImages = {
 export default function ScrollRevealGallery() {
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const [viewport, setViewport] = useState({ w: 0, h: 0 });
   const [availW, setAvailW] = useState(0);
+  const [contentH, setContentH] = useState(0);
 
   useEffect(() => {
     const update = () => setViewport({ w: window.innerWidth, h: window.innerHeight });
@@ -28,9 +30,12 @@ export default function ScrollRevealGallery() {
     window.addEventListener("resize", update);
     const ro = new ResizeObserver(([entry]) => setAvailW(entry.contentRect.width));
     if (containerRef.current) ro.observe(containerRef.current);
+    const roText = new ResizeObserver(([entry]) => setContentH(entry.contentRect.height));
+    if (contentRef.current) roText.observe(contentRef.current);
     return () => {
       window.removeEventListener("resize", update);
       ro.disconnect();
+      roText.disconnect();
     };
   }, []);
 
@@ -73,12 +78,15 @@ export default function ScrollRevealGallery() {
     }
   );
 
-  const moveDist = (vw - startW) / 2 + sideW + gap;
+  const moveDist = (vw - startW) / 2;
   const leftX = useTransform(scrollYProgress, [0, revealEnd], [0, -moveDist]);
   const rightX = useTransform(scrollYProgress, [0, revealEnd], [0, moveDist]);
   const innerX = useTransform(scrollYProgress, [0, revealEnd], ["-10%", "10%"]);
 
-  const textY = useTransform(scrollYProgress, [revealEnd, textEnd], ["100vh", "0vh"]);
+  // Fits screen -> center it. Taller than screen -> end bottom-aligned so all of it
+  // pans through the viewport while scrolling (nothing permanently clipped).
+  const endY = contentH > 0 && contentH < vh ? (vh - contentH) / 2 : Math.min(0, vh - contentH);
+  const textY = useTransform(scrollYProgress, [revealEnd, textEnd], [vh, endY]);
 
   return (
     <section className="scroll-reveal-gallery relative" style={{ overflow: "visible" }}>
@@ -106,10 +114,10 @@ export default function ScrollRevealGallery() {
           </motion.div>
 
           <motion.div
-            className="absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none container-fluid-lg"
+            className="absolute inset-0 z-30 flex flex-col items-center justify-start pointer-events-none container-fluid-lg"
             style={{ y: textY }}
           >
-            <div className="max-w-608 mx-auto w-full text-center flex flex-col items-center">
+            <div ref={contentRef} className="max-w-608 mx-auto w-full text-center flex flex-col items-center">
               <div className="pre-heading title-white mb-16">
               <span>
                 About the Rock
@@ -133,6 +141,7 @@ export default function ScrollRevealGallery() {
                   Lorem ipsum dolor sit amet consectetur. Ullamcorper quam pellentesque porttitor nisi quis bibendum tristique consequat orci. Lorem ipsum dolor sit amet consectetur. Ullamcorper quam pellentesque porttitor nisi quis bibendum tristique consequat orci.
                   Lorem ipsum dolor sit amet consectetur. </p>
                   <p>Ullamcorper quam pellentesque porttitor nisi quis bibendum tristique consequat orci. Lorem ipsum dolor sit amet consectetur. Ullamcorper quam pellentesque porttitor nisi quis bibendum tristique consequat orci. </p>
+                  <p>Last text</p>
               </div>
             </div>
           </motion.div>
